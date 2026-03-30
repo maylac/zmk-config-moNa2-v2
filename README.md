@@ -23,87 +23,42 @@
 ## レイヤー遷移図
 
 ```mermaid
-flowchart TB
-    classDef base    fill:#4C9BE8,stroke:#1a6abf,color:#fff,rx:8
-    classDef mac     fill:#34A853,stroke:#1e7e34,color:#fff,rx:8
-    classDef func    fill:#F4A62A,stroke:#c47d00,color:#fff,rx:8
-    classDef mouse   fill:#E05252,stroke:#b02020,color:#fff,rx:8
-    classDef gesture fill:#9B59B6,stroke:#6c3483,color:#fff,rx:8
-    classDef bt      fill:#607D8B,stroke:#37474F,color:#fff,rx:8
+flowchart LR
+    classDef base    fill:#4C9BE8,stroke:#1a6abf,color:#fff
+    classDef mac     fill:#34A853,stroke:#1e7e34,color:#fff
+    classDef func    fill:#F4A62A,stroke:#c47d00,color:#fff
+    classDef mouse   fill:#E05252,stroke:#b02020,color:#fff
+    classDef gesture fill:#9B59B6,stroke:#6c3483,color:#fff
+    classDef bt      fill:#607D8B,stroke:#37474F,color:#fff
 
-    BOOT(["🔌 起動"]):::base
+    L0["L0\nDefault\nWin"]:::base
+    L10["L10\nDefault\nMac"]:::mac
+    L4["L4\nBluetooth"]:::bt
+    L1["L1\nSymbol"]:::func
+    L2["L2\nNumber"]:::func
+    L3["L3\nNav\nWin"]:::func
+    L11["L11\nNav\nMac"]:::mac
+    L5["L5\nMouse"]:::mouse
+    L6["L6\nScroll"]:::mouse
+    L7["L7\nGesture\nBrowser"]:::gesture
+    L8["L8\nGesture\nVDesk"]:::gesture
+    L9["L9\nGesture\nGeneral"]:::gesture
 
-    subgraph WIN ["　　　Windows モード　　　"]
-        L0["**L0** Default\nQWERTY"]:::base
-    end
+    L0 <-->|"LANG2\nQ=Win / W=Mac"| L4
+    L10 <-->|"LANG2\nQ=Win / W=Mac"| L4
 
-    subgraph MAC ["　　　Mac モード　　　"]
-        L10["**L10** Default Mac\n↳ L0 透過オーバーレイ"]:::mac
-    end
+    L0 -->|"ENTER"| L1
+    L0 -->|"SPACE"| L2
+    L0 -->|"LANG1"| L3
+    L0 -->|"TAB\nESC"| L5
+    L0 -->|"P"| L6
+    L0 -->|"−"| L7
+    L0 -->|"combo\n8+9"| L8
+    L0 -->|"combo\n19+20"| L9
+    L0 -->|"🖱️auto"| L5
 
-    subgraph FUNC ["　　　機能レイヤー　　　"]
-        L1["**L1** Symbol\n記号・括弧"]:::func
-        L2["**L2** Number\n数字・ファンクション"]:::func
-        L3["**L3** Nav Win\nWindows ナビ"]:::func
-        L11["**L11** Nav Mac\nMac ナビ"]:::mac
-    end
-
-    subgraph POINT ["　　　ポインター　　　"]
-        L5["**L5** Mouse\nマウスボタン"]:::mouse
-        L6["**L6** Scroll\nスクロール"]:::mouse
-    end
-
-    subgraph GEST ["　　　ジェスチャー　　　"]
-        L7["**L7** Gesture\nブラウザ操作"]:::gesture
-        L8["**L8** Gesture\n仮想デスクトップ"]:::gesture
-        L9["**L9** Gesture\n一般操作"]:::gesture
-    end
-
-    L4["**L4** Bluetooth\nBT選択 / Win⇄Mac"]:::bt
-
-    %% 起動
-    BOOT -->|"デフォルト"| L0
-
-    %% BT 切替
-    L0 -->|"LANG2 長押し"| L4
-    L10 -->|"LANG2 長押し"| L4
-    L4 -->|"Q: Win mode"| L0
-    L4 -->|"W: Mac mode"| L10
-
-    %% Win → 機能
-    L0 -->|"ENTER 長押し"| L1
-    L0 -->|"SPACE 長押し"| L2
-    L0 -->|"LANG1 長押し"| L3
-
-    %% Mac → 機能
-    L10 -.->|"ENTER 長押し\n(L0 透過)"| L1
-    L10 -.->|"SPACE 長押し\n(L0 透過)"| L2
-    L10 -->|"LANG1 長押し"| L11
-
-    %% Win → ポインター
-    L0 -->|"P 長押し"| L6
-    L0 -->|"TAB/ESC 長押し"| L5
-    L0 -->|"🖱️ トラックボール\n(Automouse)"| L5
-
-    %% Mac → ポインター
-    L10 -.->|"P 長押し\n(L0 透過)"| L6
-    L10 -.->|"TAB/ESC 長押し\n(L0 透過)"| L5
-    L10 -->|"🖱️ トラックボール\n(Automouse)"| L5
-
-    %% Win → ジェスチャー
-    L0 -->|"- 長押し"| L7
-    L0 -->|"コンボ [8+9]"| L8
-    L0 -->|"コンボ [19+20]"| L9
-
-    %% Mac → ジェスチャー
-    L10 -.->|"- 長押し\n(L0 透過)"| L7
-    L10 -.->|"コンボ [8+9]"| L8
-    L10 -.->|"コンボ [19+20]"| L9
-
-    %% 戻り
-    L1 & L2 & L3 & L6 & L7 & L8 & L9 -->|"キー離す"| L0
-    L11 -->|"キー離す"| L10
-    L5 -->|"10秒 or Ctrl/Shift タップ"| L0
+    L10 -.->|"LANG1"| L11
+    L10 -.->|"ENTER\nSPACE\n他 →L0透過"| L0
 ```
 
 ### 補足

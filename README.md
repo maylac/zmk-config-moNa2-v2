@@ -20,6 +20,78 @@
 
 ---
 
+## レイヤー遷移図
+
+```mermaid
+stateDiagram-v2
+    direction TB
+
+    state "Layer 0\nDefault (Win)" as L0
+    state "Layer 1\nSymbol" as L1
+    state "Layer 2\nNumber" as L2
+    state "Layer 3\nNav (Win)" as L3
+    state "Layer 4\nBluetooth" as L4
+    state "Layer 5\nMouse" as L5
+    state "Layer 6\nScroll" as L6
+    state "Layer 7\nGesture: Browser" as L7
+    state "Layer 8\nGesture: Virtual Desktop" as L8
+    state "Layer 9\nGesture: General" as L9
+    state "Layer 10\nDefault (Mac)" as L10
+    state "Layer 11\nNav (Mac)" as L11
+
+    state "Win/Mac切替" as BT4 {
+        state "Q → Win mode\n(&df DF_SEL 0)" as DFWIN
+        state "W → Mac mode\n(&df DF_SEL 10)" as DFMAC
+    }
+
+    [*] --> L0 : 起動時デフォルト
+
+    L0 --> L1  : ENTER長押し
+    L0 --> L2  : SPACE長押し
+    L0 --> L3  : LANG1長押し
+    L0 --> L4  : LANG2長押し
+    L0 --> L5  : TAB長押し / ESC長押し
+    L0 --> L5  : トラックボール操作\n(Automouse)
+    L0 --> L6  : P長押し
+    L0 --> L7  : -長押し
+
+    L0 --> L8  : コンボ[8+9]\n+ Alt+Tab
+    L0 --> L9  : コンボ[19+20]\n+ Win
+
+    L4 --> BT4 : --
+    DFWIN --> L0 : Winをデフォルトに設定
+    DFMAC --> L10 : Macをデフォルトに設定
+
+    L10 --> L1  : ENTER長押し (L0経由)
+    L10 --> L2  : SPACE長押し (L0経由)
+    L10 --> L11 : LANG1長押し
+    L10 --> L4  : LANG2長押し (L0経由)
+    L10 --> L5  : TAB長押し / ESC長押し (L0経由)
+    L10 --> L5  : トラックボール操作\n(Automouse)
+    L10 --> L6  : P長押し (L0経由)
+    L10 --> L7  : -長押し (L0経由)
+
+    L1 --> L0  : キー離す
+    L2 --> L0  : キー離す
+    L3 --> L0  : キー離す / LANG1タップ
+    L4 --> L0  : キー離す
+    L5 --> L0  : 10秒タイムアウト / Ctrl or Shift タップ
+    L6 --> L0  : キー離す
+    L7 --> L0  : キー離す
+    L8 --> L0  : キー離す
+    L9 --> L0  : キー離す
+    L11 --> L10 : キー離す / LANG1タップ
+```
+
+### 補足
+
+- **Win モード**（デフォルト）: Layer 0 を基点に遷移
+- **Mac モード**: Layer 10 を基点に遷移。Layer 10 は Layer 0 の透過オーバーレイ（LANG1 長押し以外は Layer 0 に通過）
+- **Automouse**: トラックボールを動かすと Layer 5 に自動遷移、300ms 静止 + 10秒タイムアウトで復帰
+- **BT プロファイルごとに Win/Mac 設定を記憶**（Flash 保存）
+
+---
+
 ## レイヤー一覧
 
 | # | レイヤー名 | 概要 |

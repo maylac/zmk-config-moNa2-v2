@@ -94,6 +94,8 @@ flowchart LR
 | 7 | Gesture L7 | ジェスチャー：ブラウザ操作 |
 | 8 | Gesture L8 | ジェスチャー：仮想デスクトップ |
 | 9 | Gesture L9 | ジェスチャー：一般操作 |
+| 10 | Default Mac | Mac用ベースレイヤー（L0透過オーバーレイ） |
+| 11 | Nav Mac | Macナビゲーション（Macスクリーンショット対応） |
 
 ---
 

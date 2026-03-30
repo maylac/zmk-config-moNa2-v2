@@ -35,7 +35,7 @@
         };
 
         Gesture_L8_mac {
-            bindings = <&lt 14 LG(TAB)>;
+            bindings = <&lt 13 LG(TAB)>;
             key-positions = <8 9>;
             layers = <10>;
         };
@@ -47,7 +47,7 @@
         };
 
         Gesture_L9_mac {
-            bindings = <&lt 12 LEFT_WIN>;
+            bindings = <&lt 14 LEFT_WIN>;
             key-positions = <19 20>;
             layers = <10>;
         };
@@ -265,14 +265,14 @@
 
         // Layer 10: Mac default base
         // &trans は Layer 0 に透過。Mac固有の遷移先のみ上書き:
-        //   - MINUS hold → Layer 13 (Mac Gesture L7)
+        //   - MINUS hold → Layer 12 (Mac Gesture L7)
         //   - LANG1 hold → Layer 11 (Mac Nav)
-        //   コンボ [8+9]  → Layer 14 (Mac Gesture L8)  ※combo定義で制御
-        //   コンボ [19+20] → Layer 12 (Mac Gesture L9) ※combo定義で制御
+        //   コンボ [8+9]  → Layer 13 (Mac Gesture L8)  ※combo定義で制御
+        //   コンボ [19+20] → Layer 14 (Mac Gesture L9) ※combo定義で制御
         mac_default_layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &lt 13 MINUS
+&trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &lt 12 MINUS
 &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &lt_to_layer_0 11 LANG1           &trans  &trans                  &trans
             >;
@@ -280,8 +280,8 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        // Layer 13: Mac Gesture L7 (≒ L7のMac版)
-        // - 長押しで起動（Mac モード時のみ）
+        // Layer 12: Mac Gesture L7 (≒ L7のMac版)
+        // − 長押しで起動（Mac モード時のみ）
         mac_gesture_l7 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
@@ -291,7 +291,7 @@
             >;
         };
 
-        // Layer 14: Mac Gesture L8 (≒ L8のMac版)
+        // Layer 13: Mac Gesture L8 (≒ L8のMac版)
         // コンボ [8+9] で起動（Mac モード時のみ）
         mac_gesture_l8 {
             bindings = <
@@ -302,7 +302,7 @@
             >;
         };
 
-        // Layer 12: Mac Gesture L9 (≒ L9のMac版)
+        // Layer 14: Mac Gesture L9 (≒ L9のMac版)
         // コンボ [19+20] で起動（Mac モード時のみ）
         mac_gesture_l9 {
             bindings = <

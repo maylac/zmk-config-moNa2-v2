@@ -103,9 +103,9 @@ flowchart LR
 | 9 | Gesture L9 | ジェスチャー：一般操作 |
 | 10 | Default Mac | Mac用ベースレイヤー（L0透過オーバーレイ） |
 | 11 | Nav Mac | Macナビゲーション ≒ L3のMac版（スクリーンショットのみ差替） |
-| 12 | Gesture Mac L9 | Macジェスチャー ≒ L9のMac版（Spotlight・ウィンドウ切替） |
-| 13 | Gesture Mac L7 | Macジェスチャー ≒ L7のMac版（Cmd+T/W でタブ操作） |
-| 14 | Gesture Mac L8 | Macジェスチャー ≒ L8のMac版（Ctrl+←→ でSpace切替） |
+| 12 | Gesture Mac L7 | Macジェスチャー ≒ L7のMac版（Cmd+T/W でタブ操作） |
+| 13 | Gesture Mac L8 | Macジェスチャー ≒ L8のMac版（Ctrl+←→ でSpace切替） |
+| 14 | Gesture Mac L9 | Macジェスチャー ≒ L9のMac版（Spotlight・ウィンドウ切替） |
 
 ---
 

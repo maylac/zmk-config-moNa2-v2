@@ -124,6 +124,16 @@
             input-processors = <&zip_mouse_gesture_l9_mac &zip_xy_scaler 0 1>;
         };
 
+        gest_on_l13 {
+            layers = <13>;
+            input-processors = <&zip_mouse_gesture_l7_mac &zip_xy_scaler 0 1>;
+        };
+
+        gest_on_l14 {
+            layers = <14>;
+            input-processors = <&zip_mouse_gesture_l8_mac &zip_xy_scaler 0 1>;
+        };
+
     };
 
     layer_listeners {
@@ -147,6 +157,16 @@
 
         gesture_on_l12 {
             layers = <12>;
+            bindings = <&mouse_gesture_on &mouse_gesture_off>;
+        };
+
+        gesture_on_l13 {
+            layers = <13>;
+            bindings = <&mouse_gesture_on &mouse_gesture_off>;
+        };
+
+        gesture_on_l14 {
+            layers = <14>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
     };

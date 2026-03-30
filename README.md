@@ -32,35 +32,43 @@ flowchart LR
     classDef bt      fill:#607D8B,stroke:#37474F,color:#fff
 
     L0["L0\nDefault\nWin"]:::base
-    L10["L10\nDefault\nMac"]:::mac
+    L10["L10\nDefault\nMac\n※L0と同時にアクティブ"]:::mac
     L4["L4\nBluetooth"]:::bt
     L1["L1\nSymbol"]:::func
     L2["L2\nNumber"]:::func
-    L3["L3\nNav\nWin"]:::func
-    L11["L11\nNav\nMac"]:::mac
+    L3["L3\nNav Win"]:::func
+    L11["L11\nNav Mac"]:::mac
     L5["L5\nMouse"]:::mouse
     L6["L6\nScroll"]:::mouse
     L7["L7\nGesture\nBrowser"]:::gesture
     L8["L8\nGesture\nVDesk"]:::gesture
     L9["L9\nGesture\nGeneral"]:::gesture
 
+    %% BT切替
     L0 <-->|"LANG2\nQ=Win / W=Mac"| L4
     L10 <-->|"LANG2\nQ=Win / W=Mac"| L4
 
+    %% L0からの遷移（Win・Mac共通）
     L0 -->|"ENTER"| L1
     L0 -->|"SPACE"| L2
     L0 -->|"LANG1"| L3
-    L0 -->|"TAB\nESC"| L5
+    L0 -->|"TAB / ESC"| L5
     L0 -->|"P"| L6
     L0 -->|"−"| L7
-    L0 -->|"combo\n8+9"| L8
-    L0 -->|"combo\n19+20"| L9
-    L0 -->|"🖱️auto"| L5
+    L0 -->|"combo 8+9"| L8
+    L0 -->|"combo 19+20"| L9
+    L0 -->|"🖱️ Automouse"| L5
 
-    L5 -->|"10秒 or\nCtrl/Shift"| L0
+    %% 戻り
+    L1 & L2 & L3 & L6 & L7 & L8 & L9 -->|"キー離す"| L0
+    L5 -->|"10秒 or Ctrl/Shift"| L0
 
-    L10 -.->|"LANG1"| L11
-    L10 -.->|"ENTER\nSPACE\n他 →L0透過"| L0
+    %% L10はL0と同時にアクティブ → L0の全遷移が使える
+    L10 <-.->|"常時重ねがけ\n（L0透過）"| L0
+
+    %% L10のみ異なる遷移
+    L10 -->|"LANG1"| L11
+    L11 -->|"キー離す"| L10
 ```
 
 ### 補足

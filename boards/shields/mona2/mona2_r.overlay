@@ -46,29 +46,19 @@
 };
 
 
+// SPIバス: 右側のCS GPIOピンでオーバーライド (P0.09)
 &spi0 {
-    status = "okay";
-    compatible = "nordic,nrf-spim"; //マイコンがnRFシリーズ
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;  //P0.09を指定(CS)
+};
 
-    trackball_central: trackball_central@0 {
-        status = "okay";
-        compatible = "pixart,pmw3610";  //トラボセンサ用のドライバとバインド
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
-        cpi = <600>;
-        //swap-xy;
-        invert-x; //COROPIT版ではコメントアウトを外す
-        invert-y; //COROPIT版ではコメントアウトを外す
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        force-awake; // ZMKがアクティブな間センサーを起きたままにする
-    };
+// mona2.dtsiで定義済みのpmw3610_tbを右側ピン設定でオーバーライド
+&pmw3610_tb {
+    irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
+    cpi = <600>;
+    //swap-xy;
+    invert-x; //COROPIT版ではコメントアウトを外す
+    invert-y; //COROPIT版ではコメントアウトを外す
+    force-awake; // ZMKがアクティブな間センサーを起きたままにする
 };
 
 &zip_temp_layer {
@@ -79,7 +69,7 @@
 // Overrides for the input listener node
 &trackball_central_listener {
     status = "okay";
-    device = <&trackball_central>;
+    device = <&pmw3610_tb>;
 
     input-processors = <&zip_temp_layer 5 10000>; 
 

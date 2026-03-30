@@ -38,6 +38,7 @@ flowchart LR
     L2["L2\nNumber"]:::func
     L3["L3\nNav Win"]:::func
     L11["L11\nNav Mac"]:::mac
+    L12["L12\nGesture Mac\nGeneral"]:::gesture
     L5["L5\nMouse"]:::mouse
     L6["L6\nScroll"]:::mouse
     L7["L7\nGesture\nBrowser"]:::gesture
@@ -68,7 +69,9 @@ flowchart LR
 
     %% L10のみ異なる遷移
     L10 -->|"LANG1"| L11
+    L10 -->|"combo 19+20"| L12
     L11 -->|"キー離す"| L10
+    L12 -->|"キー離す"| L10
 ```
 
 ### 補足
@@ -96,6 +99,7 @@ flowchart LR
 | 9 | Gesture L9 | ジェスチャー：一般操作 |
 | 10 | Default Mac | Mac用ベースレイヤー（L0透過オーバーレイ） |
 | 11 | Nav Mac | Macナビゲーション ≒ L3のMac版（スクリーンショットのみ差替） |
+| 12 | Gesture Mac | Macジェスチャー ≒ L9のMac版（Spotlight・ウィンドウ切替） |
 
 ---
 

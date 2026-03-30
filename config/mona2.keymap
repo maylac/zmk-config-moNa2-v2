@@ -7,6 +7,7 @@
 #include "gesture/gesture_L7.dtsi"
 #include "gesture/gesture_L8.dtsi"
 #include "gesture/gesture_L9.dtsi"
+#include "gesture/gesture_L9_mac.dtsi"
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 5
@@ -33,6 +34,13 @@
         Gesture_L9 {
             bindings = <&lt 9 LEFT_WIN>;
             key-positions = <19 20>;
+            layers = <0>;
+        };
+
+        Gesture_L9_mac {
+            bindings = <&lt 12 LEFT_WIN>;
+            key-positions = <19 20>;
+            layers = <10>;
         };
 
         a {
@@ -257,6 +265,17 @@
             >;
 
             sensor-bindings = <&scroll_up_down>;
+        };
+
+        // Layer 12: Mac Gesture L9 (≒ L9のMac版)
+        // コンボ [19+20] で起動（Mac モード時のみ）
+        mac_gesture_l9 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
+            >;
         };
 
         // Layer 11: Mac Nav

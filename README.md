@@ -57,6 +57,8 @@ flowchart LR
     L0 -->|"combo\n19+20"| L9
     L0 -->|"🖱️auto"| L5
 
+    L5 -->|"10秒 or\nCtrl/Shift"| L0
+
     L10 -.->|"LANG1"| L11
     L10 -.->|"ENTER\nSPACE\n他 →L0透過"| L0
 ```

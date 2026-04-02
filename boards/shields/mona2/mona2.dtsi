@@ -5,6 +5,7 @@
 #include <zephyr/dt-bindings/pinctrl/nrf-pinctrl.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <mouse-gesture.dtsi>   /* kot149 モジュール */
+#include <input-processor-keybind.dtsi>  /* zettaface モジュール */
 
  / {
     chosen {
@@ -86,6 +87,20 @@
                     <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
+    /* Alt+Tab ウィンドウ切替用: トラックボール横移動 → Tab/Shift+Tab
+     * bindings順: 右(X+), 左(X-), 下(Y+), 上(Y-)
+     * invert-x/y が有効な場合、物理的な方向が逆になることがある。
+     * その際は TAB と LS(TAB) を入れ替えること。
+     */
+    zip_keybind_alttab: zip_keybind_alttab {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        bindings = <&kp TAB>, <&kp LS(TAB)>, <&none>, <&none>;
+        tick = <50>;
+        tap-ms = <10>;
+        track_remainders;
+    };
+
     //right hand trackball
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";
@@ -132,6 +147,13 @@
         gest_on_l14 {
             layers = <14>;
             input-processors = <&zip_mouse_gesture_l9_mac &zip_xy_scaler 0 1>;
+        };
+
+        // Layer 15: Alt+Tab スクロール
+        // LAlt キーホールド中に有効。トラックボール横移動 → Tab/Shift+Tab
+        alttab_on_l15 {
+            layers = <15>;
+            input-processors = <&zip_keybind_alttab>;
         };
 
     };

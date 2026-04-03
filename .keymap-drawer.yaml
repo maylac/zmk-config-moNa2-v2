@@ -1,0 +1,22 @@
+draw_config:
+  outer_pad_h: 72
+  svg_extra_style: |
+    text.label { font-size: 18px; }
+
+parse_config:
+  layer_legend_map:
+    default:       "L0: Default (Win)"
+    "1":           "L1: Symbol"
+    "2":           "L2: Number"
+    "3":           "L3: Nav (Win)"
+    "4":           "L4: Bluetooth"
+    "5":           "L5: Mouse"
+    SCROLL:        "L6: Scroll"
+    Gesture_L7:    "L7: Gesture Browser (Win)"
+    Gesture_L8:    "L8: Gesture VDesk (Win)"
+    Gesture_L9:    "L9: Gesture General (Win)"
+    mac_default:   "L10: Default (Mac)"
+    mac_nav:       "L11: Nav (Mac)"
+    mac_gesture_l7: "L12: Gesture Browser (Mac)"
+    mac_gesture_l8: "L13: Gesture VDesk (Mac)"
+    mac_gesture_l9: "L14: Gesture General (Mac)"

@@ -8,6 +8,32 @@
 
 ---
 
+## レイヤー一覧
+
+| # | レイヤー名 | 概要 |
+|---|-----------|------|
+| 0 | Default | QWERTY基本配置 |
+| 1 | Symbol | 記号・括弧 |
+| 2 | Number | 数字・ファンクション |
+| 3 | Nav | ナビゲーション |
+| 4 | BT | Bluetooth設定 |
+| 5 | Mouse | マウスボタン（Automouseで自動遷移） |
+| 6 | Scroll | スクロールモード |
+| 7 | Gesture L7 | ジェスチャー：ブラウザ操作 |
+| 8 | Gesture L8 | ジェスチャー：仮想デスクトップ |
+| 9 | Gesture L9 | ジェスチャー：一般操作 |
+| 10 | Default Mac | Mac用ベースレイヤー（L0透過オーバーレイ） |
+| 11 | Nav Mac | Macナビゲーション ≒ L3のMac版（スクリーンショットのみ差替） |
+| 12 | Gesture Mac L7 | Macジェスチャー ≒ L7のMac版（Cmd+T/W でタブ操作） |
+| 13 | Gesture Mac L8 | Macジェスチャー ≒ L8のMac版（Ctrl+←→ でSpace切替） |
+| 14 | Gesture Mac L9 | Macジェスチャー ≒ L9のMac版（Spotlight・ウィンドウ切替） |
+
+## キーマップ
+
+![keymap](keymap.svg)
+
+---
+
 ## レイヤー遷移図
 
 ```mermaid
@@ -72,32 +98,6 @@ flowchart LR
 - **Mac モード**: Layer 10 を基点に遷移。Layer 10 は Layer 0 の透過オーバーレイ（LANG1 長押し以外は Layer 0 に通過）
 - **Automouse**: トラックボールを動かすと Layer 5 に自動遷移、300ms 静止 + 10秒タイムアウトで復帰
 - **BT プロファイルごとに Win/Mac 設定を記憶**（Flash 保存）
-
----
-
-## レイヤー一覧
-
-| # | レイヤー名 | 概要 |
-|---|-----------|------|
-| 0 | Default | QWERTY基本配置 |
-| 1 | Symbol | 記号・括弧 |
-| 2 | Number | 数字・ファンクション |
-| 3 | Nav | ナビゲーション |
-| 4 | BT | Bluetooth設定 |
-| 5 | Mouse | マウスボタン（Automouseで自動遷移） |
-| 6 | Scroll | スクロールモード |
-| 7 | Gesture L7 | ジェスチャー：ブラウザ操作 |
-| 8 | Gesture L8 | ジェスチャー：仮想デスクトップ |
-| 9 | Gesture L9 | ジェスチャー：一般操作 |
-| 10 | Default Mac | Mac用ベースレイヤー（L0透過オーバーレイ） |
-| 11 | Nav Mac | Macナビゲーション ≒ L3のMac版（スクリーンショットのみ差替） |
-| 12 | Gesture Mac L7 | Macジェスチャー ≒ L7のMac版（Cmd+T/W でタブ操作） |
-| 13 | Gesture Mac L8 | Macジェスチャー ≒ L8のMac版（Ctrl+←→ でSpace切替） |
-| 14 | Gesture Mac L9 | Macジェスチャー ≒ L9のMac版（Spotlight・ウィンドウ切替） |
-
-## キーマップ
-
-![keymap](keymap.svg)
 
 ---
 

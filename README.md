@@ -62,15 +62,15 @@ flowchart LR
     L9["L9\nGesture\nGeneral"]:::gesture
 
     %% BT切替
-    L0 <-->|"LANG2\nQ=Win / W=Mac"| L4
-    L10 <-->|"LANG2\nQ=Win / W=Mac"| L4
+    L0 <-->|"combo LANG2+LANG1\nQ=Win / W=Mac"| L4
+    L10 <-->|"combo LANG2+LANG1\nQ=Win / W=Mac"| L4
 
     %% L0からの遷移（Win・Mac共通）
     L0 -->|"ENTER"| L1
     L0 -->|"SPACE"| L2
     L0 -->|"LANG1"| L3
     L0 -->|"TAB / ESC"| L5
-    L0 -->|"P"| L6
+    L0 -->|"LAlt"| L6
     L0 -->|"−"| L7
     L0 -->|"combo 8+9"| L8
     L0 -->|"combo 19+20"| L9
@@ -147,6 +147,8 @@ flowchart LR
 ## Layer 6 - Scroll（スクロール）
 
 全キー透過（トランス）。トラックボール移動がスクロール入力に変換される。
+
+**遷移方法:** `LAlt` ホールド
 
 - スケール: 1/8倍
 - Y軸反転あり
@@ -230,6 +232,7 @@ Layer 7〜9 の Mac 版。トリガーキーが異なるのみ。
 |---------|------|
 | 8 + 9 同時押し | Layer 8 一時有効 + `Alt+Tab` |
 | 19 + 20 同時押し | Layer 9 一時有効 + `Win` |
+| LANG2 + LANG1 同時押し | Layer 4 (Bluetooth) 一時有効 |
 
 ---
 

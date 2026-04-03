@@ -8,12 +8,6 @@
 
 ---
 
-## キーマップ
-
-![keymap](keymap.svg)
-
----
-
 ## キー配置図
 
 ```
@@ -119,6 +113,10 @@ flowchart LR
 | 12 | Gesture Mac L7 | Macジェスチャー ≒ L7のMac版（Cmd+T/W でタブ操作） |
 | 13 | Gesture Mac L8 | Macジェスチャー ≒ L8のMac版（Ctrl+←→ でSpace切替） |
 | 14 | Gesture Mac L9 | Macジェスチャー ≒ L9のMac版（Spotlight・ウィンドウ切替） |
+
+## キーマップ
+
+![keymap](keymap.svg)
 
 ---
 

@@ -51,12 +51,6 @@
             key-positions = <19 20>;
             layers = <10>;
         };
-
-        // Automouse除外キー（10 17 18 19 21 29 31）を全て同時押しした際の誤動作防止
-        block_automouse_keys {
-            bindings = <&none>;
-            key-positions = <17 29 18 19 31 10 21>;
-        };
     };
 
     macros {

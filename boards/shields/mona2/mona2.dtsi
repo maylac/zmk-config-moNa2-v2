@@ -89,7 +89,7 @@
     //right hand trackball
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";
-        status = "okay";
+        status = "disabled";
         device = <&pmw3610_tb>;
 
         dpi_low_on_l2 {

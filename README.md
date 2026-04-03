@@ -45,9 +45,9 @@ flowchart LR
     L2["L2\nNumber"]:::func
     L3["L3\nNav Win"]:::func
     L11["L11\nNav Mac"]:::mac
-    L12["L12\nGesture Mac\nGeneral"]:::gesture
-    L13["L13\nGesture Mac\nBrowser"]:::gesture
-    L14["L14\nGesture Mac\nVDesk"]:::gesture
+    L12["L12\nGesture Mac\nBrowser"]:::gesture
+    L13["L13\nGesture Mac\nVDesk"]:::gesture
+    L14["L14\nGesture Mac\nGeneral"]:::gesture
     L5["L5\nMouse"]:::mouse
     L6["L6\nScroll"]:::mouse
     L7["L7\nGesture\nBrowser"]:::gesture
@@ -78,9 +78,9 @@ flowchart LR
 
     %% L10のみ異なる遷移
     L10 -->|"LANG1"| L11
-    L10 -->|"combo 19+20"| L12
-    L10 -->|"− 長押し"| L13
-    L10 -->|"combo 8+9"| L14
+    L10 -->|"−"| L12
+    L10 -->|"combo 8+9"| L13
+    L10 -->|"combo 19+20"| L14
     L11 -->|"キー離す"| L10
     L12 & L13 & L14 -->|"キー離す"| L10
 ```
@@ -374,8 +374,7 @@ Layer 7〜9 の Mac 版。トリガーキーが異なるのみ。
 |---------|------|
 | 8 + 9 同時押し | Layer 8 一時有効 + `Alt+Tab` |
 | 19 + 20 同時押し | Layer 9 一時有効 + `Win` |
-| 11 + 12 同時押し | `Tab` |
-| 39 + 38 同時押し | Layer 4 + `ESC` |
+| 10+17+18+19+21+29+31 同時押し | なし（Automouse除外キー全押し時の誤動作防止） |
 
 ---
 

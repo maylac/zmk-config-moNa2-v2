@@ -8,7 +8,7 @@
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <120>;
 
-    focus_url   { pattern = <GESTURE_UP>;    bindings = <&kp LC(L)>;      };  // URLバー選択
+    focus_url   { pattern = <GESTURE_UP>;    bindings = <&kp LG(L)>;      };  // URLバー選択
     spotlight   { pattern = <GESTURE_DOWN>;  bindings = <&kp LG(SPACE)>;  };  // Spotlight / Raycast
     prev_window { pattern = <GESTURE_LEFT>;  bindings = <&kp LEFT>;        };  // 左矢印
     switch_win  { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(GRAVE)>;  };  // 同アプリ内ウィンドウ切替

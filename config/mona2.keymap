@@ -47,7 +47,7 @@
         };
 
         Gesture_L9_mac {
-            bindings = <&lt 14 LEFT_WIN>;
+            bindings = <&lt 14 LGUI>;
             key-positions = <19 20>;
             layers = <10>;
         };
@@ -56,6 +56,24 @@
             bindings = <&mo 4>;
             key-positions = <38 39>;
             layers = <0 10>;
+        };
+
+        Scroll_toggle {
+            bindings = <&tog 6>;
+            key-positions = <30 31>;
+            layers = <0 10>;
+        };
+
+        Select_All_win {
+            bindings = <&kp LC(A)>;
+            key-positions = <0 10>;
+            layers = <0>;
+        };
+
+        Select_All_mac {
+            bindings = <&kp LG(A)>;
+            key-positions = <0 10>;
+            layers = <10>;
         };
     };
 
@@ -165,7 +183,7 @@
 &kp Q                             &kp W         &kp E         &kp R        &kp T                                                     &kp Y        &kp U  &kp I      &kp O    &kp P
 &mt_exit_AML_on_tap LCTRL A       &kp S         &kp D         &kp F        &kp G                                  &kp SEMICOLON      &kp H        &kp J  &kp K      &kp L    &lt 7 MINUS
 &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X         &kp C         &kp V        &kp B        &lt 5 TAB                 &kp DOUBLE_QUOTES  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL                         &kp LEFT_WIN  &lt 6 LEFT_ALT  &kp BACKSPACE  &lt 2 SPACE  &kp LANG2               &lt_to_layer_0 3 LANG1  &lt 1 ENTER                             &lt 5 ESCAPE
+&kp LCTRL                         &kp LEFT_WIN  &kp LEFT_ALT  &kp BACKSPACE  &lt 2 SPACE  &kp LANG2               &lt_to_layer_0 3 LANG1  &lt 1 ENTER                             &lt 5 ESCAPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -271,14 +289,31 @@
         //   コンボ [8+9]  → Layer 13 (Mac Gesture L8)  ※combo定義で制御
         //   コンボ [19+20] → Layer 14 (Mac Gesture L9) ※combo定義で制御
         mac_default_layer {
+            // Win/Mac共通の筋肉記憶のため修飾キー位置を合わせる:
+            //   親指左端: Win=LCTRL → Mac=LGUI(Cmd)
+            //   親指2番目: Win=LEFT_WIN → Mac=LCTRL
+            //   Aホールド: Win=LCTRL → Mac=LGUI(Cmd)
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &lt 12 MINUS
-&trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                           &lt_to_layer_0 11 LANG1  &trans                  &trans
+&trans                             &trans  &trans  &trans  &trans                             &trans  &trans  &trans  &trans  &trans
+&mt_exit_AML_on_tap LGUI A         &trans  &trans  &trans  &trans    &trans                   &trans  &trans  &trans  &trans  &lt 12 MINUS
+&trans                             &trans  &trans  &trans  &trans    &trans                   &trans  &trans  &trans  &trans  &trans  &trans
+&kp LGUI  &kp LCTRL  &trans  &trans  &trans  &trans                 &lt_to_layer_0 11 LANG1  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
+        };
+
+        // Layer 11: Mac Nav
+        // Same as layer 3 (Win Nav) but with Mac screenshot shortcuts
+        mac_nav_layer {
+            bindings = <
+&kp PAGE_UP  &trans    &kp UP_ARROW  &trans           &kp PAGE_DOWN                                 &trans  &trans              &kp LG(UP_ARROW)    &trans               &trans
+&kp HOME     &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp END                  &kp LG(LS(N4))       &trans  &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans
+&trans       &trans    &trans        &trans           &trans         &trans    &kp LG(LS(N5))       &trans  &trans              &trans              &trans               &trans
+&trans       &trans    &trans        &trans           &trans         &trans    &kp DEL              &trans                                                               &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
         };
 
         // Layer 12: Mac Gesture L7 (≒ L7のMac版)
@@ -312,19 +347,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
-        };
-
-        // Layer 11: Mac Nav
-        // Same as layer 3 (Win Nav) but with Mac screenshot shortcuts
-        mac_nav_layer {
-            bindings = <
-&kp PAGE_UP  &trans    &kp UP_ARROW  &trans           &kp PAGE_DOWN                                 &trans  &trans              &kp LG(UP_ARROW)    &trans               &trans
-&kp HOME     &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp END                  &kp LG(LS(N4))       &trans  &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans
-&trans       &trans    &trans        &trans           &trans         &trans    &kp LG(LS(N5))       &trans  &trans              &trans              &trans               &trans
-&trans       &trans    &trans        &trans           &trans         &trans    &kp DEL              &trans                                                               &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
         };
     };
 };

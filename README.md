@@ -10,23 +10,23 @@
 
 ## レイヤー一覧
 
-| # | レイヤー名 | 概要 |
-|---|-----------|------|
-| 0 | Default | QWERTY基本配置 |
-| 1 | Symbol | 記号・括弧 |
-| 2 | Number | 数字・ファンクション |
-| 3 | Nav | ナビゲーション |
-| 4 | BT | Bluetooth設定 |
-| 5 | Mouse | マウスボタン（Automouseで自動遷移） |
-| 6 | Scroll | スクロールモード |
-| 7 | Gesture L7 | ジェスチャー：ブラウザ操作 |
-| 8 | Gesture L8 | ジェスチャー：仮想デスクトップ |
-| 9 | Gesture L9 | ジェスチャー：一般操作 |
-| 10 | Default Mac | Mac用ベースレイヤー（L0透過オーバーレイ） |
-| 11 | Nav Mac | Macナビゲーション ≒ L3のMac版（スクリーンショットのみ差替） |
-| 12 | Gesture Mac L7 | Macジェスチャー ≒ L7のMac版（Cmd+T/W でタブ操作） |
-| 13 | Gesture Mac L8 | Macジェスチャー ≒ L8のMac版（Ctrl+←→ でSpace切替） |
-| 14 | Gesture Mac L9 | Macジェスチャー ≒ L9のMac版（Spotlight・ウィンドウ切替） |
+| # | レイヤー名 | 概要 | LED |
+|---|-----------|------|-----|
+| 0 | Default (Win) | QWERTY基本配置 | ⚫ 消灯 |
+| 1 | Symbol | 記号・括弧 | 🟡 黄 |
+| 2 | Number | 数字・ファンクション | 🔵 青 |
+| 3 | Nav (Win) | ナビゲーション | 🩵 シアン |
+| 4 | BT | Bluetooth設定 | 🔴 赤 |
+| 5 | Mouse | マウスボタン（Automouseで自動遷移） | 🟣 マゼンタ |
+| 6 | Scroll | スクロールモード | ⚪ 白 |
+| 7 | Gesture L7 | ジェスチャー：ブラウザ操作 | — |
+| 8 | Gesture L8 | ジェスチャー：仮想デスクトップ | — |
+| 9 | Gesture L9 | ジェスチャー：一般操作 | — |
+| 10 | Default (Mac) | Mac用ベースレイヤー（L0透過オーバーレイ） | 🟢 緑 |
+| 11 | Nav Mac | Macナビゲーション ≒ L3のMac版（スクリーンショットのみ差替） | 🩵 シアン |
+| 12 | Gesture Mac L7 | Macジェスチャー ≒ L7のMac版（Cmd+T/W でタブ操作） | — |
+| 13 | Gesture Mac L8 | Macジェスチャー ≒ L8のMac版（Ctrl+←→ でSpace切替） | — |
+| 14 | Gesture Mac L9 | Macジェスチャー ≒ L9のMac版（Spotlight・ウィンドウ切替） | — |
 
 ## キーマップ
 
@@ -38,25 +38,28 @@
 
 ```mermaid
 flowchart LR
-    classDef base    fill:#4C9BE8,stroke:#1a6abf,color:#fff
-    classDef mac     fill:#34A853,stroke:#1e7e34,color:#fff
-    classDef func    fill:#F4A62A,stroke:#c47d00,color:#fff
-    classDef mouse   fill:#E05252,stroke:#b02020,color:#fff
-    classDef gesture fill:#9B59B6,stroke:#6c3483,color:#fff
-    classDef bt      fill:#607D8B,stroke:#37474F,color:#fff
+    classDef winBase fill:#607D8B,stroke:#37474F,color:#fff
+    classDef macBase fill:#43A047,stroke:#2E7D32,color:#fff
+    classDef symbol  fill:#F9A825,stroke:#c47d00,color:#fff
+    classDef number  fill:#1976D2,stroke:#1565C0,color:#fff
+    classDef nav     fill:#0097A7,stroke:#006064,color:#fff
+    classDef bt      fill:#E53935,stroke:#B71C1C,color:#fff
+    classDef mouse   fill:#E91E63,stroke:#880E4F,color:#fff
+    classDef scroll  fill:#78909C,stroke:#546E7A,color:#fff
+    classDef gesture fill:#7B1FA2,stroke:#4A148C,color:#fff
 
-    L0["L0\nDefault\nWin"]:::base
-    L10["L10\nDefault\nMac\n※L0と同時にアクティブ"]:::mac
-    L4["L4\nBluetooth"]:::bt
-    L1["L1\nSymbol"]:::func
-    L2["L2\nNumber"]:::func
-    L3["L3\nNav Win"]:::func
-    L11["L11\nNav Mac"]:::mac
+    L0["L0\nDefault\nWin\n⚫"]:::winBase
+    L10["L10\nDefault\nMac\n🟢\n※L0と同時にアクティブ"]:::macBase
+    L4["L4\nBluetooth\n🔴"]:::bt
+    L1["L1\nSymbol\n🟡"]:::symbol
+    L2["L2\nNumber\n🔵"]:::number
+    L3["L3\nNav Win\n🩵"]:::nav
+    L11["L11\nNav Mac\n🩵"]:::nav
     L12["L12\nGesture Mac\nBrowser"]:::gesture
     L13["L13\nGesture Mac\nVDesk"]:::gesture
     L14["L14\nGesture Mac\nGeneral"]:::gesture
-    L5["L5\nMouse"]:::mouse
-    L6["L6\nScroll"]:::mouse
+    L5["L5\nMouse\n🟣"]:::mouse
+    L6["L6\nScroll\n⚪"]:::scroll
     L7["L7\nGesture\nBrowser"]:::gesture
     L8["L8\nGesture\nVDesk"]:::gesture
     L9["L9\nGesture\nGeneral"]:::gesture
@@ -70,14 +73,15 @@ flowchart LR
     L0 -->|"SPACE"| L2
     L0 -->|"LANG1"| L3
     L0 -->|"TAB / ESC"| L5
-    L0 -->|"LAlt"| L6
+    L0 -->|"combo ,."|  L6
     L0 -->|"−"| L7
     L0 -->|"combo 8+9"| L8
     L0 -->|"combo 19+20"| L9
     L0 -->|"🖱️ Automouse"| L5
 
     %% 戻り
-    L1 & L2 & L3 & L6 & L7 & L8 & L9 -->|"キー離す"| L0
+    L1 & L2 & L3 & L7 & L8 & L9 -->|"キー離す"| L0
+    L6 -->|"combo ,. 再押し"| L0
     L5 -->|"10秒 or Ctrl/Shift"| L0
 
     %% L10はL0と同時にアクティブ → L0の全遷移が使える
@@ -103,9 +107,9 @@ flowchart LR
 
 ## 特殊バインド
 
-- `A` ホールド → LCtrl（+ マウスレイヤー終了）
+- `A` ホールド → **Win: LCtrl** / **Mac: Cmd**（+ マウスレイヤー終了）
 - `Z` ホールド → LShift（+ マウスレイヤー終了）
-- `LANG1` タップ → Layer 0へ戻る / ホールド → Layer 3一時有効
+- `LANG1` タップ → Layer 0へ戻る / ホールド → Layer 3一時有効（Mac時はLayer 11）
 
 ---
 
@@ -148,7 +152,7 @@ flowchart LR
 
 全キー透過（トランス）。トラックボール移動がスクロール入力に変換される。
 
-**遷移方法:** `LAlt` ホールド
+**遷移方法:** `,` + `.` 同時押し（トグル）
 
 - スケール: 1/8倍
 - Y軸反転あり
@@ -228,11 +232,13 @@ Layer 7〜9 の Mac 版。トリガーキーが異なるのみ。
 
 ## コンボ
 
-| キー位置 | 動作 |
-|---------|------|
-| 8 + 9 同時押し | Layer 8 一時有効 + `Alt+Tab` |
-| 19 + 20 同時押し | Layer 9 一時有効 + `Win` |
-| LANG2 + LANG1 同時押し | Layer 4 (Bluetooth) 一時有効 |
+| キー | 動作 |
+|-----|------|
+| `O` + `P` 同時押し | Layer 8 一時有効 + `Alt+Tab` |
+| `L` + `-` 同時押し | Layer 9 一時有効 + `Win` |
+| `LANG2` + `LANG1` 同時押し | Layer 4 (Bluetooth) 一時有効 |
+| `,` + `.` 同時押し | Layer 6 (Scroll) トグル ON/OFF |
+| `Q` + `A` 同時押し | 全選択（Win: `Ctrl+A` / Mac: `Cmd+A`） |
 
 ---
 

@@ -2,6 +2,21 @@ draw_config:
   outer_pad_h: 72
   svg_extra_style: |
     text.label { font-size: 18px; }
+    g.layer-L0  text.label { fill: #455A64; }
+    g.layer-L1  text.label { fill: #E65100; }
+    g.layer-L2  text.label { fill: #1565C0; }
+    g.layer-L3  text.label { fill: #006064; }
+    g.layer-L4  text.label { fill: #B71C1C; }
+    g.layer-L5  text.label { fill: #880E4F; }
+    g.layer-L6  text.label { fill: #546E7A; }
+    g.layer-L7  text.label { fill: #4A148C; }
+    g.layer-L8  text.label { fill: #4A148C; }
+    g.layer-L9  text.label { fill: #4A148C; }
+    g.layer-L10 text.label { fill: #1B5E20; }
+    g.layer-L11 text.label { fill: #006064; }
+    g.layer-L12 text.label { fill: #4A148C; }
+    g.layer-L13 text.label { fill: #4A148C; }
+    g.layer-L14 text.label { fill: #4A148C; }
 
 parse_config:
   layer_legend_map:

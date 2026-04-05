@@ -122,11 +122,13 @@ flowchart LR
 
 ---
 
-## Layer 3 - Nav（ナビゲーション）
+## Layer 3/11 - Nav（ナビゲーション）
 
-- `WinSnap` = `Ctrl+Win+PrintScreen`（全画面スクショ）
-- `SS ※` = `Shift+PrintScreen`（範囲スクショ）
-- `W+↑/←/↓/→` = `Win+矢印`（ウィンドウスナップ）
+| 機能 | Windows (L3) | Mac (L11) |
+|------|-------------|-----------|
+| 全画面スクショ | `Ctrl+Win+PrintScreen` | `Cmd+Shift+4` |
+| 範囲スクショ | `Shift+PrintScreen` | `Cmd+Shift+5`（スクショメニュー） |
+| ウィンドウスナップ | `Win+↑/←/↓/→` | 同じ |
 
 **エンコーダ:** `Ctrl+Tab` / `Ctrl+Shift+Tab`（タブ切り替え）
 
@@ -159,44 +161,44 @@ flowchart LR
 
 ---
 
-## Layer 7 - Gesture（ブラウザ操作）
+## Layer 7/12 - Gesture（ブラウザ操作）
 
 トラックボールのスワイプ方向でブラウザ操作。
 
-| スワイプ | 動作 | ショートカット |
-|---------|------|--------------|
-| ←      | 前のタブ | `Ctrl+Shift+Tab` |
-| →      | 次のタブ | `Ctrl+Tab` |
-| ↑      | 新規タブ | `Ctrl+T` |
-| ↓      | タブを閉じる | `Ctrl+W` |
+| スワイプ | 動作 | Windows (L7) | Mac (L12) |
+|---------|------|-------------|-----------|
+| ←      | 前のタブ | `Ctrl+Shift+Tab` | `Ctrl+Shift+Tab` |
+| →      | 次のタブ | `Ctrl+Tab` | `Ctrl+Tab` |
+| ↑      | 新規タブ | `Ctrl+T` | `Cmd+T` |
+| ↓      | タブを閉じる | `Ctrl+W` | `Cmd+W` |
 
 **遷移方法:** `-`キー長押し または コンボ（後述）
 
 ---
 
-## Layer 8 - Gesture（仮想デスクトップ）
+## Layer 8/13 - Gesture（仮想デスクトップ）
 
-| スワイプ | 動作 | ショートカット |
-|---------|------|--------------|
-| ←      | 前の仮想デスク | `Win+Ctrl+←` |
-| →      | 次の仮想デスク | `Win+Ctrl+→` |
-| ↑      | タスクビュー | `Win+Tab` |
-| ↓      | アプリを次のデスクへ | `Win+Ctrl+Shift+→` |
+| スワイプ | Windows 動作 (L8) | ショートカット | Mac 動作 (L13) | ショートカット |
+|---------|-----------------|--------------|--------------|--------------|
+| ←      | 前の仮想デスク | `Win+Ctrl+←` | 前のSpace | `Ctrl+←` |
+| →      | 次の仮想デスク | `Win+Ctrl+→` | 次のSpace | `Ctrl+→` |
+| ↑      | タスクビュー | `Win+Tab` | Mission Control | `Ctrl+↑` |
+| ↓      | アプリを次のデスクへ | `Win+Ctrl+Shift+→` | Spaceへ移動 | `Ctrl+Shift+→` |
 
-**遷移方法:** キー8+9同時押し（+ `Alt+Tab`）
+**遷移方法:** キー8+9同時押し（Win: `Alt+Tab` / Mac: `Cmd+Tab`）
 
 ---
 
-## Layer 9 - Gesture（一般操作）
+## Layer 9/14 - Gesture（一般操作）
 
-| スワイプ | 動作 | ショートカット |
-|---------|------|--------------|
-| ↑      | URLバー選択 | `Ctrl+L` |
-| ↓      | スクリーンショット | `Win+S` |
-| ←      | （前のウィンドウ） | `←` |
-| →      | Windows Terminal起動 | `Win+T` |
+| スワイプ | Windows 動作 (L9) | ショートカット | Mac 動作 (L14) | ショートカット |
+|---------|-----------------|--------------|--------------|--------------|
+| ↑      | URLバー選択 | `Ctrl+L` | URLバー選択 | `Cmd+L` |
+| ↓      | スクリーンショット | `Win+S` | Spotlight / Raycast | `Cmd+Space` |
+| ←      | （前のウィンドウ） | `←` | （前のウィンドウ） | `←` |
+| →      | Windows Terminal起動 | `Win+T` | 同アプリ内ウィンドウ切替 | `Cmd+\`` |
 
-**遷移方法:** キー19+20同時押し（+ `Win`）
+**遷移方法:** キー19+20同時押し（Win: `Win` / Mac: `Cmd`）
 
 ---
 
@@ -206,27 +208,6 @@ flowchart LR
 - `LANG1` ホールド → Layer 11（Mac Nav）
 - コンボ `8+9` → Layer 13（Mac Gesture L8）
 - コンボ `19+20` → Layer 14（Mac Gesture L9）
-
----
-
-## Layer 11 - Nav Mac
-
-Layer 3 と同じ配置。スクリーンショットのみ Mac 版ショートカットに差替。
-
-- `WinSnap` の位置 → `Cmd+Shift+4`（範囲スクショ）
-- `SS ※` の位置 → `Cmd+Shift+5`（スクショメニュー）
-
----
-
-## Layer 12〜14 - Gesture Mac
-
-Layer 7〜9 の Mac 版。トリガーキーが異なるのみ。
-
-| レイヤー | 内容 | Winとの差分 |
-|---------|------|------------|
-| L12 (Gs7 Mac) | ブラウザ操作 | `Cmd+T/W`（タブ操作） |
-| L13 (Gs8 Mac) | 仮想デスクトップ | `Ctrl+←/→`（Space切替） |
-| L14 (Gs9 Mac) | 一般操作 | Spotlight・ウィンドウ切替 |
 
 ---
 

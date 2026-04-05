@@ -59,7 +59,7 @@
         };
 
         Scroll_toggle {
-            bindings = <&tog 6>;
+            bindings = <&mo 6>;
             key-positions = <30 31>;
             layers = <0 10>;
         };

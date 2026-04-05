@@ -113,10 +113,7 @@ flowchart LR
 
 ---
 
-## Layer 2 - Number マクロ
-
-- `×` → `Alt + テンキー 0215`（×記号）
-- `÷` → `Alt + テンキー 0247`（÷記号）
+## Layer 2 - Number
 
 **エンコーダ:** 上下スクロール
 
@@ -128,9 +125,11 @@ flowchart LR
 |------|-------------|-----------|
 | 全画面スクショ | `Ctrl+Win+PrintScreen` | `Cmd+Shift+4` |
 | 範囲スクショ | `Shift+PrintScreen` | `Cmd+Shift+5`（スクショメニュー） |
-| ウィンドウスナップ | `Win+↑/←/↓/→` | 同じ |
+| ウィンドウスナップ | `Win+↑/←/↓/→` | `Cmd+↑/←/↓/→`（⚠️ Mac未対応） |
 
-**エンコーダ:** `Ctrl+Tab` / `Ctrl+Shift+Tab`（タブ切り替え）
+> **Mac 注意:** `Cmd+矢印` はテキストナビゲーション（行末・先頭等）として機能し、ウィンドウスナップにはなりません。Rectangle 等のアプリでショートカットを `Cmd+矢印` に割り当てれば利用可能です。
+
+**エンコーダ:** `Cmd+Shift+]` / `Cmd+Shift+[`（タブ切り替え、Safari/Chrome/Firefox 対応）
 
 **トラックボール:** スクロール変換（X軸反転、速度1/5倍）
 
@@ -275,7 +274,8 @@ flowchart LR
 |---------|------|
 | 0, 1, 4, 5, 6 | 上下スクロール |
 | 2 | 上下スクロール |
-| 3 | `Ctrl+Tab` / `Ctrl+Shift+Tab` |
+| 3 (Win Nav) | `Ctrl+Tab` / `Ctrl+Shift+Tab` |
+| 11 (Mac Nav) | `Cmd+Shift+]` / `Cmd+Shift+[` |
 
 ---
 

@@ -85,35 +85,6 @@
             label = "TO_LAYER_0";
         };
 
-        mul_mark: x_sign_win {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N5>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        div_mark: div_mark {
-            compatible = "zmk,behavior-macro";
-            label = "DIV_MARK";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N7>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -203,8 +174,8 @@
         layer_2 {
             bindings = <
 &trans  &kp N7  &kp N8  &kp N9  &kp PLUS                                 &trans  &kp F7  &kp F8  &kp F9  &kp F12
-&trans  &kp N4  &kp N5  &kp N6  &kp MINUS                     &mul_mark  &trans  &kp F4  &kp F5  &kp F6  &kp F11
-&kp N0  &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp KP_MULTIPLY    &div_mark  &trans  &kp F1  &kp F2  &kp F3  &kp F10
+&trans  &kp N4  &kp N5  &kp N6  &kp MINUS                     &trans  &trans  &kp F4  &kp F5  &kp F6  &kp F11
+&kp N0  &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp KP_MULTIPLY    &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F10
 &trans  &trans  &trans  &trans  &trans     &trans             &trans     &trans                          &trans
             >;
 
@@ -305,6 +276,7 @@
 
         // Layer 11: Mac Nav
         // Same as layer 3 (Win Nav) but with Mac screenshot shortcuts
+        // encoder: Cmd+Shift+] / Cmd+Shift+[ (Safari/Chrome/Firefox compatible)
         mac_nav_layer {
             bindings = <
 &kp PAGE_UP  &trans    &kp UP_ARROW  &trans           &kp PAGE_DOWN                                 &trans  &trans              &kp LG(UP_ARROW)    &trans               &trans
@@ -313,7 +285,7 @@
 &trans       &trans    &trans        &trans           &trans         &trans    &kp DEL              &trans                                                               &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
+            sensor-bindings = <&inc_dec_kp LG(LS(RBKT)) LG(LS(LBKT))>;
         };
 
         // Layer 12: Mac Gesture L7 (≒ L7のMac版)

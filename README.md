@@ -30,7 +30,7 @@
 
 ## キーマップ
 
-![keymap](keymap.svg)
+![keymap](mona2.svg)
 
 ---
 

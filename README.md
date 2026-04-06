@@ -73,15 +73,15 @@ flowchart LR
     L0 -->|"SPACE"| L2
     L0 -->|"LANG1"| L3
     L0 -->|"TAB / ESC"| L5
-    L0 -->|"combo ,."|  L6
-    L0 -->|"−"| L7
+    L0 -->|"combo comma+dot"| L6
+    L0 -->|"MINUS hold"| L7
     L0 -->|"combo 8+9"| L8
     L0 -->|"combo 19+20"| L9
-    L0 -->|"🖱️ Automouse"| L5
+    L0 -->|"Automouse"| L5
 
     %% 戻り
     L1 & L2 & L3 & L7 & L8 & L9 -->|"キー離す"| L0
-    L6 -->|"combo ,. 再押し"| L0
+    L6 -->|"combo comma+dot 再押し"| L0
     L5 -->|"10秒 or Ctrl/Shift"| L0
 
     %% L10はL0と同時にアクティブ → L0の全遷移が使える
@@ -89,7 +89,7 @@ flowchart LR
 
     %% L10のみ異なる遷移
     L10 -->|"LANG1"| L11
-    L10 -->|"−"| L12
+    L10 -->|"MINUS hold"| L12
     L10 -->|"combo 8+9"| L13
     L10 -->|"combo 19+20"| L14
     L11 -->|"キー離す"| L10

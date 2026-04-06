@@ -511,7 +511,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - RGUI
   - {t: ▽, type: trans}
   - {t: DEL, type: held}
   - {t: ▽, type: trans}

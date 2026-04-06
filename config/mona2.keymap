@@ -29,21 +29,15 @@
     combos {
         compatible = "zmk,combos";
 
-        Gesture_L8 {
-            bindings = <&app_sw_win>;
-            key-positions = <8 9>;
-            layers = <0>;
-        };
-
         Gesture_L8_mac {
             bindings = <&app_sw_mac>;
             key-positions = <8 9>;
             layers = <10>;
         };
 
-        Gesture_L9 {
-            bindings = <&lt 9 LEFT_WIN>;
-            key-positions = <19 20>;
+        Gesture_L8 {
+            bindings = <&app_sw_win>;
+            key-positions = <8 9>;
             layers = <0>;
         };
 
@@ -51,6 +45,12 @@
             bindings = <&lt 14 LGUI>;
             key-positions = <19 20>;
             layers = <10>;
+        };
+
+        Gesture_L9 {
+            bindings = <&lt 9 LEFT_WIN>;
+            key-positions = <19 20>;
+            layers = <0>;
         };
 
         BT_layer {
@@ -71,16 +71,16 @@
             layers = <0 10>;
         };
 
-        Select_All_win {
-            bindings = <&kp LC(A)>;
-            key-positions = <0 10>;
-            layers = <0>;
-        };
-
         Select_All_mac {
             bindings = <&kp LG(A)>;
             key-positions = <0 10>;
             layers = <10>;
+        };
+
+        Select_All_win {
+            bindings = <&kp LC(A)>;
+            key-positions = <0 10>;
+            layers = <0>;
         };
     };
 

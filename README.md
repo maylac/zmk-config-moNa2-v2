@@ -65,8 +65,8 @@ flowchart LR
     L9["L9\nGesture\nGeneral"]:::gesture
 
     %% BT切替
-    L0 <-->|"combo LANG2+LANG1\nQ=Win / W=Mac"| L4
-    L10 <-->|"combo LANG2+LANG1\nQ=Win / W=Mac"| L4
+    L0 <-->|"combo LANG2+LANG1"| L4
+    L10 <-->|"combo LANG2+LANG1"| L4
 
     %% L0からの遷移（Win・Mac共通）
     L0 -->|"ENTER"| L1
@@ -85,7 +85,7 @@ flowchart LR
     L5 -->|"10秒 or Ctrl/Shift"| L0
 
     %% L10はL0と同時にアクティブ → L0の全遷移が使える
-    L10 <-.->|"常時重ねがけ\n（L0透過）"| L0
+    L10 <-->|"常時重ねがけ（L0透過）"| L0
 
     %% L10のみ異なる遷移
     L10 -->|"LANG1"| L11

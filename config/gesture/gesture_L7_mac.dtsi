@@ -10,7 +10,7 @@
 
     prev_tab   { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(LS(TAB))>; };  // 前のタブ（Mac同じ）
     next_tab   { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(TAB)>;     };  // 次のタブ（Mac同じ）
-    create_tab { pattern = <GESTURE_UP>;    bindings = <&kp LG(T)>;       };  // 新規タブ Cmd+T
-    close_tab  { pattern = <GESTURE_DOWN>;  bindings = <&kp LG(W)>;       };  // タブ閉じる Cmd+W
+    create_tab { pattern = <GESTURE_DOWN>; bindings = <&kp LG(T)>;       };  // 新規タブ Cmd+T（invert-y: 物理上 → GESTURE_DOWN）
+    close_tab  { pattern = <GESTURE_UP>;   bindings = <&kp LG(W)>;       };  // タブ閉じる Cmd+W（invert-y: 物理下 → GESTURE_UP）
   };
 };

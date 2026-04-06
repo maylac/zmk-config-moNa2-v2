@@ -690,17 +690,17 @@ layers:
   - ESCAPE
 combos:
 - p: [8, 9]
-  k: '&app_sw_win'
-  l: [default]
-- p: [8, 9]
   k: '&app_sw_mac'
   l: [mac_default]
-- p: [19, 20]
-  k: {t: LEFT WIN, h: 'L9: Gesture General (Win)'}
+- p: [8, 9]
+  k: '&app_sw_win'
   l: [default]
 - p: [19, 20]
   k: {t: LGUI, h: 'L14: Gesture General (Mac)'}
   l: [mac_default]
+- p: [19, 20]
+  k: {t: LEFT WIN, h: 'L9: Gesture General (Win)'}
+  l: [default]
 - p: [38, 39]
   k: 'L4: Bluetooth'
   l: [default, mac_default]
@@ -711,8 +711,8 @@ combos:
   k: DEL
   l: [default, mac_default]
 - p: [0, 10]
-  k: Ctl+A
-  l: [default]
-- p: [0, 10]
   k: Gui+A
   l: [mac_default]
+- p: [0, 10]
+  k: Ctl+A
+  l: [default]

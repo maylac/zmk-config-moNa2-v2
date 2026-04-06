@@ -134,6 +134,11 @@
             input-processors = <&zip_mouse_gesture_l9_mac &zip_xy_scaler 0 1>;
         };
 
+        gest_on_l15 {
+            layers = <15>;
+            input-processors = <&zip_mouse_gesture_app_sw &zip_xy_scaler 0 1>;
+        };
+
     };
 
     layer_listeners {
@@ -167,6 +172,11 @@
 
         gesture_on_l14 {
             layers = <14>;
+            bindings = <&mouse_gesture_on &mouse_gesture_off>;
+        };
+
+        gesture_on_l15 {
+            layers = <15>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
     };

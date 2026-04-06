@@ -59,8 +59,14 @@
         };
 
         Scroll_toggle {
-            bindings = <&mo 6>;
+            bindings = <&tog 6>;
             key-positions = <30 31>;
+            layers = <0 10>;
+        };
+
+        Delete {
+            bindings = <&kp DEL>;
+            key-positions = <36 39>;
             layers = <0 10>;
         };
 

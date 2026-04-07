@@ -713,8 +713,8 @@ combos:
 - p: [0, 10]
   k: Gui+A
   l: [mac_default]
-- p: [36, 38]
-  k: RGUI
+- p: [37, 39]
+  k: '&aqua_voice'
   l: [mac_default]
 - p: [0, 10]
   k: Ctl+A

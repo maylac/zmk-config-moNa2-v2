@@ -145,6 +145,7 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_exit_AML";
         };
+
     };
 
     behaviors {
@@ -237,7 +238,7 @@
 &kp PAGE_UP  &trans    &kp UP_ARROW  &trans           &kp PAGE_DOWN                                     &kp LC(LA(E))         &kp LC(LA(U))     &kp LC(LA(UP))     &kp LC(LA(I))      &kp LC(LA(T))
 &kp HOME     &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp END                  &kp LC(LG(PRINTSCREEN))  &kp LC(LA(D))         &kp LC(LA(LEFT))  &kp LC(LA(ENTER))  &kp LC(LA(RIGHT))  &kp LC(LA(G))
 &trans       &trans    &trans        &trans           &trans         &trans    &kp LS(PRINTSCREEN)      &kp LC(LA(BACKSPACE)) &kp LC(LA(J))     &kp LC(LA(DOWN))   &kp LC(LA(K))      &kp LC(LA(F))
-&trans       &trans    &trans        &trans           &trans         &trans    &kp DEL                  &trans                                                                         &trans
+&trans       &trans    &trans        &kp LC(LA(DEL))  &trans         &trans    &kp DEL                  &trans                                                                         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;

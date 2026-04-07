@@ -479,11 +479,11 @@ layers:
   - UP ARROW
   - {t: ▽, type: trans}
   - PAGE DOWN
-  - Meh+LEFT
+  - Ctl+Alt+E
   - Ctl+Alt+U
   - Ctl+Alt+UP
   - Ctl+Alt+I
-  - Meh+RIGHT
+  - Ctl+Alt+T
   - HOME
   - LEFT
   - DOWN

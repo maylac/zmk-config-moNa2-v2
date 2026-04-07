@@ -135,22 +135,22 @@ layers:
   - UP ARROW
   - {t: ▽, type: trans}
   - PAGE DOWN
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Gui+UP ARROW
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+Alt+E
+  - Ctl+Alt+U
+  - Ctl+Alt+UP
+  - Ctl+Alt+I
+  - Ctl+Alt+T
   - HOME
   - LEFT
   - DOWN
   - RIGHT ARROW
   - END
   - Ctl+Gui+PRINTSCREEN
-  - {t: ▽, type: trans}
-  - Gui+LEFT ARROW
-  - Gui+DOWN ARROW
-  - Gui+RIGHT ARROW
-  - {t: ▽, type: trans}
+  - Ctl+Alt+D
+  - Ctl+Alt+LEFT
+  - Ctl+Alt+ENTER
+  - Ctl+Alt+RIGHT
+  - Ctl+Alt+G
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -158,11 +158,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Sft+PRINTSCREEN
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+Alt+BACKSPACE
+  - Ctl+Alt+J
+  - Ctl+Alt+DOWN
+  - Ctl+Alt+K
+  - Ctl+Alt+F
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

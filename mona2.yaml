@@ -166,7 +166,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+Alt+DEL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: DEL, type: held}

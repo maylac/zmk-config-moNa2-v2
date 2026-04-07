@@ -41,6 +41,20 @@
             layers = <0>;
         };
 
+        // W+E: 仮想デスクトップジェスチャー
+        // トラックボール ←/→ = 前/次のデスクトップ、↑ = タスクビュー/Mission Control
+        Gesture_VDesk_win {
+            bindings = <&mo 8>;
+            key-positions = <1 2>;
+            layers = <0>;
+        };
+
+        Gesture_VDesk_mac {
+            bindings = <&mo 13>;
+            key-positions = <1 2>;
+            layers = <10>;
+        };
+
         Gesture_L9_mac {
             bindings = <&lt 14 LGUI>;
             key-positions = <19 20>;

@@ -20,12 +20,12 @@
 | 5 | Mouse | マウスボタン | 🟣 マゼンタ | `TAB` or `ESC` ホールド / Automouse |
 | 6 | Scroll | スクロールモード | ⚪ 白 | `,`+`.` 同時押し（トグル） |
 | 7 | Gesture L7 | ジェスチャー：ブラウザ操作 | — | `-` ホールド（Win） |
-| 8 | Gesture L8 | ジェスチャー：仮想デスクトップ | — | システム内部（ジェスチャー処理用） |
+| 8 | Gesture L8 | ジェスチャー：仮想デスクトップ | — | `W`+`E` 同時押し（Win） |
 | 9 | Gesture L9 | ジェスチャー：一般操作 | — | `L`+`-` 同時押し（Win） |
 | 10 | Default (Mac) | Mac用ベースレイヤー（L0透過オーバーレイ） | 🟢 緑 | L4で Mac プロファイルを選択 |
 | 11 | Nav Mac | Magnetウィンドウスナップ（3×3）+ Macナビゲーション | 🩵 シアン | `LANG1` ホールド（Mac） |
 | 12 | Gesture Mac L7 | Macジェスチャー：ブラウザ操作 | — | `-` ホールド（Mac） |
-| 13 | Gesture Mac L8 | Macジェスチャー：仮想デスクトップ | — | システム内部（ジェスチャー処理用） |
+| 13 | Gesture Mac L8 | Macジェスチャー：仮想デスクトップ | — | `W`+`E` 同時押し（Mac） |
 | 14 | Gesture Mac L9 | Macジェスチャー：一般操作 | — | `L`+`-` 同時押し（Mac） |
 | 15 | App Switcher | Alt/Cmd+Tab アプリ切替 | — | `O`+`P` 同時押し（Win/Mac共通） |
 
@@ -77,12 +77,13 @@ flowchart LR
     L0 -->|"TAB / ESC"| L5
     L0 -->|"combo comma+dot"| L6
     L0 -->|"MINUS hold"| L7
+    L0 -->|"combo W+E"| L8
     L0 -->|"combo O+P"| L15
     L0 -->|"combo 19+20"| L9
     L0 -->|"Automouse"| L5
 
     %% 戻り
-    L1 & L2 & L3 & L7 & L8 & L9 & L15 -->|"キー離す"| L0
+    L1 & L2 & L3 & L7 & L8 & L9 & L15 -->|"コンボ/キー離す"| L0
     L6 -->|"combo comma+dot 再押し"| L0
     L5 -->|"10秒 or Ctrl/Shift"| L0
 
@@ -92,9 +93,10 @@ flowchart LR
     %% L10のみ異なる遷移
     L10 -->|"LANG1"| L11
     L10 -->|"MINUS hold"| L12
+    L10 -->|"combo W+E"| L13
     L10 -->|"combo O+P"| L15
     L10 -->|"combo 19+20"| L14
-    L11 & L12 & L13 & L14 -->|"キー離す"| L10
+    L11 & L12 & L13 & L14 -->|"コンボ/キー離す"| L10
     L15 -->|"ESC or コンボ離す"| L0
 ```
 
@@ -233,8 +235,9 @@ LANG1押しながら...
 
 | キー | 動作 |
 |-----|------|
-| `O` + `P` 同時押し | Layer 8 一時有効 + `Alt+Tab` |
-| `L` + `-` 同時押し | Layer 9 一時有効 + `Win` |
+| `W` + `E` 同時押し | Layer 8/13 一時有効（仮想デスクトップジェスチャー） |
+| `O` + `P` 同時押し | Layer 15 一時有効（App Switcher、Alt/Cmd+Tab） |
+| `L` + `-` 同時押し | Layer 9/14 一時有効（一般ジェスチャー + Win/Cmd） |
 | `LANG2` + `LANG1` 同時押し | Layer 4 (Bluetooth) 一時有効 |
 | `,` + `.` 同時押し | Layer 6 (Scroll) トグル ON/OFF |
 | `Q` + `A` 同時押し | 全選択（Win: `Ctrl+A` / Mac: `Cmd+A`） |

@@ -328,7 +328,7 @@
             bindings = <
 &kp PAGE_UP  &kp RGUI  &kp UP_ARROW  &trans           &kp PAGE_DOWN                                 &kp LC(LA(E))         &kp LC(LA(U))    &kp LC(LA(UP))     &kp LC(LA(I))    &kp LC(LA(T))
 &kp HOME     &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp END                  &kp LG(LS(N4))       &kp LC(LA(D))         &kp LC(LA(LEFT))  &kp LC(LA(ENTER))  &kp LC(LA(RIGHT))  &kp LC(LA(G))
-&trans       &trans    &trans        &trans           &trans         &trans    &kp LG(LS(N5))       &kp LC(LA(BACKSPACE)) &kp LC(LA(J))    &kp LC(LA(DOWN))   &kp LC(LA(K))    &kp LC(LA(C))
+&trans       &trans    &trans        &trans           &trans         &trans    &kp LG(LS(N5))       &kp LC(LA(BACKSPACE)) &kp LC(LA(J))    &kp LC(LA(DOWN))   &kp LC(LA(K))    &kp LC(LA(F))
 &trans       &trans    &trans        &trans           &kp RGUI       &trans    &kp DEL              &trans                                                               &trans
             >;
 

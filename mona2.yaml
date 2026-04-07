@@ -713,6 +713,9 @@ combos:
 - p: [0, 10]
   k: Gui+A
   l: [mac_default]
+- p: [36, 38]
+  k: RGUI
+  l: [mac_default]
 - p: [0, 10]
   k: Ctl+A
   l: [default]

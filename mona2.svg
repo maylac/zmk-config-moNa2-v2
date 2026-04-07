@@ -2186,6 +2186,12 @@ g.layer-L14 text.label { fill: #4A148C; }
 <rect rx="6" ry="6" x="14" y="43" width="28" height="26" class="combo"/>
 <text x="28" y="56" class="combo tap">Gui+A</text>
 </g>
+<g class="combo combopos-6">
+<path d="M252,196 l-37,0" class="combo"/>
+<path d="M252,196 l37,0" class="combo"/>
+<rect rx="6" ry="6" x="238" y="183" width="28" height="26" class="combo"/>
+<text x="252" y="196" class="combo tap">RGUI</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 3256)" class="layer-mac_nav">

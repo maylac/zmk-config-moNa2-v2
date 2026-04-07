@@ -318,13 +318,17 @@
         };
 
         // Layer 11: Mac Nav
-        // Same as layer 3 (Win Nav) but with Mac screenshot shortcuts
-        // encoder: Cmd+Shift+] / Cmd+Shift+[ for tab switching (Safari/Chrome/Firefox compatible)
+        // 左側: カーソル移動（L3 Win Navと共通）
+        // 右側: Magnetウィンドウスナップ専用（3×3空間マッピング）
+        //   行0: [前画面] [上左] [上半] [上右] [次画面]
+        //   行1: [SS]  [左3]  [左半] [最大] [右半] [右3]
+        //   行2:       [復元] [下左] [下半] [下右] [中央]
+        // encoder: Cmd+Shift+] / Cmd+Shift+[ for tab switching
         mac_nav_layer {
             bindings = <
-&kp PAGE_UP  &kp RGUI  &kp UP_ARROW  &trans           &kp PAGE_DOWN                                 &trans  &trans              &kp LG(UP_ARROW)    &trans               &trans
-&kp HOME     &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp END                  &kp LG(LS(N4))       &trans  &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans
-&trans       &trans    &trans        &trans           &trans         &trans    &kp LG(LS(N5))       &trans  &trans              &trans              &trans               &trans
+&kp PAGE_UP  &kp RGUI  &kp UP_ARROW  &trans           &kp PAGE_DOWN                                 &kp LC(LA(LS(LEFT)))  &kp LC(LA(U))    &kp LC(LA(UP))     &kp LC(LA(I))    &kp LC(LA(LS(RIGHT)))
+&kp HOME     &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp END                  &kp LG(LS(N4))       &kp LC(LA(D))         &kp LC(LA(LEFT))  &kp LC(LA(ENTER))  &kp LC(LA(RIGHT))  &kp LC(LA(G))
+&trans       &trans    &trans        &trans           &trans         &trans    &kp LG(LS(N5))       &kp LC(LA(BACKSPACE)) &kp LC(LA(J))    &kp LC(LA(DOWN))   &kp LC(LA(K))    &kp LC(LA(C))
 &trans       &trans    &trans        &trans           &kp RGUI       &trans    &kp DEL              &trans                                                               &trans
             >;
 

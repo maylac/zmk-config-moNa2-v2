@@ -77,6 +77,12 @@
             layers = <10>;
         };
 
+        Aqua_Voice {
+            bindings = <&kp RGUI>;
+            key-positions = <36 38>;
+            layers = <10>;
+        };
+
         Select_All_win {
             bindings = <&kp LC(A)>;
             key-positions = <0 10>;

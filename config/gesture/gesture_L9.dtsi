@@ -10,7 +10,7 @@
 
     focus_url        { pattern = <GESTURE_UP>;    bindings = <&kp LC(L)>;      };  // URLバー選択
     powertoys_run    { pattern = <GESTURE_DOWN>;  bindings = <&kp LA(SPACE)>; };  // PowerToys Run
-    win_snap_left    { pattern = <GESTURE_LEFT>;  bindings = <&kp LG(LEFT)>;  };  // ウィンドウ左スナップ
-    run_dialog       { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(R)>;     };  // Runダイアログ
+    browser_back     { pattern = <GESTURE_LEFT>;  bindings = <&kp LA(LEFT)>;  };  // ブラウザ戻る
+    browser_forward  { pattern = <GESTURE_RIGHT>; bindings = <&kp LA(RIGHT)>; };  // ブラウザ進む
   };
 };

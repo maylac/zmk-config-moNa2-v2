@@ -346,8 +346,8 @@ layers:
   - {t: ▽, type: trans}
   Gesture_L8:
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -561,8 +561,8 @@ layers:
   - {t: ▽, type: trans}
   mac_gesture_l8:
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -695,6 +695,12 @@ combos:
 - p: [8, 9]
   k: '&app_sw_win'
   l: [default]
+- p: [1, 2]
+  k: 'L8: Gesture VDesk (Win)'
+  l: [default]
+- p: [1, 2]
+  k: 'L13: Gesture VDesk (Mac)'
+  l: [mac_default]
 - p: [19, 20]
   k: {t: LGUI, h: 'L14: Gesture General (Mac)'}
   l: [mac_default]

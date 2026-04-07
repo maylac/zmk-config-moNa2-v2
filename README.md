@@ -10,24 +10,24 @@
 
 ## レイヤー一覧
 
-| # | レイヤー名 | 概要 | LED |
-|---|-----------|------|-----|
-| 0 | Default (Win) | QWERTY基本配置 | ⚫ 消灯 |
-| 1 | Symbol | 記号・括弧 | 🟡 黄 |
-| 2 | Number | 数字・ファンクション | 🔵 青 |
-| 3 | Nav (Win) | ナビゲーション | 🩵 シアン |
-| 4 | BT | Bluetooth設定 | 🔴 赤 |
-| 5 | Mouse | マウスボタン（Automouseで自動遷移） | 🟣 マゼンタ |
-| 6 | Scroll | スクロールモード | ⚪ 白 |
-| 7 | Gesture L7 | ジェスチャー：ブラウザ操作 | — |
-| 8 | Gesture L8 | ジェスチャー：仮想デスクトップ | — |
-| 9 | Gesture L9 | ジェスチャー：一般操作 | — |
-| 10 | Default (Mac) | Mac用ベースレイヤー（L0透過オーバーレイ） | 🟢 緑 |
-| 11 | Nav Mac | Magnetウィンドウスナップ（3×3）+ Macナビゲーション | 🩵 シアン |
-| 12 | Gesture Mac L7 | Macジェスチャー ≒ L7のMac版（Cmd+T/W でタブ操作） | — |
-| 13 | Gesture Mac L8 | Macジェスチャー ≒ L8のMac版（Ctrl+←→ でSpace切替） | — |
-| 14 | Gesture Mac L9 | Macジェスチャー ≒ L9のMac版（Spotlight・ウィンドウ切替） | — |
-| 15 | App Switcher | Alt/Cmd+Tab アプリ切替（コンボ [O+P] で起動） | — |
+| # | レイヤー名 | 概要 | LED | 起動方法 |
+|---|-----------|------|-----|---------|
+| 0 | Default (Win) | QWERTY基本配置 | ⚫ 消灯 | ベースレイヤー（常時） |
+| 1 | Symbol | 記号・括弧 | 🟡 黄 | `ENTER` ホールド |
+| 2 | Number | 数字・ファンクション | 🔵 青 | `SPACE` ホールド |
+| 3 | Nav (Win) | ナビゲーション + ウィンドウスナップ | 🩵 シアン | `LANG1` ホールド |
+| 4 | BT | Bluetooth設定 | 🔴 赤 | `LANG2`+`LANG1` 同時押し |
+| 5 | Mouse | マウスボタン | 🟣 マゼンタ | `TAB` or `ESC` ホールド / Automouse |
+| 6 | Scroll | スクロールモード | ⚪ 白 | `,`+`.` 同時押し（トグル） |
+| 7 | Gesture L7 | ジェスチャー：ブラウザ操作 | — | `-` ホールド（Win） |
+| 8 | Gesture L8 | ジェスチャー：仮想デスクトップ | — | システム内部（ジェスチャー処理用） |
+| 9 | Gesture L9 | ジェスチャー：一般操作 | — | `L`+`-` 同時押し（Win） |
+| 10 | Default (Mac) | Mac用ベースレイヤー（L0透過オーバーレイ） | 🟢 緑 | L4で Mac プロファイルを選択 |
+| 11 | Nav Mac | Magnetウィンドウスナップ（3×3）+ Macナビゲーション | 🩵 シアン | `LANG1` ホールド（Mac） |
+| 12 | Gesture Mac L7 | Macジェスチャー：ブラウザ操作 | — | `-` ホールド（Mac） |
+| 13 | Gesture Mac L8 | Macジェスチャー：仮想デスクトップ | — | システム内部（ジェスチャー処理用） |
+| 14 | Gesture Mac L9 | Macジェスチャー：一般操作 | — | `L`+`-` 同時押し（Mac） |
+| 15 | App Switcher | Alt/Cmd+Tab アプリ切替 | — | `O`+`P` 同時押し（Win/Mac共通） |
 
 ## キーマップ
 

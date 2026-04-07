@@ -470,7 +470,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&to_layer_0 LANG1', h: 'L11: Nav (Mac)'}
+  - {t: '&to_layer_10 LANG1', h: 'L11: Nav (Mac)'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   mac_nav:

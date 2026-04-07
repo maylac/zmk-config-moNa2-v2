@@ -506,7 +506,7 @@ layers:
   - Ctl+Alt+J
   - Ctl+Alt+DOWN
   - Ctl+Alt+K
-  - Ctl+Alt+C
+  - Ctl+Alt+F
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

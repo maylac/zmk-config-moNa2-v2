@@ -10,7 +10,7 @@
 
     focus_url   { pattern = <GESTURE_UP>;    bindings = <&kp LG(L)>;      };  // URLバー選択
     spotlight   { pattern = <GESTURE_DOWN>;  bindings = <&kp LG(SPACE)>;  };  // Spotlight / Raycast
-    prev_window { pattern = <GESTURE_LEFT>;  bindings = <&kp LEFT>;        };  // 左矢印
-    switch_win  { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(GRAVE)>;  };  // 同アプリ内ウィンドウ切替
+    browser_back    { pattern = <GESTURE_LEFT>;  bindings = <&kp LG(LEFT)>;   };  // ブラウザ戻る
+    browser_forward { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(RIGHT)>; };  // ブラウザ進む
   };
 };

@@ -78,8 +78,8 @@
         };
 
         Aqua_Voice {
-            bindings = <&kp RGUI>;
-            key-positions = <36 38>;
+            bindings = <&aqua_voice>;
+            key-positions = <37 39>;
             layers = <10>;
         };
 
@@ -106,6 +106,16 @@
                 , <&macro_pause_for_release>
                 , <&macro_release &kp LALT &mo 15>;
             label = "APP_SW_WIN";
+        };
+
+        aqua_voice: aqua_voice {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RGUI>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp RGUI>;
+            label = "AQUA_VOICE";
         };
 
         app_sw_mac: app_sw_mac {

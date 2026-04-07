@@ -39,7 +39,7 @@ layers:
   - LEFT ALT
   - BACKSPACE
   - {t: SPACE, h: 'L2: Number'}
-  - LANG2
+  - {t: LANG2, h: LGUI}
   - {t: '&to_layer_0 LANG1', h: 'L3: Nav (Win)'}
   - {t: ENTER, h: 'L1: Symbol'}
   - {t: ESCAPE, h: 'L5: Mouse'}

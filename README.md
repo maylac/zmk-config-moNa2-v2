@@ -23,10 +23,11 @@
 | 8 | Gesture L8 | ジェスチャー：仮想デスクトップ | — |
 | 9 | Gesture L9 | ジェスチャー：一般操作 | — |
 | 10 | Default (Mac) | Mac用ベースレイヤー（L0透過オーバーレイ） | 🟢 緑 |
-| 11 | Nav Mac | Macナビゲーション ≒ L3のMac版（スクリーンショットのみ差替） | 🩵 シアン |
+| 11 | Nav Mac | Magnetウィンドウスナップ（3×3）+ Macナビゲーション | 🩵 シアン |
 | 12 | Gesture Mac L7 | Macジェスチャー ≒ L7のMac版（Cmd+T/W でタブ操作） | — |
 | 13 | Gesture Mac L8 | Macジェスチャー ≒ L8のMac版（Ctrl+←→ でSpace切替） | — |
 | 14 | Gesture Mac L9 | Macジェスチャー ≒ L9のMac版（Spotlight・ウィンドウ切替） | — |
+| 15 | App Switcher | Alt/Cmd+Tab アプリ切替（コンボ [O+P] で起動） | — |
 
 ## キーマップ
 
@@ -63,6 +64,7 @@ flowchart LR
     L7["L7\nGesture\nBrowser"]:::gesture
     L8["L8\nGesture\nVDesk"]:::gesture
     L9["L9\nGesture\nGeneral"]:::gesture
+    L15["L15\nApp Switcher\nAlt/Cmd+Tab"]:::gesture
 
     %% BT切替
     L0 <-->|"combo LANG2+LANG1"| L4
@@ -75,12 +77,12 @@ flowchart LR
     L0 -->|"TAB / ESC"| L5
     L0 -->|"combo comma+dot"| L6
     L0 -->|"MINUS hold"| L7
-    L0 -->|"combo 8+9"| L8
+    L0 -->|"combo O+P"| L15
     L0 -->|"combo 19+20"| L9
     L0 -->|"Automouse"| L5
 
     %% 戻り
-    L1 & L2 & L3 & L7 & L8 & L9 -->|"キー離す"| L0
+    L1 & L2 & L3 & L7 & L8 & L9 & L15 -->|"キー離す"| L0
     L6 -->|"combo comma+dot 再押し"| L0
     L5 -->|"10秒 or Ctrl/Shift"| L0
 
@@ -90,10 +92,10 @@ flowchart LR
     %% L10のみ異なる遷移
     L10 -->|"LANG1"| L11
     L10 -->|"MINUS hold"| L12
-    L10 -->|"combo 8+9"| L13
+    L10 -->|"combo O+P"| L15
     L10 -->|"combo 19+20"| L14
-    L11 -->|"キー離す"| L10
-    L12 & L13 & L14 -->|"キー離す"| L10
+    L11 & L12 & L13 & L14 -->|"キー離す"| L10
+    L15 -->|"ESC or コンボ離す"| L0
 ```
 
 ### 補足
@@ -121,15 +123,32 @@ flowchart LR
 
 ## Layer 3/11 - Nav（ナビゲーション）
 
+左側はカーソル移動、右側はウィンドウスナップ（3×3空間マッピング）。
+Win/Mac で同一の `Ctrl+Alt+[key]` を送信し、OS側ソフトウェアが処理する。
+
+```
+LANG1押しながら...
+
+[ Y ] [ U ] [ I ] [ O ] [ P ]
+ 左2/3  左上  上半  右上  右2/3
+
+[ H ] [ J ] [ K ] [ L ] [ - ]
+ 左1/3  左半  最大  右半  右1/3
+
+[ N ] [ M ] [ , ] [ . ] [ / ]
+ 復元  左下  下半  右下  中央1/3
+```
+
 | 機能 | Windows (L3) | Mac (L11) |
 |------|-------------|-----------|
+| ウィンドウスナップ | `Ctrl+Alt+[key]` → **AHK**（`windows/window_snap.ahk`） | `Ctrl+Alt+[key]` → **Magnet** |
 | 全画面スクショ | `Ctrl+Win+PrintScreen` | `Cmd+Shift+4` |
-| 範囲スクショ | `Shift+PrintScreen` | `Cmd+Shift+5`（スクショメニュー） |
-| ウィンドウスナップ | `Win+↑/←/↓/→` | `Cmd+↑/←/↓/→`（⚠️ Mac未対応） |
+| 範囲スクショ | `Shift+PrintScreen` | `Cmd+Shift+5` |
+| **Ctrl+Alt+Del** | `LANG1+BS`（ロック画面解除） | — |
 
-> **Mac 注意:** `Cmd+矢印` はテキストナビゲーション（行末・先頭等）として機能し、ウィンドウスナップにはなりません。Rectangle 等のアプリでショートカットを `Cmd+矢印` に割り当てれば利用可能です。
-
-**エンコーダ:** `Cmd+Shift+]` / `Cmd+Shift+[`（タブ切り替え、Safari/Chrome/Firefox 対応）
+**エンコーダ:**
+- Win (L3): `Ctrl+Tab` / `Ctrl+Shift+Tab`（タブ切り替え）
+- Mac (L11): `Cmd+Shift+]` / `Cmd+Shift+[`（タブ切り替え）
 
 **トラックボール:** スクロール変換（X軸反転、速度1/5倍）
 

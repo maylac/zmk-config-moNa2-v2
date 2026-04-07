@@ -8,9 +8,9 @@
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <120>;
 
-    focus_url        { pattern = <GESTURE_UP>;  bindings = <&kp LC(L)>;      };
-    vdesk_send_next  { pattern = <GESTURE_DOWN>; bindings = <&kp LG(S)>;     };
-    taskbar_prev     { pattern = <GESTURE_LEFT>;    bindings = <&kp LEFT>;   };
-    taskbar_next     { pattern = <GESTURE_RIGHT>;  bindings = <&kp LG(T)>;   };
+    focus_url        { pattern = <GESTURE_UP>;    bindings = <&kp LC(L)>;      };  // URLバー選択
+    powertoys_run    { pattern = <GESTURE_DOWN>;  bindings = <&kp LA(SPACE)>; };  // PowerToys Run
+    browser_back     { pattern = <GESTURE_LEFT>;  bindings = <&kp LA(LEFT)>;  };  // ブラウザ戻る
+    browser_forward  { pattern = <GESTURE_RIGHT>; bindings = <&kp LA(RIGHT)>; };  // ブラウザ進む
   };
 };

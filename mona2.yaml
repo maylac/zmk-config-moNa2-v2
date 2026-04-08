@@ -173,8 +173,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   '4':
-  - '&df DF_SEL 0'
-  - '&df DF_SEL 10'
+  - '&win_mode'
+  - '&mac_mode'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

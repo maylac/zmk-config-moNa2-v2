@@ -181,6 +181,28 @@
             label = "KP_exit_AML";
         };
 
+        ctrl_scroll_up: ctrl_scroll_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_press &kp LCTRL>
+                     , <&msc SCRL_UP>
+                     , <&macro_release &kp LCTRL>;
+            label = "CTRL_SCROLL_UP";
+        };
+
+        ctrl_scroll_down: ctrl_scroll_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_press &kp LCTRL>
+                     , <&msc SCRL_DOWN>
+                     , <&macro_release &kp LCTRL>;
+            label = "CTRL_SCROLL_DOWN";
+        };
+
     };
 
     behaviors {
@@ -230,6 +252,13 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
             quick-tap-ms = <200>;
+        };
+
+        zoom_scroll: zoom_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&ctrl_scroll_up>, <&ctrl_scroll_down>;
         };
     };
 
@@ -328,7 +357,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PLUS) LC(MINUS)>;
+            sensor-bindings = <&zoom_scroll>;
         };
 
         Gesture_L8 {

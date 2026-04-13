@@ -152,14 +152,18 @@
         win_mode: win_mode {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &df DF_SEL 0>;
+            bindings = <&macro_release &kp LALT &kp LGUI>
+                     , <&to 0>
+                     , <&df DF_SEL 0>;
             label = "WIN_MODE";
         };
 
         mac_mode: mac_mode {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 10 &df DF_SEL 10>;
+            bindings = <&macro_release &kp LALT &kp LGUI>
+                     , <&to 10>
+                     , <&df DF_SEL 10>;
             label = "MAC_MODE";
         };
 
@@ -210,7 +214,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
             bindings = <&mo>, <&to_layer_0>;
         };
 
@@ -218,7 +224,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_10";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
             bindings = <&mo>, <&to_layer_10>;
         };
 

@@ -1,5 +1,6 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
+DllCall("SetThreadDpiAwarenessContext", "ptr", -4)  ; Per-Monitor DPI Aware V2（マルチモニター高DPI対応）
 
 ; =============================================================================
 ; ZMK L3 (Win Nav) ウィンドウスナップ
@@ -30,8 +31,10 @@ GetMonitorWorkArea(&Left, &Top, &Right, &Bottom) {
 }
 
 SnapWindow(x, y, w, h) {
-    if WinGetMinMax("A") = 1
+    if WinGetMinMax("A") = 1 {
         WinRestore("A")
+        WinWait("A",, 1)  ; 復元アニメーション完了を最大1秒待機
+    }
     WinMove(x, y, w, h, "A")
 }
 
@@ -125,10 +128,11 @@ SnapWindow(x, y, w, h) {
     WinMaximize("A")
 }
 
-^!Backspace:: {     ; 復元（最大化→通常サイズ、それ以外→中央寄せ）
-    if WinGetMinMax("A") != 0 {
+^!Backspace:: {     ; 復元（最大化→通常サイズ、通常→中央寄せ、最小化は無視）
+    minmax := WinGetMinMax("A")
+    if (minmax = 1) {
         WinRestore("A")
-    } else {
+    } else if (minmax = 0) {
         GetMonitorWorkArea(&L, &T, &R, &B)
         W := R - L, H := B - T
         SnapWindow(L + W // 6, T + H // 6, W * 2 // 3, H * 2 // 3)

@@ -152,14 +152,18 @@
         win_mode: win_mode {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &df DF_SEL 0>;
+            bindings = <&macro_release &kp LALT &kp LGUI>
+                     , <&to 0>
+                     , <&df DF_SEL 0>;
             label = "WIN_MODE";
         };
 
         mac_mode: mac_mode {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 10 &df DF_SEL 10>;
+            bindings = <&macro_release &kp LALT &kp LGUI>
+                     , <&to 10>
+                     , <&df DF_SEL 10>;
             label = "MAC_MODE";
         };
 
@@ -181,6 +185,28 @@
             label = "KP_exit_AML";
         };
 
+        ctrl_scroll_up: ctrl_scroll_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_press &kp LCTRL>
+                     , <&msc SCRL_UP>
+                     , <&macro_release &kp LCTRL>;
+            label = "CTRL_SCROLL_UP";
+        };
+
+        ctrl_scroll_down: ctrl_scroll_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_press &kp LCTRL>
+                     , <&msc SCRL_DOWN>
+                     , <&macro_release &kp LCTRL>;
+            label = "CTRL_SCROLL_DOWN";
+        };
+
     };
 
     behaviors {
@@ -188,7 +214,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
             bindings = <&mo>, <&to_layer_0>;
         };
 
@@ -196,7 +224,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_10";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
             bindings = <&mo>, <&to_layer_10>;
         };
 
@@ -230,6 +260,13 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
             quick-tap-ms = <200>;
+        };
+
+        zoom_scroll: zoom_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&ctrl_scroll_up>, <&ctrl_scroll_down>;
         };
     };
 
@@ -270,7 +307,11 @@
         };
 
         // Layer 3: Win Nav
-        // 左側: カーソル移動（L11 Mac Navと共通）
+        // 左側: カーソル移動 + 単語編集（L11 Mac Navと共通配置）
+        //   行0: [単語←]  [↑]       [単語→]
+        //   行1: [←]      [↓]       [→]
+        //   行2: [選択単語←] [単語削除] [選択単語→]
+        //   thumb-BS: Delete  (Zは透過→LShift: Z+W=選択単語←, Z+R=選択単語→も可)
         // 右側: AHK経由ウィンドウスナップ（L11 Magnetと同一キーコンボ）
         //   行0: [左2/3] [上左] [上半] [上右] [右2/3]
         //   行1: [SS]  [左3]  [左半] [最大] [右半] [右3]
@@ -278,10 +319,10 @@
         // encoder: Ctrl+Tab / Ctrl+Shift+Tab for tab switching
         layer_3 {
             bindings = <
-&kp PAGE_UP  &trans    &kp UP_ARROW  &trans           &kp PAGE_DOWN                                     &kp LC(LA(E))         &kp LC(LA(U))     &kp LC(LA(UP))     &kp LC(LA(I))      &kp LC(LA(T))
-&kp HOME     &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp END                  &kp LC(LG(PRINTSCREEN))  &kp LC(LA(D))         &kp LC(LA(LEFT))  &kp LC(LA(ENTER))  &kp LC(LA(RIGHT))  &kp LC(LA(G))
-&trans       &trans    &trans        &trans           &trans         &trans    &kp LS(PRINTSCREEN)      &kp LC(LA(BACKSPACE)) &kp LC(LA(J))     &kp LC(LA(DOWN))   &kp LC(LA(K))      &kp LC(LA(F))
-&trans       &trans    &trans        &kp LC(LA(DEL))  &trans         &trans    &kp DEL                  &trans                                                                         &trans
+&kp PAGE_UP  &kp LC(LEFT)      &kp UP_ARROW       &kp LC(RIGHT)     &kp PAGE_DOWN                                     &kp LC(LA(E))         &kp LC(LA(U))     &kp LC(LA(UP))     &kp LC(LA(I))      &kp LC(LA(T))
+&kp HOME     &kp LEFT          &kp DOWN           &kp RIGHT_ARROW   &kp END                  &kp LC(LG(PRINTSCREEN))  &kp LC(LA(D))         &kp LC(LA(LEFT))  &kp LC(LA(ENTER))  &kp LC(LA(RIGHT))  &kp LC(LA(G))
+&trans       &kp LC(LS(LEFT))  &kp LC(BACKSPACE)  &kp LC(LS(RIGHT)) &trans         &trans    &kp LS(PRINTSCREEN)      &kp LC(LA(BACKSPACE)) &kp LC(LA(J))     &kp LC(LA(DOWN))   &kp LC(LA(K))      &kp LC(LA(F))
+&trans       &trans            &trans             &kp DEL           &trans         &trans    &trans                   &trans                                                                         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
@@ -328,7 +369,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PLUS) LC(MINUS)>;
+            sensor-bindings = <&zoom_scroll>;
         };
 
         Gesture_L8 {
@@ -371,7 +412,12 @@
         };
 
         // Layer 11: Mac Nav
-        // 左側: カーソル移動（L3 Win Navと共通）
+        // 左側: カーソル移動 + 単語編集（L3 Win Navと完全対称）
+        //   行0: [単語←]  [↑]       [単語→]      ← W=Opt+←, R=Opt+→
+        //   行1: [←]      [↓]       [→]
+        //   行2: [選択単語←] [単語削除] [選択単語→]  ← X=Opt+Shift+←, V=Opt+Shift+→
+        //   thumb-BS: Delete  (Zは透過→LShift: Z+W=選択単語←, Z+R=選択単語→も可)
+        //   thumb-SPACE: RGUI (Cmd)
         // 右側: Magnetウィンドウスナップ専用（3×3空間マッピング）
         //   行0: [左2/3] [上左] [上半] [上右] [右2/3]
         //   行1: [SS]  [左3]  [左半] [最大] [右半] [右3]
@@ -379,10 +425,10 @@
         // encoder: Cmd+Shift+] / Cmd+Shift+[ for tab switching
         mac_nav_layer {
             bindings = <
-&kp PAGE_UP  &kp RGUI  &kp UP_ARROW  &trans           &kp PAGE_DOWN                                 &kp LC(LA(E))         &kp LC(LA(U))    &kp LC(LA(UP))     &kp LC(LA(I))    &kp LC(LA(T))
-&kp HOME     &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp END                  &kp LG(LS(N4))       &kp LC(LA(D))         &kp LC(LA(LEFT))  &kp LC(LA(ENTER))  &kp LC(LA(RIGHT))  &kp LC(LA(G))
-&trans       &trans    &trans        &trans           &trans         &trans    &kp LG(LS(N5))       &kp LC(LA(BACKSPACE)) &kp LC(LA(J))    &kp LC(LA(DOWN))   &kp LC(LA(K))    &kp LC(LA(F))
-&trans       &trans    &trans        &trans           &kp RGUI       &trans    &kp DEL              &trans                                                               &trans
+&kp PAGE_UP  &kp LA(LEFT)  &kp UP_ARROW       &kp LA(RIGHT)    &kp PAGE_DOWN                                 &kp LC(LA(E))         &kp LC(LA(U))    &kp LC(LA(UP))     &kp LC(LA(I))    &kp LC(LA(T))
+&kp HOME     &kp LEFT      &kp DOWN           &kp RIGHT_ARROW  &kp END                  &kp LG(LS(N4))       &kp LC(LA(D))         &kp LC(LA(LEFT))  &kp LC(LA(ENTER))  &kp LC(LA(RIGHT))  &kp LC(LA(G))
+&trans       &kp LA(LS(LEFT))  &kp LA(BACKSPACE)  &kp LA(LS(RIGHT))  &trans         &trans    &kp LG(LS(N5))       &kp LC(LA(BACKSPACE)) &kp LC(LA(J))    &kp LC(LA(DOWN))   &kp LC(LA(K))    &kp LC(LA(F))
+&trans       &trans        &trans             &kp DEL          &kp RGUI       &trans    &trans               &trans                                                               &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LG(LS(RBKT)) LG(LS(LBKT))>;

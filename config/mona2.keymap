@@ -415,7 +415,7 @@
         // 左側: カーソル移動 + 単語編集（L3 Win Navと完全対称）
         //   行0: [単語←]  [↑]       [単語→]      ← W=Opt+←, R=Opt+→
         //   行1: [←]      [↓]       [→]
-        //   行2: [X=Opt単語←] [C=Opt単語削除] [V=Opt単語→]
+        //   行2: [選択単語←] [単語削除] [選択単語→]  ← X=Opt+Shift+←, V=Opt+Shift+→
         //   thumb-BS: Delete  (Zは透過→LShift: Z+W=選択単語←, Z+R=選択単語→も可)
         //   thumb-SPACE: RGUI (Cmd)
         // 右側: Magnetウィンドウスナップ専用（3×3空間マッピング）
@@ -427,7 +427,7 @@
             bindings = <
 &kp PAGE_UP  &kp LA(LEFT)  &kp UP_ARROW       &kp LA(RIGHT)    &kp PAGE_DOWN                                 &kp LC(LA(E))         &kp LC(LA(U))    &kp LC(LA(UP))     &kp LC(LA(I))    &kp LC(LA(T))
 &kp HOME     &kp LEFT      &kp DOWN           &kp RIGHT_ARROW  &kp END                  &kp LG(LS(N4))       &kp LC(LA(D))         &kp LC(LA(LEFT))  &kp LC(LA(ENTER))  &kp LC(LA(RIGHT))  &kp LC(LA(G))
-&trans       &kp LA(LEFT)  &kp LA(BACKSPACE)  &kp LA(RIGHT)    &trans         &trans    &kp LG(LS(N5))       &kp LC(LA(BACKSPACE)) &kp LC(LA(J))    &kp LC(LA(DOWN))   &kp LC(LA(K))    &kp LC(LA(F))
+&trans       &kp LA(LS(LEFT))  &kp LA(BACKSPACE)  &kp LA(LS(RIGHT))  &trans         &trans    &kp LG(LS(N5))       &kp LC(LA(BACKSPACE)) &kp LC(LA(J))    &kp LC(LA(DOWN))   &kp LC(LA(K))    &kp LC(LA(F))
 &trans       &trans        &trans             &kp DEL          &kp RGUI       &trans    &kp DEL              &trans                                                               &trans
             >;
 

@@ -153,7 +153,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_release &kp LALT &kp LGUI>
-                     , <&to 0>
                      , <&df DF_SEL 0>;
             label = "WIN_MODE";
         };
@@ -162,7 +161,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_release &kp LALT &kp LGUI>
-                     , <&to 10>
                      , <&df DF_SEL 10>;
             label = "MAC_MODE";
         };

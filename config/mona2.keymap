@@ -153,7 +153,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_release &kp LALT &kp LGUI>
-                     , <&to 0>
                      , <&df DF_SEL 0>;
             label = "WIN_MODE";
         };
@@ -162,7 +161,6 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_release &kp LALT &kp LGUI>
-                     , <&to 10>
                      , <&df DF_SEL 10>;
             label = "MAC_MODE";
         };
@@ -330,9 +328,9 @@
 
         layer_4 {
             bindings = <
-&win_mode      &mac_mode      &trans  &trans  &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans         &win_mode      &trans  &trans  &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans         &trans         &trans  &trans  &trans            &trans        &trans        &trans        &trans        &trans        &trans
-&trans         &trans         &trans  &trans  &trans  &trans    &bootloader   &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans         &trans         &trans  &trans  &trans  &trans    &bootloader   &trans        &mac_mode     &trans        &trans        &bt BT_CLR
 &trans         &trans         &trans  &trans  &trans  &trans    &trans        &trans                                                  &bt BT_CLR_ALL
             >;
 

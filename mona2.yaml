@@ -175,7 +175,7 @@ layers:
   '4':
   - ''
   - '&win_mode'
-  - {t: ▽, type: trans}
+  - '&mac_mode'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: BT, h: '0'}
@@ -202,7 +202,7 @@ layers:
   - {t: ▽, type: trans}
   - '&bootloader'
   - {t: ▽, type: trans}
-  - '&mac_mode'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BT CLR
@@ -212,7 +212,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - {type: held}
+  - {t: BT CLR, type: held}
   - {t: ▽, type: trans}
   - BT CLR ALL
   '5':

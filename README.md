@@ -16,13 +16,13 @@
 | 1 | Symbol | 記号・括弧 | 🟡 黄 | `ENTER` ホールド |
 | 2 | Number | 数字・ファンクション | 🔵 青 | `SPACE` ホールド |
 | 3 | Nav (Win) | ナビゲーション + ウィンドウスナップ | 🩵 シアン | `LANG1` ホールド |
-| 4 | BT | Bluetooth設定 | 🔴 赤 | `LANG2`+`LANG1` 同時押し |
+| 4 | BT | Bluetooth設定 + 現在プロファイルのWin/Mac設定 | 🔴 赤 | `LANG2`+`LANG1` 同時押し |
 | 5 | Mouse | マウスボタン | 🟣 マゼンタ | `TAB` or `ESC` ホールド / Automouse |
 | 6 | Scroll | スクロールモード | ⚪ 白 | `,`+`.` 同時押し（トグル） |
 | 7 | Gesture L7 | ジェスチャー：ブラウザ操作 | — | `-` ホールド（Win） |
 | 8 | Gesture L8 | ジェスチャー：仮想デスクトップ | — | `W`+`E` 同時押し（Win） |
 | 9 | Gesture L9 | ジェスチャー：一般操作 | — | `L`+`-` 同時押し（Win） |
-| 10 | Default (Mac) | Mac用ベースレイヤー（L0透過オーバーレイ） | 🟢 緑 | L4で Mac プロファイルを選択 |
+| 10 | Default (Mac) | Mac用ベースレイヤー（L0透過オーバーレイ） | 🟢 緑 | L4で `BTn` 選択後 `Mac` を保存 |
 | 11 | Nav Mac | Magnetウィンドウスナップ（3×3）+ Macナビゲーション | 🩵 シアン | `LANG1` ホールド（Mac） |
 | 12 | Gesture Mac L7 | Macジェスチャー：ブラウザ操作 | — | `-` ホールド（Mac） |
 | 13 | Gesture Mac L8 | Macジェスチャー：仮想デスクトップ | — | `W`+`E` 同時押し（Mac） |
@@ -105,7 +105,7 @@ flowchart LR
 - **Win モード**（デフォルト）: Layer 0 を基点に遷移
 - **Mac モード**: Layer 10 を基点に遷移。Layer 10 は Layer 0 の透過オーバーレイ（LANG1 長押し以外は Layer 0 に通過）
 - **Automouse**: トラックボールを動かすと Layer 5 に自動遷移、300ms 静止 + 10秒タイムアウトで復帰
-- **BT プロファイルごとに Win/Mac 設定を記憶**（Flash 保存）
+- **L4 で `BTn` を選び、そのアクティブなプロファイルに Win/Mac を保存**
 
 ---
 
@@ -194,6 +194,10 @@ LANG1押しながら...
 
 **遷移方法:** `-`キー長押し または コンボ（後述）
 
+**エンコーダ:**
+- Win (L7): `Ctrl+-` / `Ctrl+=`（ズーム）
+- Mac (L12): `Cmd+-` / `Cmd+=`（ズーム）
+
 ---
 
 ## Layer 8/13 - Gesture（仮想デスクトップ）
@@ -241,6 +245,15 @@ LANG1押しながら...
 | `LANG2` + `LANG1` 同時押し | Layer 4 (Bluetooth) 一時有効 |
 | `,` + `.` 同時押し | Layer 6 (Scroll) トグル ON/OFF |
 | `Q` + `A` 同時押し | 全選択（Win: `Ctrl+A` / Mac: `Cmd+A`） |
+
+### Layer 4 の使い方
+
+- 上段右側 5 キー: `BT0..4`
+- 左上側: `Win`
+- その右: `Mac`
+- `bootloader`: ブートローダ起動
+- `BT CLR` / `BT CLR ALL`: 現在のプロファイル消去 / 全消去
+- 手順: `BTn` を押す → `Win` または `Mac` を押す
 
 ---
 
@@ -297,7 +310,14 @@ LANG1押しながら...
 | 0, 1, 4, 5, 6 | 上下スクロール |
 | 2 | 上下スクロール |
 | 3 (Win Nav) | `Ctrl+Tab` / `Ctrl+Shift+Tab` |
+| 7 (Win Gesture Browser) | `Ctrl+-` / `Ctrl+=` |
+| 8 (Win Gesture VDesk) | `Win+Ctrl+←` / `Win+Ctrl+→` |
+| 9 (Win Gesture General) | `Alt+←` / `Alt+→` |
 | 11 (Mac Nav) | `Cmd+Shift+]` / `Cmd+Shift+[` |
+| 12 (Mac Gesture Browser) | `Cmd+-` / `Cmd+=` |
+| 13 (Mac Gesture VDesk) | `Ctrl+←` / `Ctrl+→` |
+| 14 (Mac Gesture General) | `Cmd+←` / `Cmd+→` |
+| 15 (App Switcher) | `Shift+Tab` / `Tab` |
 
 ---
 

@@ -105,7 +105,8 @@ flowchart LR
 - **Win モード**（デフォルト）: Layer 0 を基点に遷移
 - **Mac モード**: Layer 10 を基点に遷移。Layer 10 は Layer 0 の透過オーバーレイ（LANG1 長押し以外は Layer 0 に通過）
 - **Automouse**: トラックボールを動かすと Layer 5 に自動遷移、300ms 静止 + 10秒タイムアウトで復帰
-- **L4 で `BTn` を選び、そのアクティブなプロファイルに Win/Mac を保存**
+- **BT プロファイルごとに Win/Mac 状態をキーボード側へ保存**
+- **LED は Layer 10 がアクティブなときだけ緑になり、Win では消灯**
 
 ---
 
@@ -254,6 +255,12 @@ LANG1押しながら...
 - `bootloader`: ブートローダ起動
 - `BT CLR` / `BT CLR ALL`: 現在のプロファイル消去 / 全消去
 - 手順: `BTn` を押す → `Win` または `Mac` を押す
+
+### Win/Mac 判定の見方
+
+- `Win`: Layer 10 がオフなので LED は消灯
+- `Mac`: Layer 10 がオンなので LED は緑
+- `Nav Mac` に入ると Layer 11 が最上位になり、LED はシアンに変わる
 
 ---
 

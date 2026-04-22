@@ -1,0 +1,1 @@
+target_sources_ifdef(CONFIG_ZMK_BEHAVIOR_OS_LAYER app PRIVATE src/profile_os_mode.c)

@@ -16,6 +16,11 @@ if ! rg -q 'config ZMK_BEHAVIOR_OS_LAYER' app/Kconfig; then
   exit 1
 fi
 
+if ! rg -q 'depends on ZMK_SPLIT_ROLE_CENTRAL' app/Kconfig; then
+  echo "profile OS module must be limited to the central half" >&2
+  exit 1
+fi
+
 if rg -q 'behaviors/default_layer.dtsi|zmk_behavior_default_layer/default_layer.h' config/mona2.keymap; then
   echo "legacy default-layer module includes are still present" >&2
   exit 1
@@ -23,6 +28,16 @@ fi
 
 if rg -q 'CONFIG_ZMK_DEFAULT_LAYER=y|CONFIG_ZMK_DEFAULT_LAYER_MIN_INDEX|CONFIG_ZMK_DEFAULT_LAYER_MAX_INDEX' config/mona2_l.conf config/mona2_r.conf; then
   echo "legacy default-layer Kconfig is still present" >&2
+  exit 1
+fi
+
+if rg -q 'CONFIG_ZMK_BEHAVIOR_OS_LAYER=y' config/mona2_l.conf; then
+  echo "left-half config must not enable profile OS mode module" >&2
+  exit 1
+fi
+
+if ! rg -q 'CONFIG_ZMK_BEHAVIOR_OS_LAYER=y' config/mona2_r.conf; then
+  echo "right-half config must enable profile OS mode module" >&2
   exit 1
 fi
 

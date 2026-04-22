@@ -4,5 +4,21 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run static checks
+        run: |
+          sh tests/check_os_mode_indicators.sh
+          sh tests/check_profile_os_mode_module.sh
+          sh tests/check_bt_mode_layout.sh
+          sh tests/check_missing_encoder_layers.sh
+          sh tests/check_l7_encoder_zoom.sh
+          git diff --check
+
   build:
+    needs: preflight
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0

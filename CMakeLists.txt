@@ -1,0 +1,2 @@
+zephyr_library()
+zephyr_library_sources_ifdef(CONFIG_ZMK_BEHAVIOR_OS_LAYER app/src/profile_os_mode.c)

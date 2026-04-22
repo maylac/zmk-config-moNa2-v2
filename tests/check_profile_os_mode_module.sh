@@ -6,7 +6,7 @@ if ! test -f app/src/profile_os_mode.c; then
   exit 1
 fi
 
-if ! rg -q 'target_sources_ifdef\(CONFIG_ZMK_BEHAVIOR_OS_LAYER app PRIVATE src/profile_os_mode.c\)' app/CMakeLists.txt; then
+if ! rg -q 'zephyr_library_sources_ifdef\(CONFIG_ZMK_BEHAVIOR_OS_LAYER app/src/profile_os_mode.c\)' CMakeLists.txt; then
   echo "missing module CMake wiring" >&2
   exit 1
 fi

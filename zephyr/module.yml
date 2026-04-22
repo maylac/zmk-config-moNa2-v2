@@ -1,5 +1,5 @@
 build:
-  cmake: app
+  cmake: .
   kconfig: app/Kconfig
   settings:
     board_root: .

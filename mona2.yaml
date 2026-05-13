@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: mona2}
 layers:
-  default:
+  default_win:
   - Q
   - W
   - E
@@ -21,13 +21,13 @@ layers:
   - J
   - K
   - L
-  - {t: '-', h: 'L7: Gesture Browser (Win)'}
+  - {t: '-', h: gesture_browser_win}
   - {t: '&kp_exit_AML Z', h: LEFT SHIFT}
   - X
   - C
   - V
   - B
-  - {t: TAB, h: 'L5: Mouse'}
+  - {t: TAB, h: mouse}
   - '"'
   - N
   - M
@@ -38,12 +38,12 @@ layers:
   - LEFT WIN
   - LEFT ALT
   - BACKSPACE
-  - {t: SPACE, h: 'L2: Number'}
+  - {t: SPACE, h: num_fn}
   - {t: LANG2, h: LGUI}
-  - {t: '&to_layer_0 LANG1', h: 'L3: Nav (Win)'}
-  - {t: ENTER, h: 'L1: Symbol'}
-  - {t: ESCAPE, h: 'L5: Mouse'}
-  '1':
+  - {t: '&to_layer_0 LANG1', h: nav_win}
+  - {t: ENTER, h: symbol}
+  - {t: ESCAPE, h: mouse}
+  symbol:
   - {t: ▽, type: trans}
   - '&'
   - '*'
@@ -86,7 +86,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  '2':
+  num_fn:
   - {t: ▽, type: trans}
   - '7'
   - '8'
@@ -129,7 +129,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '3':
+  nav_win:
   - PAGE UP
   - Ctl+LEFT
   - UP ARROW
@@ -172,7 +172,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '4':
+  bt:
   - ''
   - '&win_mode'
   - '&mac_mode'
@@ -215,7 +215,7 @@ layers:
   - {t: BT CLR, type: held}
   - {t: ▽, type: trans}
   - BT CLR ALL
-  '5':
+  mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -258,7 +258,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  SCROLL:
+  scroll:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -301,7 +301,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Gesture_L7:
+  gesture_browser_win:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -344,7 +344,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Gesture_L8:
+  gesture_vdesk_win:
   - {t: ▽, type: trans}
   - {type: held}
   - {type: held}
@@ -387,7 +387,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Gesture_L9:
+  gesture_general_win:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -430,7 +430,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  mac_default:
+  default_mac:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -451,7 +451,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '-', h: 'L12: Gesture Browser (Mac)'}
+  - {t: '-', h: gesture_browser_mac}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -470,10 +470,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&to_layer_10 LANG1', h: 'L11: Nav (Mac)'}
+  - {t: '&to_layer_10 LANG1', h: nav_mac}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  mac_nav:
+  nav_mac:
   - PAGE UP
   - Alt+LEFT
   - UP ARROW
@@ -516,7 +516,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  mac_gesture_l7:
+  gesture_browser_mac:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -559,7 +559,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  mac_gesture_l8:
+  gesture_vdesk_mac:
   - {t: ▽, type: trans}
   - {type: held}
   - {type: held}
@@ -602,7 +602,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  mac_gesture_l9:
+  gesture_general_mac:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -688,7 +688,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ESCAPE
-  win_indicator:
+  indicator_win:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -734,37 +734,37 @@ layers:
 combos:
 - p: [8, 9]
   k: '&app_sw_mac'
-  l: [mac_default]
+  l: [default_mac]
 - p: [8, 9]
   k: '&app_sw_win'
-  l: [win_indicator]
+  l: [indicator_win]
 - p: [1, 2]
-  k: 'L8: Gesture VDesk (Win)'
-  l: [win_indicator]
+  k: gesture_vdesk_win
+  l: [indicator_win]
 - p: [1, 2]
-  k: 'L13: Gesture VDesk (Mac)'
-  l: [mac_default]
+  k: gesture_vdesk_mac
+  l: [default_mac]
 - p: [19, 20]
-  k: {t: LGUI, h: 'L14: Gesture General (Mac)'}
-  l: [mac_default]
+  k: {t: LGUI, h: gesture_general_mac}
+  l: [default_mac]
 - p: [19, 20]
-  k: {t: LEFT WIN, h: 'L9: Gesture General (Win)'}
-  l: [win_indicator]
+  k: {t: LEFT WIN, h: gesture_general_win}
+  l: [indicator_win]
 - p: [38, 39]
-  k: 'L4: Bluetooth'
-  l: [default, mac_default]
+  k: bt
+  l: [default_win, default_mac]
 - p: [30, 31]
-  k: {t: 'L6: Scroll', h: toggle}
-  l: [default, mac_default]
+  k: {t: scroll, h: toggle}
+  l: [default_win, default_mac]
 - p: [36, 39]
   k: DEL
-  l: [default, mac_default]
+  l: [default_win, default_mac]
 - p: [0, 10]
   k: Gui+A
-  l: [mac_default]
+  l: [default_mac]
 - p: [37, 39]
   k: '&aqua_voice'
-  l: [mac_default]
+  l: [default_mac]
 - p: [0, 10]
   k: Ctl+A
-  l: [win_indicator]
+  l: [indicator_win]

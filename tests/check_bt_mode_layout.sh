@@ -2,7 +2,7 @@
 set -eu
 
 keymap="config/mona2.keymap"
-layer_4_block="$(sed -n '/layer_4 {/,/^[[:space:]]*};/p' "$keymap")"
+layer_4_block="$(sed -n '/[[:space:]]bt {/,/^[[:space:]]*};/p' "$keymap")"
 
 for pattern in \
   '&win_mode' \

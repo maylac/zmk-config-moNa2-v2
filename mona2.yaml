@@ -688,16 +688,59 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ESCAPE
+  win_indicator:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
 combos:
 - p: [8, 9]
   k: '&app_sw_mac'
   l: [mac_default]
 - p: [8, 9]
   k: '&app_sw_win'
-  l: [default]
+  l: [win_indicator]
 - p: [1, 2]
   k: 'L8: Gesture VDesk (Win)'
-  l: [default]
+  l: [win_indicator]
 - p: [1, 2]
   k: 'L13: Gesture VDesk (Mac)'
   l: [mac_default]
@@ -706,7 +749,7 @@ combos:
   l: [mac_default]
 - p: [19, 20]
   k: {t: LEFT WIN, h: 'L9: Gesture General (Win)'}
-  l: [default]
+  l: [win_indicator]
 - p: [38, 39]
   k: 'L4: Bluetooth'
   l: [default, mac_default]
@@ -724,4 +767,4 @@ combos:
   l: [mac_default]
 - p: [0, 10]
   k: Ctl+A
-  l: [default]
+  l: [win_indicator]

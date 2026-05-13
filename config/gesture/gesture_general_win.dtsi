@@ -1,5 +1,5 @@
 / {
-  zip_mouse_gesture_l9: zip_mouse_gesture_l9 {
+  zip_mouse_gesture_general_win: zip_mouse_gesture_general_win {
     compatible = "zmk,input-processor-mouse-gesture";
     #input-processor-cells = <0>;  
     enable-eager-mode;

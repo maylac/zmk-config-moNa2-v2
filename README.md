@@ -12,23 +12,23 @@
 
 | # | レイヤー名 | 概要 | LED | 起動方法 |
 |---|-----------|------|-----|---------|
-| 0 | Default (Win) | QWERTY基本配置 | ⚫ 消灯 | ベースレイヤー（常時） |
-| 1 | Symbol | 記号・括弧 | 🟡 黄 | `ENTER` ホールド |
-| 2 | Number | 数字・ファンクション | 🔵 青 | `SPACE` ホールド |
-| 3 | Nav (Win) | ナビゲーション + ウィンドウスナップ | 🩵 シアン | `LANG1` ホールド |
-| 4 | BT | Bluetooth設定 + 現在プロファイルのWin/Mac設定 | 🔴 赤 | `LANG2`+`LANG1` 同時押し |
-| 5 | Mouse | マウスボタン | 🟣 マゼンタ | `TAB` or `ESC` ホールド / Automouse |
-| 6 | Scroll | スクロールモード | ⚪ 白 | `,`+`.` 同時押し（トグル） |
-| 7 | Gesture L7 | ジェスチャー：ブラウザ操作 | — | `-` ホールド（Win） |
-| 8 | Gesture L8 | ジェスチャー：仮想デスクトップ | — | `W`+`E` 同時押し（Win） |
-| 9 | Gesture L9 | ジェスチャー：一般操作 | — | `L`+`-` 同時押し（Win） |
-| 10 | Default (Mac) | Mac用ベースレイヤー（L0透過オーバーレイ） | 🟢 緑 | L4で `BTn` 選択後 `Mac` を保存 |
-| 11 | Nav Mac | Magnetウィンドウスナップ（3×3）+ Macナビゲーション | 🩵 シアン | `LANG1` ホールド（Mac） |
-| 12 | Gesture Mac L7 | Macジェスチャー：ブラウザ操作 | — | `-` ホールド（Mac） |
-| 13 | Gesture Mac L8 | Macジェスチャー：仮想デスクトップ | — | `W`+`E` 同時押し（Mac） |
-| 14 | Gesture Mac L9 | Macジェスチャー：一般操作 | — | `L`+`-` 同時押し（Mac） |
-| 15 | App Switcher | Alt/Cmd+Tab アプリ切替 | — | `O`+`P` 同時押し（Win/Mac共通） |
-| 16 | Win Indicator | Winモードコンボ識別用フラグ（全キー透過） | — | Winモード時に自動オン |
+| 0 | `default_win` | QWERTY基本配置 | ⚫ 消灯 | ベースレイヤー（常時） |
+| 1 | `symbol` | 記号・括弧 | 🟡 黄 | `ENTER` ホールド |
+| 2 | `num_fn` | 数字・ファンクション | 🔵 青 | `SPACE` ホールド |
+| 3 | `nav_win` | ナビゲーション + ウィンドウスナップ | 🩵 シアン | `LANG1` ホールド |
+| 4 | `bt` | Bluetooth設定 + 現在プロファイルのWin/Mac設定 | 🔴 赤 | `LANG2`+`LANG1` 同時押し |
+| 5 | `mouse` | マウスボタン | 🟣 マゼンタ | `TAB` or `ESC` ホールド / Automouse |
+| 6 | `scroll` | スクロールモード | ⚪ 白 | `,`+`.` 同時押し（トグル） |
+| 7 | `gesture_browser_win` | ジェスチャー：ブラウザ操作 | — | `-` ホールド（Win） |
+| 8 | `gesture_vdesk_win` | ジェスチャー：仮想デスクトップ | — | `W`+`E` 同時押し（Win） |
+| 9 | `gesture_general_win` | ジェスチャー：一般操作 | — | `L`+`-` 同時押し（Win） |
+| 10 | `default_mac` | Mac用ベースレイヤー（L0透過オーバーレイ） | 🟢 緑 | L4で `BTn` 選択後 `Mac` を保存 |
+| 11 | `nav_mac` | Magnetウィンドウスナップ（3×3）+ Macナビゲーション | 🩵 シアン | `LANG1` ホールド（Mac） |
+| 12 | `gesture_browser_mac` | Macジェスチャー：ブラウザ操作 | — | `-` ホールド（Mac） |
+| 13 | `gesture_vdesk_mac` | Macジェスチャー：仮想デスクトップ | — | `W`+`E` 同時押し（Mac） |
+| 14 | `gesture_general_mac` | Macジェスチャー：一般操作 | — | `L`+`-` 同時押し（Mac） |
+| 15 | `app_switch` | Alt/Cmd+Tab アプリ切替 | — | `O`+`P` 同時押し（Win/Mac共通） |
+| 16 | `indicator_win` | Winモードコンボ識別用フラグ（全キー透過） | — | Winモード時に自動オン |
 
 ## キーマップ
 

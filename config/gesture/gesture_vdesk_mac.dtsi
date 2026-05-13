@@ -1,5 +1,5 @@
 / {
-  zip_mouse_gesture_l8_mac: zip_mouse_gesture_l8_mac {
+  zip_mouse_gesture_vdesk_mac: zip_mouse_gesture_vdesk_mac {
     compatible = "zmk,input-processor-mouse-gesture";
     #input-processor-cells = <0>;
     enable-eager-mode;

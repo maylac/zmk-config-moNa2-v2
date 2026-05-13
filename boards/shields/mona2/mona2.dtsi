@@ -104,37 +104,37 @@
                             &zip_xy_to_scroll_mapper>;
         };
 
-        gest_on_l7 {
+        gest_browser_win {
             layers = <7>;
             input-processors = <&zip_mouse_gesture &zip_xy_scaler 0 1>;
         };
 
-        gest_on_l8 {
+        gest_vdesk_win {
             layers = <8>;
-            input-processors = <&zip_mouse_gesture_l8 &zip_xy_scaler 0 1>;
+            input-processors = <&zip_mouse_gesture_vdesk_win &zip_xy_scaler 0 1>;
         };
 
-        gest_on_l9 {
+        gest_general_win {
             layers = <9>;
-            input-processors = <&zip_mouse_gesture_l9 &zip_xy_scaler 0 1>;
+            input-processors = <&zip_mouse_gesture_general_win &zip_xy_scaler 0 1>;
         };
 
-        gest_on_l12 {
+        gest_browser_mac {
             layers = <12>;
-            input-processors = <&zip_mouse_gesture_l7_mac &zip_xy_scaler 0 1>;
+            input-processors = <&zip_mouse_gesture_browser_mac &zip_xy_scaler 0 1>;
         };
 
-        gest_on_l13 {
+        gest_vdesk_mac {
             layers = <13>;
-            input-processors = <&zip_mouse_gesture_l8_mac &zip_xy_scaler 0 1>;
+            input-processors = <&zip_mouse_gesture_vdesk_mac &zip_xy_scaler 0 1>;
         };
 
-        gest_on_l14 {
+        gest_general_mac {
             layers = <14>;
-            input-processors = <&zip_mouse_gesture_l9_mac &zip_xy_scaler 0 1>;
+            input-processors = <&zip_mouse_gesture_general_mac &zip_xy_scaler 0 1>;
         };
 
-        gest_on_l15 {
+        gest_app_switch {
             layers = <15>;
             input-processors = <&zip_mouse_gesture_app_sw &zip_xy_scaler 0 1>;
         };
@@ -144,38 +144,37 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        // Layer 7 に入ったらジェスチャーON、抜けたらOFF
-        gesture_on_l7 {
+        listener_browser_win {
             layers = <7>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        gesture_on_l8 {
+        listener_vdesk_win {
             layers = <8>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        gesture_on_l9 {
+        listener_general_win {
             layers = <9>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        gesture_on_l12 {
+        listener_browser_mac {
             layers = <12>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        gesture_on_l13 {
+        listener_vdesk_mac {
             layers = <13>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        gesture_on_l14 {
+        listener_general_mac {
             layers = <14>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        gesture_on_l15 {
+        listener_app_switch {
             layers = <15>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };

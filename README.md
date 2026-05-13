@@ -28,6 +28,7 @@
 | 13 | Gesture Mac L8 | Macジェスチャー：仮想デスクトップ | — | `W`+`E` 同時押し（Mac） |
 | 14 | Gesture Mac L9 | Macジェスチャー：一般操作 | — | `L`+`-` 同時押し（Mac） |
 | 15 | App Switcher | Alt/Cmd+Tab アプリ切替 | — | `O`+`P` 同時押し（Win/Mac共通） |
+| 16 | Win Indicator | Winモードコンボ識別用フラグ（全キー透過） | — | Winモード時に自動オン |
 
 ## キーマップ
 
@@ -65,6 +66,7 @@ flowchart LR
     L8["L8\nGesture\nVDesk"]:::gesture
     L9["L9\nGesture\nGeneral"]:::gesture
     L15["L15\nApp Switcher\nAlt/Cmd+Tab"]:::gesture
+    L16["L16\nWin Indicator\n(Winコンボ識別)"]:::winBase
 
     %% BT切替
     L0 <-->|"combo LANG2+LANG1"| L4
@@ -84,6 +86,10 @@ flowchart LR
 
     %% 戻り
     L1 & L2 & L3 & L7 & L8 & L9 & L15 -->|"コンボ/キー離す"| L0
+
+    %% L16はWinモードフラグ（L4でWin/Mac切替）
+    L4 -->|"Win押す"| L16
+    L4 -->|"Mac押す（L16オフ）"| L0
     L6 -->|"combo comma+dot 再押し"| L0
     L5 -->|"10秒 or Ctrl/Shift"| L0
 
@@ -102,8 +108,9 @@ flowchart LR
 
 ### 補足
 
-- **Win モード**（デフォルト）: Layer 0 を基点に遷移
+- **Win モード**（デフォルト）: Layer 0 を基点に遷移。Layer 16 (Win Indicator) が同時アクティブ
 - **Mac モード**: Layer 10 を基点に遷移。Layer 10 は Layer 0 の透過オーバーレイ（LANG1 長押し以外は Layer 0 に通過）
+- **Layer 16 (Win Indicator)**: Layer 0 は常時アクティブなため「Winモード限定コンボ」を `layers=0` で定義するとMacモードでも誤発火する。Layer 16 をWinモードのフラグとして使い、Winコンボは `layers=16` で参照することで誤発火を防ぐ
 - **Automouse**: トラックボールを動かすと Layer 5 に自動遷移、300ms 静止 + 10秒タイムアウトで復帰
 - **BT プロファイルごとに Win/Mac 状態をキーボード側へ保存**
 - **LED は最上位レイヤー色を表示する。L4 を押している間は常に赤で、離した後に Win=消灯 / Mac=緑 を確認する**
@@ -210,7 +217,7 @@ LANG1押しながら...
 | ↑      | タスクビュー | `Win+Tab` | Mission Control | `Ctrl+↑` |
 | ↓      | アプリを次のデスクへ | `Win+Ctrl+Shift+→` | Spaceへ移動 | `Ctrl+Shift+→` |
 
-**遷移方法:** キー8+9同時押し（Win: `Alt+Tab` / Mac: `Cmd+Tab`）
+**遷移方法:** `W`+`E` 同時押し
 
 ---
 
@@ -315,8 +322,7 @@ LANG1押しながら...
 
 | レイヤー | 動作 |
 |---------|------|
-| 0, 1, 4, 5, 6 | 上下スクロール |
-| 2 | 上下スクロール |
+| 0, 1, 2, 4, 5, 6, 10, 16 | 上下スクロール |
 | 3 (Win Nav) | `Ctrl+Tab` / `Ctrl+Shift+Tab` |
 | 7 (Win Gesture Browser) | `Ctrl+-` / `Ctrl+=` |
 | 8 (Win Gesture VDesk) | `Win+Ctrl+←` / `Win+Ctrl+→` |

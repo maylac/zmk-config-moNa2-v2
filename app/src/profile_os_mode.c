@@ -10,6 +10,7 @@
 #include <zmk/keymap.h>
 
 #define MAC_LAYER 10
+#define WIN_LAYER 16
 #define BT_LAYER 4
 #define SETTINGS_NAME "mona2/os_profile_map"
 
@@ -23,8 +24,10 @@ static uint8_t profile_os_map[ZMK_BLE_PROFILE_COUNT];
 static void apply_os_mode(uint8_t mode) {
     if (mode == PROFILE_OS_MAC) {
         zmk_keymap_layer_activate(MAC_LAYER);
+        zmk_keymap_layer_deactivate(WIN_LAYER);
     } else {
         zmk_keymap_layer_deactivate(MAC_LAYER);
+        zmk_keymap_layer_activate(WIN_LAYER);
     }
 }
 

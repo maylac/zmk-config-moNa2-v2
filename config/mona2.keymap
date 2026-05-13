@@ -36,7 +36,7 @@
         Gesture_L8 {
             bindings = <&app_sw_win>;
             key-positions = <8 9>;
-            layers = <0>;
+            layers = <16>;
         };
 
         // W+E: 仮想デスクトップジェスチャー
@@ -44,7 +44,7 @@
         Gesture_VDesk_win {
             bindings = <&mo 8>;
             key-positions = <1 2>;
-            layers = <0>;
+            layers = <16>;
         };
 
         Gesture_VDesk_mac {
@@ -62,7 +62,7 @@
         Gesture_L9 {
             bindings = <&lt 9 LEFT_WIN>;
             key-positions = <19 20>;
-            layers = <0>;
+            layers = <16>;
         };
 
         BT_layer {
@@ -98,7 +98,7 @@
         Select_All_win {
             bindings = <&kp LC(A)>;
             key-positions = <0 10>;
-            layers = <0>;
+            layers = <16>;
         };
     };
 
@@ -152,7 +152,9 @@
             #binding-cells = <0>;
             bindings = <&macro_release &kp LALT &kp LGUI>
                      , <&tog_on 10>
-                     , <&tog_off 10>;
+                     , <&tog_off 10>
+                     , <&tog_off 16>
+                     , <&tog_on 16>;
             label = "WIN_MODE";
         };
 
@@ -161,7 +163,9 @@
             #binding-cells = <0>;
             bindings = <&macro_release &kp LALT &kp LGUI>
                      , <&tog_off 10>
-                     , <&tog_on 10>;
+                     , <&tog_on 10>
+                     , <&tog_on 16>
+                     , <&tog_off 16>;
             label = "MAC_MODE";
         };
 
@@ -467,6 +471,22 @@
             >;
 
             sensor-bindings = <&inc_dec_kp LS(TAB) TAB>;
+        };
+
+        // Layer 16: Win Indicator
+        // Winモード時のみアクティブ。layer 0 はベースレイヤーとして常時アクティブなため、
+        // Winコンボを layers=0 で定義するとMacモードでも発火してしまう。
+        // このレイヤーをインジケーターとし、Winコンボは layers=16 を参照することで
+        // Macモードでの誤発火を防ぐ。
+        win_indicator_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
         };
     };
 };

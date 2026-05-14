@@ -70,6 +70,7 @@
             key-positions = <38 39>;
             layers = <0 11>;
             timeout-ms = <200>;
+            slow-release;
         };
 
         Scroll_toggle {
@@ -253,6 +254,19 @@
             quick-tap-ms = <200>;
         };
 
+        mt_lang2: mt_lang2 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BT_SAFE_LANG2";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            quick-tap-ms = <0>;
+            // LANG1(39)を除外: LANG2を先に押してもGUI holdへ解決させず、BTコンボを優先する
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 40 41>;
+        };
+
     };
 
     keymap {
@@ -263,7 +277,7 @@
 &kp Q                             &kp W         &kp E         &kp R        &kp T                                                     &kp Y        &kp U  &kp I      &kp O    &kp P
 &mt_exit_AML_on_tap LCTRL A       &kp S         &kp D         &kp F        &kp G                                  &kp SEMICOLON      &kp H        &kp J  &kp K      &kp L    &lt 8 MINUS
 &mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X         &kp C         &kp V        &kp B        &lt 6 TAB                 &kp DOUBLE_QUOTES  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL                         &kp LEFT_WIN  &kp LEFT_ALT  &kp BACKSPACE  &lt 3 SPACE  &mt LGUI LANG2          &lt_to_layer_0 4 LANG1  &lt 2 ENTER                             &lt 6 ESCAPE
+&kp LCTRL                         &kp LEFT_WIN  &kp LEFT_ALT  &kp BACKSPACE  &lt 3 SPACE  &mt_lang2 LGUI LANG2    &lt_to_layer_0 4 LANG1  &lt 2 ENTER                             &lt 6 ESCAPE
             >;
 
             sensor-bindings = <&scroll_up_down>;

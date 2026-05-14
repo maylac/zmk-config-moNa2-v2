@@ -29,4 +29,26 @@ if printf '%s\n' "$layer_4_block" | rg -q '&bt_(win|mac)_[0-4]'; then
   exit 1
 fi
 
+bt_combo_block="$(awk '/BT_layer \{/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}' "$keymap")"
+if ! printf '%s\n' "$bt_combo_block" | rg -q 'slow-release;'; then
+  echo "BT layer combo must use slow-release so the momentary layer stays active until both combo keys are released" >&2
+  exit 1
+fi
+
+if ! rg -q 'mt_lang2: mt_lang2' "$keymap"; then
+  echo "missing BT-safe LANG2 mod-tap behavior" >&2
+  exit 1
+fi
+
+mt_lang2_block="$(awk '/mt_lang2: mt_lang2 \{/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}' "$keymap")"
+if ! printf '%s\n' "$mt_lang2_block" | rg -q 'hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 40 41>'; then
+  echo "mt_lang2 must exclude LANG1 position 39 so LANG2+LANG1 can resolve as the BT combo" >&2
+  exit 1
+fi
+
+if ! rg -q '&mt_lang2 LGUI LANG2' "$keymap"; then
+  echo "default layer must use BT-safe &mt_lang2 for LANG2" >&2
+  exit 1
+fi
+
 echo "BT mode layout looks consistent."

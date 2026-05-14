@@ -359,7 +359,201 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 296)" class="layer-symbol">
+<g transform="translate(30, 296)" class="layer-indicator_win">
+<text x="0" y="36" class="label" id="indicator_win">indicator_win:</text>
+<g transform="translate(0, 72)">
+<g transform="translate(28, 28)" class="key trans keypos-0">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(84, 28)" class="key trans keypos-1">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(140, 28)" class="key trans keypos-2">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(196, 28)" class="key trans keypos-3">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(252, 28)" class="key trans keypos-4">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(476, 28)" class="key trans keypos-5">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(532, 28)" class="key trans keypos-6">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(588, 28)" class="key trans keypos-7">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(644, 28)" class="key trans keypos-8">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(700, 28)" class="key trans keypos-9">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(28, 84)" class="key trans keypos-10">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(84, 84)" class="key trans keypos-11">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(140, 84)" class="key trans keypos-12">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(196, 84)" class="key trans keypos-13">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(252, 84)" class="key trans keypos-14">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(420, 84)" class="key trans keypos-15">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(476, 84)" class="key trans keypos-16">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(532, 84)" class="key trans keypos-17">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(588, 84)" class="key trans keypos-18">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(644, 84)" class="key trans keypos-19">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(700, 84)" class="key trans keypos-20">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(28, 140)" class="key trans keypos-21">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(84, 140)" class="key trans keypos-22">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(140, 140)" class="key trans keypos-23">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(196, 140)" class="key trans keypos-24">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(252, 140)" class="key trans keypos-25">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(308, 140)" class="key trans keypos-26">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(420, 140)" class="key trans keypos-27">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(476, 140)" class="key trans keypos-28">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(532, 140)" class="key trans keypos-29">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(588, 140)" class="key trans keypos-30">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(644, 140)" class="key trans keypos-31">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(700, 140)" class="key trans keypos-32">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(28, 196)" class="key trans keypos-33">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(84, 196)" class="key trans keypos-34">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(140, 196)" class="key trans keypos-35">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(196, 196)" class="key trans keypos-36">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(252, 196)" class="key trans keypos-37">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(308, 196)" class="key trans keypos-38">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(420, 196)" class="key trans keypos-39">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(476, 196)" class="key trans keypos-40">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g transform="translate(700, 196)" class="key trans keypos-41">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
+</g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="658" y="15" width="28" height="26" class="combo"/>
+<text x="672" y="28" class="combo tap"><tspan style="font-size: 64%">&amp;app_sw_win</tspan></text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="98" y="15" width="28" height="26" class="combo"/>
+<a href="#gesture_vdesk_win">
+<text x="112" y="28" class="combo tap layer-activator"><tspan style="font-size: 64%">gesture_vd…</tspan></text>
+</a></g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="658" y="71" width="28" height="26" class="combo"/>
+<text x="672" y="84" class="combo tap">
+<tspan x="672" dy="-0.6em">LEFT</tspan><tspan x="672" dy="1.2em">WIN</tspan>
+</text>
+<a href="#gesture_general_win">
+<text x="672" y="95" class="combo hold layer-activator"><tspan style="font-size: 64%">gesture_ge…</tspan></text>
+</a></g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="14" y="43" width="28" height="26" class="combo"/>
+<text x="28" y="56" class="combo tap">Ctl+A</text>
+</g>
+</g>
+</g>
+<g transform="translate(30, 592)" class="layer-symbol">
 <text x="0" y="36" class="label" id="symbol">symbol:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -532,7 +726,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 592)" class="layer-num_fn">
+<g transform="translate(30, 888)" class="layer-num_fn">
 <text x="0" y="36" class="label" id="num_fn">num_fn:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -706,7 +900,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 888)" class="layer-nav_win">
+<g transform="translate(30, 1184)" class="layer-nav_win">
 <text x="0" y="36" class="label" id="nav_win">nav_win:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key keypos-0">
@@ -930,7 +1124,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 1184)" class="layer-bt">
+<g transform="translate(30, 1480)" class="layer-bt">
 <text x="0" y="36" class="label" id="bt">bt:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key keypos-0">
@@ -1112,7 +1306,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 1480)" class="layer-mouse">
+<g transform="translate(30, 1776)" class="layer-mouse">
 <text x="0" y="36" class="label" id="mouse">mouse:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -1294,7 +1488,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 1776)" class="layer-scroll">
+<g transform="translate(30, 2072)" class="layer-scroll">
 <text x="0" y="36" class="label" id="scroll">scroll:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -1467,7 +1661,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 2072)" class="layer-gesture_browser_win">
+<g transform="translate(30, 2368)" class="layer-gesture_browser_win">
 <text x="0" y="36" class="label" id="gesture_browser_win">gesture_browser_win:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -1639,7 +1833,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 2368)" class="layer-gesture_vdesk_win">
+<g transform="translate(30, 2664)" class="layer-gesture_vdesk_win">
 <text x="0" y="36" class="label" id="gesture_vdesk_win">gesture_vdesk_win:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -1810,7 +2004,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 2664)" class="layer-gesture_general_win">
+<g transform="translate(30, 2960)" class="layer-gesture_general_win">
 <text x="0" y="36" class="label" id="gesture_general_win">gesture_general_win:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -1981,7 +2175,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 2960)" class="layer-default_mac">
+<g transform="translate(30, 3256)" class="layer-default_mac">
 <text x="0" y="36" class="label" id="default_mac">default_mac:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -2207,7 +2401,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 3256)" class="layer-nav_mac">
+<g transform="translate(30, 3552)" class="layer-nav_mac">
 <text x="0" y="36" class="label" id="nav_mac">nav_mac:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key keypos-0">
@@ -2431,7 +2625,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 3552)" class="layer-gesture_browser_mac">
+<g transform="translate(30, 3848)" class="layer-gesture_browser_mac">
 <text x="0" y="36" class="label" id="gesture_browser_mac">gesture_browser_mac:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -2603,7 +2797,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 3848)" class="layer-gesture_vdesk_mac">
+<g transform="translate(30, 4144)" class="layer-gesture_vdesk_mac">
 <text x="0" y="36" class="label" id="gesture_vdesk_mac">gesture_vdesk_mac:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -2774,7 +2968,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 4144)" class="layer-gesture_general_mac">
+<g transform="translate(30, 4440)" class="layer-gesture_general_mac">
 <text x="0" y="36" class="label" id="gesture_general_mac">gesture_general_mac:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -2945,7 +3139,7 @@ g.layer-L14 text.label { fill: #4A148C; }
 </g>
 </g>
 </g>
-<g transform="translate(30, 4440)" class="layer-app_switch">
+<g transform="translate(30, 4736)" class="layer-app_switch">
 <text x="0" y="36" class="label" id="app_switch">app_switch:</text>
 <g transform="translate(0, 72)">
 <g transform="translate(28, 28)" class="key trans keypos-0">
@@ -3115,200 +3309,6 @@ g.layer-L14 text.label { fill: #4A148C; }
 <g transform="translate(700, 196)" class="key keypos-41">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">ESCAPE</text>
-</g>
-</g>
-</g>
-<g transform="translate(30, 4736)" class="layer-indicator_win">
-<text x="0" y="36" class="label" id="indicator_win">indicator_win:</text>
-<g transform="translate(0, 72)">
-<g transform="translate(28, 28)" class="key trans keypos-0">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(84, 28)" class="key trans keypos-1">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(140, 28)" class="key trans keypos-2">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(196, 28)" class="key trans keypos-3">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(252, 28)" class="key trans keypos-4">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(476, 28)" class="key trans keypos-5">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(532, 28)" class="key trans keypos-6">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(588, 28)" class="key trans keypos-7">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(644, 28)" class="key trans keypos-8">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(700, 28)" class="key trans keypos-9">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(28, 84)" class="key trans keypos-10">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(84, 84)" class="key trans keypos-11">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(140, 84)" class="key trans keypos-12">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(196, 84)" class="key trans keypos-13">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(252, 84)" class="key trans keypos-14">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(420, 84)" class="key trans keypos-15">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(476, 84)" class="key trans keypos-16">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(532, 84)" class="key trans keypos-17">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(588, 84)" class="key trans keypos-18">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(644, 84)" class="key trans keypos-19">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(700, 84)" class="key trans keypos-20">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(28, 140)" class="key trans keypos-21">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(84, 140)" class="key trans keypos-22">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(140, 140)" class="key trans keypos-23">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(196, 140)" class="key trans keypos-24">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(252, 140)" class="key trans keypos-25">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(308, 140)" class="key trans keypos-26">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(420, 140)" class="key trans keypos-27">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(476, 140)" class="key trans keypos-28">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(532, 140)" class="key trans keypos-29">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(588, 140)" class="key trans keypos-30">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(644, 140)" class="key trans keypos-31">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(700, 140)" class="key trans keypos-32">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(28, 196)" class="key trans keypos-33">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(84, 196)" class="key trans keypos-34">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(140, 196)" class="key trans keypos-35">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(196, 196)" class="key trans keypos-36">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(252, 196)" class="key trans keypos-37">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(308, 196)" class="key trans keypos-38">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(420, 196)" class="key trans keypos-39">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(476, 196)" class="key trans keypos-40">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g transform="translate(700, 196)" class="key trans keypos-41">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g class="combo combopos-0">
-<rect rx="6" ry="6" x="658" y="15" width="28" height="26" class="combo"/>
-<text x="672" y="28" class="combo tap"><tspan style="font-size: 64%">&amp;app_sw_win</tspan></text>
-</g>
-<g class="combo combopos-1">
-<rect rx="6" ry="6" x="98" y="15" width="28" height="26" class="combo"/>
-<a href="#gesture_vdesk_win">
-<text x="112" y="28" class="combo tap layer-activator"><tspan style="font-size: 64%">gesture_vd…</tspan></text>
-</a></g>
-<g class="combo combopos-2">
-<rect rx="6" ry="6" x="658" y="71" width="28" height="26" class="combo"/>
-<text x="672" y="84" class="combo tap">
-<tspan x="672" dy="-0.6em">LEFT</tspan><tspan x="672" dy="1.2em">WIN</tspan>
-</text>
-<a href="#gesture_general_win">
-<text x="672" y="95" class="combo hold layer-activator"><tspan style="font-size: 64%">gesture_ge…</tspan></text>
-</a></g>
-<g class="combo combopos-3">
-<rect rx="6" ry="6" x="14" y="43" width="28" height="26" class="combo"/>
-<text x="28" y="56" class="combo tap">Ctl+A</text>
 </g>
 </g>
 </g>

@@ -88,8 +88,9 @@ static int profile_os_mode_listener(const zmk_event_t *eh) {
     }
 
     const struct zmk_layer_state_changed *layer_ev = as_zmk_layer_state_changed(eh);
-    if (layer_ev && layer_ev->layer == MAC_LAYER && zmk_keymap_layer_active(BT_LAYER)) {
-        save_active_profile_os_mode(layer_ev->state ? PROFILE_OS_MAC : PROFILE_OS_WIN);
+    if (layer_ev && layer_ev->layer == BT_LAYER && !layer_ev->state) {
+        save_active_profile_os_mode(
+            zmk_keymap_layer_active(MAC_LAYER) ? PROFILE_OS_MAC : PROFILE_OS_WIN);
     }
 
     return ZMK_EV_EVENT_BUBBLE;

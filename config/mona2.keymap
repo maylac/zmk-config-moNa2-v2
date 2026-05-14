@@ -69,6 +69,7 @@
             bindings = <&mo 5>;
             key-positions = <38 39>;
             layers = <0 11>;
+            timeout-ms = <200>;
         };
 
         Scroll_toggle {
@@ -198,6 +199,8 @@
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&to_layer_0>;
+            // LANG2(38)を除外: LANG2と同時押しの場合holdを発動しない → BTコンボ優先
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 40 41>;
         };
 
         lt_to_layer_10: lt_to_layer_10 {
@@ -208,6 +211,7 @@
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&to_layer_10>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 40 41>;
         };
 
         scroll_up_down: mouse_wheel_up_down {

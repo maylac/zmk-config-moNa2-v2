@@ -71,10 +71,10 @@
     status = "okay";
     device = <&pmw3610_tb>;
 
-    input-processors = <&zip_temp_layer 5 10000>; 
+    input-processors = <&zip_temp_layer 6 10000>;
 
     scroller {
-        layers = <3>;
+        layers = <4>;
         input-processors = 
             // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転

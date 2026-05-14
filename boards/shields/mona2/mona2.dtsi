@@ -93,49 +93,49 @@
         device = <&pmw3610_tb>;
 
         dpi_low_on_l2 {
-            layers = <2>;
+            layers = <3>;
             input-processors = <&zip_xy_scaler 1 3>;
         };
 
         scroll_on_l6 {
-            layers = <6>;
+            layers = <7>;
             input-processors = <&zip_xy_scaler 1 8
                             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT
                             &zip_xy_to_scroll_mapper>;
         };
 
         gest_browser_win {
-            layers = <7>;
+            layers = <8>;
             input-processors = <&zip_mouse_gesture &zip_xy_scaler 0 1>;
         };
 
         gest_vdesk_win {
-            layers = <8>;
+            layers = <9>;
             input-processors = <&zip_mouse_gesture_vdesk_win &zip_xy_scaler 0 1>;
         };
 
         gest_general_win {
-            layers = <9>;
+            layers = <10>;
             input-processors = <&zip_mouse_gesture_general_win &zip_xy_scaler 0 1>;
         };
 
         gest_browser_mac {
-            layers = <12>;
+            layers = <13>;
             input-processors = <&zip_mouse_gesture_browser_mac &zip_xy_scaler 0 1>;
         };
 
         gest_vdesk_mac {
-            layers = <13>;
+            layers = <14>;
             input-processors = <&zip_mouse_gesture_vdesk_mac &zip_xy_scaler 0 1>;
         };
 
         gest_general_mac {
-            layers = <14>;
+            layers = <15>;
             input-processors = <&zip_mouse_gesture_general_mac &zip_xy_scaler 0 1>;
         };
 
         gest_app_switch {
-            layers = <15>;
+            layers = <16>;
             input-processors = <&zip_mouse_gesture_app_sw &zip_xy_scaler 0 1>;
         };
 
@@ -145,37 +145,37 @@
         compatible = "zmk,layer-listeners";
 
         listener_browser_win {
-            layers = <7>;
-            bindings = <&mouse_gesture_on &mouse_gesture_off>;
-        };
-
-        listener_vdesk_win {
             layers = <8>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        listener_general_win {
+        listener_vdesk_win {
             layers = <9>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        listener_browser_mac {
-            layers = <12>;
+        listener_general_win {
+            layers = <10>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        listener_vdesk_mac {
+        listener_browser_mac {
             layers = <13>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        listener_general_mac {
+        listener_vdesk_mac {
             layers = <14>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
-        listener_app_switch {
+        listener_general_mac {
             layers = <15>;
+            bindings = <&mouse_gesture_on &mouse_gesture_off>;
+        };
+
+        listener_app_switch {
+            layers = <16>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
     };

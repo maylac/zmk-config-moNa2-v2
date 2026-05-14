@@ -11,7 +11,7 @@
 #include "gesture/gesture_app_switch.dtsi"
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-#define MOUSE 5
+#define MOUSE 6
 
 &mt {
     flavor = "balanced";
@@ -30,75 +30,75 @@
         app_sw_mac {
             bindings = <&app_sw_mac>;
             key-positions = <8 9>;
-            layers = <10>;
+            layers = <11>;
         };
 
         app_sw_win {
             bindings = <&app_sw_win>;
             key-positions = <8 9>;
-            layers = <16>;
+            layers = <1>;
         };
 
         // W+E: 仮想デスクトップジェスチャー
         // トラックボール ←/→ = 前/次のデスクトップ、↑ = タスクビュー/Mission Control
         vdesk_win {
-            bindings = <&mo 8>;
+            bindings = <&mo 9>;
             key-positions = <1 2>;
-            layers = <16>;
+            layers = <1>;
         };
 
         vdesk_mac {
-            bindings = <&mo 13>;
+            bindings = <&mo 14>;
             key-positions = <1 2>;
-            layers = <10>;
+            layers = <11>;
         };
 
         general_mac {
-            bindings = <&lt 14 LGUI>;
+            bindings = <&lt 15 LGUI>;
             key-positions = <19 20>;
-            layers = <10>;
+            layers = <11>;
         };
 
         general_win {
-            bindings = <&lt 9 LEFT_WIN>;
+            bindings = <&lt 10 LEFT_WIN>;
             key-positions = <19 20>;
-            layers = <16>;
+            layers = <1>;
         };
 
         BT_layer {
-            bindings = <&mo 4>;
+            bindings = <&mo 5>;
             key-positions = <38 39>;
-            layers = <0 10>;
+            layers = <0 11>;
         };
 
         Scroll_toggle {
-            bindings = <&tog 6>;
+            bindings = <&tog 7>;
             key-positions = <30 31>;
-            layers = <0 10>;
+            layers = <0 11>;
         };
 
         Delete {
             bindings = <&kp DEL>;
             key-positions = <36 39>;
-            layers = <0 10>;
+            layers = <0 11>;
         };
 
         Select_All_mac {
             bindings = <&kp LG(A)>;
             key-positions = <0 10>;
-            layers = <10>;
+            layers = <11>;
         };
 
         Aqua_Voice {
             bindings = <&aqua_voice>;
             key-positions = <37 39>;
-            layers = <10>;
+            layers = <11>;
         };
 
         Select_All_win {
             bindings = <&kp LC(A)>;
             key-positions = <0 10>;
-            layers = <16>;
+            layers = <1>;
         };
     };
 
@@ -106,14 +106,14 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&tog_off 10 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&tog_off 11 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
 
         to_layer_10: to_layer_10 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&tog_on 10 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&tog_on 11 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_10";
         };
 
@@ -121,9 +121,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LALT &mo 15>
+                = <&macro_press &kp LALT &mo 16>
                 , <&macro_pause_for_release>
-                , <&macro_release &kp LALT &mo 15>;
+                , <&macro_release &kp LALT &mo 16>;
             label = "APP_SW_WIN";
         };
 
@@ -141,9 +141,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LGUI &mo 15>
+                = <&macro_press &kp LGUI &mo 16>
                 , <&macro_pause_for_release>
-                , <&macro_release &kp LGUI &mo 15>;
+                , <&macro_release &kp LGUI &mo 16>;
             label = "APP_SW_MAC";
         };
 
@@ -151,10 +151,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_release &kp LALT &kp LGUI>
-                     , <&tog_on 10>
-                     , <&tog_off 10>
-                     , <&tog_off 16>
-                     , <&tog_on 16>;
+                     , <&tog_on 11>
+                     , <&tog_off 11>
+                     , <&tog_off 1>
+                     , <&tog_on 1>;
             label = "WIN_MODE";
         };
 
@@ -162,10 +162,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_release &kp LALT &kp LGUI>
-                     , <&tog_off 10>
-                     , <&tog_on 10>
-                     , <&tog_on 16>
-                     , <&tog_off 16>;
+                     , <&tog_off 11>
+                     , <&tog_on 11>
+                     , <&tog_on 1>
+                     , <&tog_off 1>;
             label = "MAC_MODE";
         };
 
@@ -257,9 +257,25 @@
         default_win {
             bindings = <
 &kp Q                             &kp W         &kp E         &kp R        &kp T                                                     &kp Y        &kp U  &kp I      &kp O    &kp P
-&mt_exit_AML_on_tap LCTRL A       &kp S         &kp D         &kp F        &kp G                                  &kp SEMICOLON      &kp H        &kp J  &kp K      &kp L    &lt 7 MINUS
-&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X         &kp C         &kp V        &kp B        &lt 5 TAB                 &kp DOUBLE_QUOTES  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL                         &kp LEFT_WIN  &kp LEFT_ALT  &kp BACKSPACE  &lt 2 SPACE  &mt LGUI LANG2          &lt_to_layer_0 3 LANG1  &lt 1 ENTER                             &lt 5 ESCAPE
+&mt_exit_AML_on_tap LCTRL A       &kp S         &kp D         &kp F        &kp G                                  &kp SEMICOLON      &kp H        &kp J  &kp K      &kp L    &lt 8 MINUS
+&mt_exit_AML_on_tap LEFT_SHIFT Z  &kp X         &kp C         &kp V        &kp B        &lt 6 TAB                 &kp DOUBLE_QUOTES  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&kp LCTRL                         &kp LEFT_WIN  &kp LEFT_ALT  &kp BACKSPACE  &lt 3 SPACE  &mt LGUI LANG2          &lt_to_layer_0 4 LANG1  &lt 2 ENTER                             &lt 6 ESCAPE
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        // Layer 1: indicator_win
+        // Winモード時のみアクティブ。layer 0 はベースレイヤーとして常時アクティブなため、
+        // Winコンボを layers=0 で定義するとMacモードでも発火してしまう。
+        // このレイヤーをインジケーターとし、Winコンボは layers=1 を参照することで
+        // Macモードでの誤発火を防ぐ。
+        indicator_win {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -287,7 +303,7 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        // Layer 3: nav_win
+        // Layer 4: nav_win
         // 左側: カーソル移動 + 単語編集（nav_macと共通配置）
         //   行0: [単語←]  [↑]       [単語→]
         //   行1: [←]      [↓]       [→]
@@ -375,12 +391,12 @@
             sensor-bindings = <&inc_dec_kp LA(LEFT) LA(RIGHT)>;
         };
 
-        // Layer 10: default_mac
+        // Layer 11: default_mac
         // &trans は Layer 0 に透過。Mac固有の遷移先のみ上書き:
-        //   - MINUS hold → gesture_browser_mac (12)
-        //   - LANG1 hold → nav_mac (11)
-        //   コンボ [8+9]  → gesture_vdesk_mac (13)  ※combo定義で制御
-        //   コンボ [19+20] → gesture_general_mac (14) ※combo定義で制御
+        //   - MINUS hold → gesture_browser_mac (13)
+        //   - LANG1 hold → nav_mac (12)
+        //   コンボ [8+9]  → gesture_vdesk_mac (14)  ※combo定義で制御
+        //   コンボ [19+20] → gesture_general_mac (15) ※combo定義で制御
         default_mac {
             // Win/Mac共通の筋肉記憶のため修飾キー位置を合わせる:
             //   親指左端: Win=LCTRL → Mac=LGUI(Cmd)
@@ -388,15 +404,15 @@
             //   Aホールド: Win=LCTRL → Mac=LGUI(Cmd)
             bindings = <
 &trans                             &trans  &trans  &trans  &trans                             &trans  &trans  &trans  &trans  &trans
-&mt_exit_AML_on_tap LGUI A         &trans  &trans  &trans  &trans    &trans                   &trans  &trans  &trans  &trans  &lt 12 MINUS
+&mt_exit_AML_on_tap LGUI A         &trans  &trans  &trans  &trans    &trans                   &trans  &trans  &trans  &trans  &lt 13 MINUS
 &trans                             &trans  &trans  &trans  &trans    &trans                   &trans  &trans  &trans  &trans  &trans  &trans
-&kp LGUI  &kp LCTRL  &trans  &trans  &trans  &trans                 &lt_to_layer_10 11 LANG1  &trans                          &trans
+&kp LGUI  &kp LCTRL  &trans  &trans  &trans  &trans                 &lt_to_layer_10 12 LANG1  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
         };
 
-        // Layer 11: nav_mac
+        // Layer 12: nav_mac
         // 左側: カーソル移動 + 単語編集（nav_winと完全対称）
         //   行0: [単語←]  [↑]       [単語→]      ← W=Opt+←, R=Opt+→
         //   行1: [←]      [↓]       [→]
@@ -419,7 +435,7 @@
             sensor-bindings = <&inc_dec_kp LG(LS(RBKT)) LG(LS(LBKT))>;
         };
 
-        // Layer 12: gesture_browser_mac (≒ gesture_browser_winのMac版)
+        // Layer 13: gesture_browser_mac (≒ gesture_browser_winのMac版)
         // − 長押しで起動（Mac モード時のみ）
         gesture_browser_mac {
             bindings = <
@@ -432,7 +448,7 @@
             sensor-bindings = <&inc_dec_kp LG(MINUS) LG(EQUAL)>;
         };
 
-        // Layer 13: gesture_vdesk_mac (≒ gesture_vdesk_winのMac版)
+        // Layer 14: gesture_vdesk_mac (≒ gesture_vdesk_winのMac版)
         // コンボ [W+E] で起動（Mac モード時のみ）
         gesture_vdesk_mac {
             bindings = <
@@ -445,7 +461,7 @@
             sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT)>;
         };
 
-        // Layer 14: gesture_general_mac (≒ gesture_general_winのMac版)
+        // Layer 15: gesture_general_mac (≒ gesture_general_winのMac版)
         // コンボ [L+-] で起動（Mac モード時のみ）
         gesture_general_mac {
             bindings = <
@@ -458,7 +474,7 @@
             sensor-bindings = <&inc_dec_kp LG(LEFT) LG(RIGHT)>;
         };
 
-        // Layer 15: App Switcher (Win/Mac 共通)
+        // Layer 16: App Switcher (Win/Mac 共通)
         // コンボ [8+9] で起動。Win=LALT保持、Mac=LGUI保持（マクロ側で制御）
         // トラックボール左=前のアプリ(Shift+Tab)、右=次のアプリ(Tab)
         // コンボキーを離すと修飾キーも解放され、選択中のアプリに遷移
@@ -473,20 +489,5 @@
             sensor-bindings = <&inc_dec_kp LS(TAB) TAB>;
         };
 
-        // Layer 16: indicator_win
-        // Winモード時のみアクティブ。layer 0 はベースレイヤーとして常時アクティブなため、
-        // Winコンボを layers=0 で定義するとMacモードでも発火してしまう。
-        // このレイヤーをインジケーターとし、Winコンボは layers=16 を参照することで
-        // Macモードでの誤発火を防ぐ。
-        indicator_win {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
-            >;
-
-            sensor-bindings = <&scroll_up_down>;
-        };
     };
 };

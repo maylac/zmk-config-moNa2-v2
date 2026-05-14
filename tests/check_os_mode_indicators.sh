@@ -17,13 +17,13 @@ if ! printf '%s\n' "$win_block" | rg -q '<&macro_release &kp LALT &kp LGUI>'; th
   exit 1
 fi
 
-if ! printf '%s\n' "$win_block" | rg -q '<&tog_on 10>'; then
-  echo "win_mode must force layer 10 on before turning it off" >&2
+if ! printf '%s\n' "$win_block" | rg -q '<&tog_on 11>'; then
+  echo "win_mode must force layer 11 on before turning it off" >&2
   exit 1
 fi
 
-if ! printf '%s\n' "$win_block" | rg -q '<&tog_off 10>'; then
-  echo "win_mode must force a layer-10 on->off transition" >&2
+if ! printf '%s\n' "$win_block" | rg -q '<&tog_off 11>'; then
+  echo "win_mode must force a layer-11 on->off transition" >&2
   exit 1
 fi
 
@@ -33,38 +33,38 @@ if ! printf '%s\n' "$mac_block" | rg -q '<&macro_release &kp LALT &kp LGUI>'; th
   exit 1
 fi
 
-if ! printf '%s\n' "$mac_block" | rg -q '<&tog_off 10>'; then
-  echo "mac_mode must force layer 10 off before turning it on" >&2
+if ! printf '%s\n' "$mac_block" | rg -q '<&tog_off 11>'; then
+  echo "mac_mode must force layer 11 off before turning it on" >&2
   exit 1
 fi
 
-if ! printf '%s\n' "$mac_block" | rg -q '<&tog_on 10>'; then
-  echo "mac_mode must force a layer-10 off->on transition" >&2
+if ! printf '%s\n' "$mac_block" | rg -q '<&tog_on 11>'; then
+  echo "mac_mode must force a layer-11 off->on transition" >&2
   exit 1
 fi
 
-if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_1_COLOR=3$' config/mona2_r.conf; then
-  echo "layer 1 LED color must be yellow" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_2_COLOR=3$' config/mona2_r.conf; then
+  echo "layer 2 LED color must be yellow" >&2
   exit 1
 fi
 
-if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_2_COLOR=4$' config/mona2_r.conf; then
-  echo "layer 2 LED color must be blue" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_3_COLOR=4$' config/mona2_r.conf; then
+  echo "layer 3 LED color must be blue" >&2
   exit 1
 fi
 
-if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_3_COLOR=6$' config/mona2_r.conf; then
-  echo "layer 3 LED color must be cyan" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_4_COLOR=6$' config/mona2_r.conf; then
+  echo "layer 4 LED color must be cyan" >&2
   exit 1
 fi
 
-if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_5_COLOR=5$' config/mona2_r.conf; then
-  echo "layer 5 LED color must be magenta" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_6_COLOR=5$' config/mona2_r.conf; then
+  echo "layer 6 LED color must be magenta" >&2
   exit 1
 fi
 
-if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_11_COLOR=6$' config/mona2_r.conf; then
-  echo "layer 11 LED color must be cyan" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_12_COLOR=6$' config/mona2_r.conf; then
+  echo "layer 12 LED color must be cyan" >&2
   exit 1
 fi
 

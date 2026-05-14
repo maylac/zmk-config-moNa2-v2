@@ -9,9 +9,9 @@
 #include <zmk/events/layer_state_changed.h>
 #include <zmk/keymap.h>
 
-#define MAC_LAYER 10
-#define WIN_LAYER 16
-#define BT_LAYER 4
+#define MAC_LAYER 11
+#define WIN_LAYER 1
+#define BT_LAYER 5
 #define SETTINGS_NAME "mona2/os_profile_map"
 
 enum profile_os_mode {

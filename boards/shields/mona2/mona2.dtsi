@@ -110,32 +110,32 @@
         };
 
         gest_vdesk_win {
-            layers = <9>;
+            layers = <10>;
             input-processors = <&zip_mouse_gesture_vdesk_win &zip_xy_scaler 0 1>;
         };
 
         gest_general_win {
-            layers = <10>;
+            layers = <12>;
             input-processors = <&zip_mouse_gesture_general_win &zip_xy_scaler 0 1>;
         };
 
         gest_browser_mac {
-            layers = <13>;
+            layers = <9>;
             input-processors = <&zip_mouse_gesture_browser_mac &zip_xy_scaler 0 1>;
         };
 
         gest_vdesk_mac {
-            layers = <14>;
+            layers = <11>;
             input-processors = <&zip_mouse_gesture_vdesk_mac &zip_xy_scaler 0 1>;
         };
 
         gest_general_mac {
-            layers = <15>;
+            layers = <13>;
             input-processors = <&zip_mouse_gesture_general_mac &zip_xy_scaler 0 1>;
         };
 
         gest_app_switch {
-            layers = <16>;
+            layers = <14>;
             input-processors = <&zip_mouse_gesture_app_sw &zip_xy_scaler 0 1>;
         };
 
@@ -150,32 +150,32 @@
         };
 
         listener_vdesk_win {
-            layers = <9>;
-            bindings = <&mouse_gesture_on &mouse_gesture_off>;
-        };
-
-        listener_general_win {
             layers = <10>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
+        listener_general_win {
+            layers = <12>;
+            bindings = <&mouse_gesture_on &mouse_gesture_off>;
+        };
+
         listener_browser_mac {
-            layers = <13>;
+            layers = <9>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
         listener_vdesk_mac {
-            layers = <14>;
+            layers = <11>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
         listener_general_mac {
-            layers = <15>;
+            layers = <13>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
 
         listener_app_switch {
-            layers = <16>;
+            layers = <14>;
             bindings = <&mouse_gesture_on &mouse_gesture_off>;
         };
     };

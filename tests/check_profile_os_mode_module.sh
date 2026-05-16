@@ -41,6 +41,21 @@ if ! rg -q 'CONFIG_ZMK_BEHAVIOR_OS_LAYER=y' config/mona2_r.conf; then
   exit 1
 fi
 
+if ! rg -q '#define MAC_LAYER 1' app/src/profile_os_mode.c; then
+  echo "profile OS module must use default_mac layer 1 in the common two-base-layer layout" >&2
+  exit 1
+fi
+
+if ! rg -q '#define BT_LAYER 15' app/src/profile_os_mode.c; then
+  echo "profile OS module must save when the single BT/System layer 15 is released" >&2
+  exit 1
+fi
+
+if rg -q '#define WIN_LAYER|zmk_keymap_layer_activate\(WIN_LAYER\)|zmk_keymap_layer_deactivate\(WIN_LAYER\)' app/src/profile_os_mode.c; then
+  echo "profile OS module must not need a separate Win indicator layer" >&2
+  exit 1
+fi
+
 if rg -q 'zmk-feature-default-layer|cormoran' config/west.yml; then
   echo "legacy default-layer west dependency is still present" >&2
   exit 1

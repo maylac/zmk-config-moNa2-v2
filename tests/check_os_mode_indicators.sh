@@ -6,6 +6,36 @@ if ! rg -q 'win_mode: win_mode' config/mona2.keymap; then
   exit 1
 fi
 
+if rg -q 'indicator_win' config/mona2.keymap README.md; then
+  echo "indicator_win must be removed; layer 1 is the Mac base layer now" >&2
+  exit 1
+fi
+
+if ! awk '/default_win \{/{seen_win=1} /default_mac \{/{if(!seen_win){exit 1}; seen_mac=1; exit} END{exit seen_mac ? 0 : 1}' config/mona2.keymap; then
+  echo "default_mac must directly follow default_win so OS bases are layers 0 and 1" >&2
+  exit 1
+fi
+
+check_combo_layer() {
+  combo="$1"
+  expected="$2"
+  block="$(awk "/${combo} \\{/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}" config/mona2.keymap)"
+
+  if ! printf '%s\n' "$block" | rg -q "layers = <${expected}>;"; then
+    echo "${combo} must be scoped to layer ${expected}" >&2
+    exit 1
+  fi
+}
+
+check_combo_layer 'app_sw_win' 0
+check_combo_layer 'vdesk_win' 0
+check_combo_layer 'general_win' 0
+check_combo_layer 'Select_All_win' 0
+check_combo_layer 'app_sw_mac' 1
+check_combo_layer 'vdesk_mac' 1
+check_combo_layer 'general_mac' 1
+check_combo_layer 'Select_All_mac' 1
+
 if ! rg -q 'win_mode: win_mode \{' config/mona2.keymap; then
   echo "missing win_mode block" >&2
   exit 1
@@ -17,13 +47,13 @@ if ! printf '%s\n' "$win_block" | rg -q '<&macro_release &kp LALT &kp LGUI>'; th
   exit 1
 fi
 
-if ! printf '%s\n' "$win_block" | rg -q '<&tog_on 11>'; then
-  echo "win_mode must force layer 11 on before turning it off" >&2
+if ! printf '%s\n' "$win_block" | rg -q '<&tog_on 1>'; then
+  echo "win_mode must force Mac layer 1 on before turning it off" >&2
   exit 1
 fi
 
-if ! printf '%s\n' "$win_block" | rg -q '<&tog_off 11>'; then
-  echo "win_mode must force a layer-11 on->off transition" >&2
+if ! printf '%s\n' "$win_block" | rg -q '<&tog_off 1>'; then
+  echo "win_mode must force a Mac layer 1 on->off transition" >&2
   exit 1
 fi
 
@@ -33,19 +63,18 @@ if ! printf '%s\n' "$mac_block" | rg -q '<&macro_release &kp LALT &kp LGUI>'; th
   exit 1
 fi
 
-if ! printf '%s\n' "$mac_block" | rg -q '<&tog_off 11>'; then
-  echo "mac_mode must force layer 11 off before turning it on" >&2
+if ! printf '%s\n' "$mac_block" | rg -q '<&tog_off 1>'; then
+  echo "mac_mode must force Mac layer 1 off before turning it on" >&2
   exit 1
 fi
 
-if ! printf '%s\n' "$mac_block" | rg -q '<&tog_on 11>'; then
-  echo "mac_mode must force a layer-11 off->on transition" >&2
+if ! printf '%s\n' "$mac_block" | rg -q '<&tog_on 1>'; then
+  echo "mac_mode must force a Mac layer 1 off->on transition" >&2
   exit 1
 fi
 
-# L1 (indicator_win) must NOT set a color (Win mode = LED off)
-if rg -q '^CONFIG_RGBLED_WIDGET_LAYER_1_COLOR=' config/mona2_r.conf; then
-  echo "layer 1 (indicator_win) must not have a color set — Win mode should show no LED" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_1_COLOR=2$' config/mona2_r.conf; then
+  echo "layer 1 (default_mac) LED color must be green (2)" >&2
   exit 1
 fi
 
@@ -64,12 +93,11 @@ if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_4_COLOR=6$' config/mona2_r.conf; then
   exit 1
 fi
 
-if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_5_COLOR=5$' config/mona2_r.conf; then
-  echo "layer 5 (bt) LED color must be magenta (5)" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_5_COLOR=6$' config/mona2_r.conf; then
+  echo "layer 5 (nav_mac) LED color must be cyan (6)" >&2
   exit 1
 fi
 
-# L6 (mouse) and L7 (scroll) must NOT set a color
 if rg -q '^CONFIG_RGBLED_WIDGET_LAYER_6_COLOR=' config/mona2_r.conf; then
   echo "layer 6 (mouse) must not have a color set — should be off" >&2
   exit 1
@@ -80,13 +108,23 @@ if rg -q '^CONFIG_RGBLED_WIDGET_LAYER_7_COLOR=' config/mona2_r.conf; then
   exit 1
 fi
 
-if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_11_COLOR=2$' config/mona2_r.conf; then
-  echo "layer 11 (default_mac) LED color must be green (2)" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_8_COLOR=7$' config/mona2_r.conf; then
+  echo "layer 8 (gesture_browser_win) LED color must be white (7)" >&2
   exit 1
 fi
 
-if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_12_COLOR=6$' config/mona2_r.conf; then
-  echo "layer 12 (nav_mac) LED color must be cyan (6)" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_14_COLOR=7$' config/mona2_r.conf; then
+  echo "layer 14 (app_switch) LED color must be white (7)" >&2
+  exit 1
+fi
+
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_15_COLOR=5$' config/mona2_r.conf; then
+  echo "layer 15 (bt) LED color must be magenta (5)" >&2
+  exit 1
+fi
+
+if rg -q '^CONFIG_RGBLED_WIDGET_LAYER_16_COLOR=' config/mona2_r.conf; then
+  echo "layer 16 must not have a color after minimizing OS layers" >&2
   exit 1
 fi
 

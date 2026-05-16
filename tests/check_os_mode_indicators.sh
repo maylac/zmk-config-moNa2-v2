@@ -103,13 +103,13 @@ if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_5_COLOR=6$' config/mona2_r.conf; then
   exit 1
 fi
 
-if rg -q '^CONFIG_RGBLED_WIDGET_LAYER_6_COLOR=' config/mona2_r.conf; then
-  echo "layer 6 (mouse) must not have a color set — should be off" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_6_COLOR=0$' config/mona2_r.conf; then
+  echo "layer 6 (mouse) LED color must be black/off (0)" >&2
   exit 1
 fi
 
-if rg -q '^CONFIG_RGBLED_WIDGET_LAYER_7_COLOR=' config/mona2_r.conf; then
-  echo "layer 7 (scroll) must not have a color set — should be off" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_7_COLOR=0$' config/mona2_r.conf; then
+  echo "layer 7 (scroll) LED color must be black/off (0)" >&2
   exit 1
 fi
 

@@ -18,8 +18,8 @@
 | 3 | `num_fn` | 数字・ファンクション | 🔴 赤 | `SPACE` ホールド |
 | 4 | `nav_win` | ナビゲーション + ウィンドウスナップ | 🩵 シアン | `LANG1` ホールド |
 | 5 | `nav_mac` | Magnetウィンドウスナップ（3×3）+ Macナビゲーション | 🩵 シアン | `LANG1` ホールド（Mac） |
-| 6 | `mouse` | マウスボタン | 消灯 | `TAB` or `ESC` ホールド / Automouse |
-| 7 | `scroll` | スクロールモード | 消灯 | `,`+`.` 同時押し（トグル） |
+| 6 | `mouse` | マウスボタン | 消灯（黒） | `TAB` or `ESC` ホールド / Automouse |
+| 7 | `scroll` | スクロールモード | 消灯（黒） | `,`+`.` 同時押し（トグル） |
 | 8 | `gesture_browser_win` | ジェスチャー：ブラウザ操作 | ◯白 | `-` ホールド（Win） |
 | 9 | `gesture_browser_mac` | Macジェスチャー：ブラウザ操作 | ◯白 | `-` ホールド（Mac） |
 | 10 | `gesture_vdesk_win` | ジェスチャー：仮想デスクトップ | ◯白 | `W`+`E` 同時押し（Win） |

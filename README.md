@@ -12,14 +12,14 @@
 
 | # | レイヤー名 | 概要 | LED | 起動方法 |
 |---|-----------|------|-----|---------|
-| 0 | `default_win` | QWERTY基本配置 | 消灯 | ベースレイヤー（常時） |
+| 0 | `default_win` | QWERTY基本配置 | 🔵 青 | ベースレイヤー（常時） |
 | 1 | `default_mac` | Mac用ベースレイヤー（L0透過オーバーレイ） | 🟢 緑 | L15で `Mac` を保存 |
 | 2 | `symbol` | 記号・括弧 | 🟡 黄 | `ENTER` ホールド |
 | 3 | `num_fn` | 数字・ファンクション | 🔴 赤 | `SPACE` ホールド |
 | 4 | `nav_win` | ナビゲーション + ウィンドウスナップ | 🩵 シアン | `LANG1` ホールド |
 | 5 | `nav_mac` | Magnetウィンドウスナップ（3×3）+ Macナビゲーション | 🩵 シアン | `LANG1` ホールド（Mac） |
-| 6 | `mouse` | マウスボタン | 消灯 | `TAB` or `ESC` ホールド / Automouse |
-| 7 | `scroll` | スクロールモード | 消灯 | `,`+`.` 同時押し（トグル） |
+| 6 | `mouse` | マウスボタン | 消灯（黒） | `TAB` or `ESC` ホールド / Automouse |
+| 7 | `scroll` | スクロールモード | 消灯（黒） | `,`+`.` 同時押し（トグル） |
 | 8 | `gesture_browser_win` | ジェスチャー：ブラウザ操作 | ◯白 | `-` ホールド（Win） |
 | 9 | `gesture_browser_mac` | Macジェスチャー：ブラウザ操作 | ◯白 | `-` ホールド（Mac） |
 | 10 | `gesture_vdesk_win` | ジェスチャー：仮想デスクトップ | ◯白 | `W`+`E` 同時押し（Win） |
@@ -49,7 +49,7 @@ flowchart LR
     classDef scroll  fill:#78909C,stroke:#546E7A,color:#fff
     classDef gesture fill:#7B1FA2,stroke:#4A148C,color:#fff
 
-    L0["L0\nDefault\nWin\n⚫"]:::winBase
+    L0["L0\nDefault\nWin\n🔵"]:::winBase
     L1M["L1\nDefault\nMac\n🟢\n※L0と同時にアクティブ"]:::macBase
     L2["L2\nSymbol\n🟡"]:::symbol
     L3["L3\nNumber\n🔴"]:::number
@@ -111,7 +111,7 @@ flowchart LR
 - **OS別コンボ**: ZMKは最上位アクティブレイヤーでコンボを絞り込むため、Win側は `layers=0`、Mac側は `layers=1` に分離する
 - **Automouse**: トラックボールを動かすと Layer 6 に自動遷移、300ms 静止 + 10秒タイムアウトで復帰
 - **BT プロファイルごとに Win/Mac 状態をキーボード側へ保存**（BTレイヤーを離したときに確定保存）
-- **LED は最上位レイヤー色を表示する。BTレイヤーは Mac の Layer 1 より高い Layer 15 に置き、BT中はマゼンタ、離した後に Win=消灯 / Mac=緑 を確認する**
+- **LED は最上位レイヤー色を表示する。BTレイヤーは Mac の Layer 1 より高い Layer 15 に置き、BT中はマゼンタ、離した後に Win=青 / Mac=緑 を確認する**
 
 ---
 
@@ -263,7 +263,7 @@ LANG1押しながら...
 
 ### Win/Mac 判定の見方
 
-- `Win`: Layer 1 がオフなので、L15 を離した後は LED が消灯
+- `Win`: Layer 1 がオフなので、L15 を離した後は LED が青
 - `Mac`: Layer 1 がオンなので、L15 を離した後は LED が緑
 - `L15` を押している間は、Macモードの Layer 1 より上位でマゼンタを表示
 - `Nav Mac` に入ると Layer 5 が最上位になり、LED はシアンに変わる
@@ -355,6 +355,24 @@ Layer 15で操作。
 | zmk-input-processor-keybind | 入力プロセッサ | zettaface |
 | zmk-mouse-gesture | マウスジェスチャー認識 | kot149 |
 | zmk-listeners | レイヤーリスナー | ssbb |
+
+---
+
+## ローカルチェック
+
+コミット時に `.githooks/pre-commit` が `scripts/check_all.sh` を実行する。
+
+初回クローン後に以下を一度だけ設定する。
+
+```sh
+git config core.hooksPath .githooks
+```
+
+手動で同じチェックを実行する場合:
+
+```sh
+sh scripts/check_all.sh
+```
 
 ---
 

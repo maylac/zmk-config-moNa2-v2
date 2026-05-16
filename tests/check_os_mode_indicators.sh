@@ -73,6 +73,11 @@ if ! printf '%s\n' "$mac_block" | rg -q '<&tog_on 1>'; then
   exit 1
 fi
 
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_0_COLOR=4$' config/mona2_r.conf; then
+  echo "layer 0 (default_win) LED color must be blue (4)" >&2
+  exit 1
+fi
+
 if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_1_COLOR=2$' config/mona2_r.conf; then
   echo "layer 1 (default_mac) LED color must be green (2)" >&2
   exit 1
@@ -98,13 +103,13 @@ if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_5_COLOR=6$' config/mona2_r.conf; then
   exit 1
 fi
 
-if rg -q '^CONFIG_RGBLED_WIDGET_LAYER_6_COLOR=' config/mona2_r.conf; then
-  echo "layer 6 (mouse) must not have a color set — should be off" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_6_COLOR=0$' config/mona2_r.conf; then
+  echo "layer 6 (mouse) LED color must be black/off (0)" >&2
   exit 1
 fi
 
-if rg -q '^CONFIG_RGBLED_WIDGET_LAYER_7_COLOR=' config/mona2_r.conf; then
-  echo "layer 7 (scroll) must not have a color set — should be off" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_7_COLOR=0$' config/mona2_r.conf; then
+  echo "layer 7 (scroll) LED color must be black/off (0)" >&2
   exit 1
 fi
 

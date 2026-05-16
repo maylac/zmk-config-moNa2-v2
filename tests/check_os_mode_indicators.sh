@@ -73,6 +73,11 @@ if ! printf '%s\n' "$mac_block" | rg -q '<&tog_on 1>'; then
   exit 1
 fi
 
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_0_COLOR=4$' config/mona2_r.conf; then
+  echo "layer 0 (default_win) LED color must be blue (4)" >&2
+  exit 1
+fi
+
 if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_1_COLOR=2$' config/mona2_r.conf; then
   echo "layer 1 (default_mac) LED color must be green (2)" >&2
   exit 1

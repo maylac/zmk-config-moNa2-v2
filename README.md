@@ -358,6 +358,24 @@ Layer 15で操作。
 
 ---
 
+## ローカルチェック
+
+コミット時に `.githooks/pre-commit` が `scripts/check_all.sh` を実行する。
+
+初回クローン後に以下を一度だけ設定する。
+
+```sh
+git config core.hooksPath .githooks
+```
+
+手動で同じチェックを実行する場合:
+
+```sh
+sh scripts/check_all.sh
+```
+
+---
+
 ## COROPIT版での設定変更
 
 `boards/shields/mona2/mona2_r.overlay` を以下のように修正：

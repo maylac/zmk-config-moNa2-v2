@@ -166,18 +166,10 @@ check_general_combo() {
 check_general_combo 'general_win'
 check_general_combo 'general_mac'
 
-check_toggle_behavior_locks() {
-  behavior="$1"
-  block="$(awk "/${behavior}: toggle_layer_/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}" config/mona2.keymap)"
-
-  if ! printf '%s\n' "$block" | rg -q 'locking;'; then
-    echo "${behavior} must use locking so Win/Mac layer state persists" >&2
-    exit 1
-  fi
-}
-
-check_toggle_behavior_locks 'tog_on'
-check_toggle_behavior_locks 'tog_off'
+if rg -q 'locking;' config/mona2.keymap; then
+  echo "ZMK v0.3 toggle-layer binding does not support locking" >&2
+  exit 1
+fi
 
 if ! rg -q 'win_mode: win_mode \{' config/mona2.keymap; then
   echo "missing win_mode block" >&2

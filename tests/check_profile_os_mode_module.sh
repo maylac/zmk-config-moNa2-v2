@@ -56,6 +56,23 @@ if rg -q '#define WIN_LAYER|zmk_keymap_layer_activate\(WIN_LAYER\)|zmk_keymap_la
   exit 1
 fi
 
+apply_os_mode_block="$(awk '/static void apply_os_mode/{flag=1} flag{print} /^}/{if(flag){exit}}' app/src/profile_os_mode.c | tr '\n' ' ')"
+
+if ! printf '%s\n' "$apply_os_mode_block" | rg -q 'zmk_keymap_layer_active\(MAC_LAYER\).*zmk_keymap_layer_deactivate\(MAC_LAYER\)'; then
+  echo "profile OS module must pulse Mac layer when reapplying Mac mode so layer LEDs refresh" >&2
+  exit 1
+fi
+
+if ! printf '%s\n' "$apply_os_mode_block" | rg -q '!zmk_keymap_layer_active\(MAC_LAYER\).*zmk_keymap_layer_activate\(MAC_LAYER\)'; then
+  echo "profile OS module must pulse Mac layer when reapplying Win mode so layer LEDs refresh" >&2
+  exit 1
+fi
+
+if ! awk '/layer_ev && layer_ev->layer == BT_LAYER/{flag=1} flag{print} /^    }/{if(flag){exit}}' app/src/profile_os_mode.c | rg -q 'apply_os_mode\(mode\);'; then
+  echo "profile OS module must reapply OS mode after BT layer release so the LED returns to the saved base color" >&2
+  exit 1
+fi
+
 if rg -q 'zmk-feature-default-layer|cormoran' config/west.yml; then
   echo "legacy default-layer west dependency is still present" >&2
   exit 1

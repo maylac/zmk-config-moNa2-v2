@@ -22,8 +22,14 @@ static uint8_t profile_os_map[ZMK_BLE_PROFILE_COUNT];
 
 static void apply_os_mode(uint8_t mode) {
     if (mode == PROFILE_OS_MAC) {
+        if (zmk_keymap_layer_active(MAC_LAYER)) {
+            zmk_keymap_layer_deactivate(MAC_LAYER);
+        }
         zmk_keymap_layer_activate(MAC_LAYER);
     } else {
+        if (!zmk_keymap_layer_active(MAC_LAYER)) {
+            zmk_keymap_layer_activate(MAC_LAYER);
+        }
         zmk_keymap_layer_deactivate(MAC_LAYER);
     }
 }
@@ -86,8 +92,9 @@ static int profile_os_mode_listener(const zmk_event_t *eh) {
 
     const struct zmk_layer_state_changed *layer_ev = as_zmk_layer_state_changed(eh);
     if (layer_ev && layer_ev->layer == BT_LAYER && !layer_ev->state) {
-        save_active_profile_os_mode(
-            zmk_keymap_layer_active(MAC_LAYER) ? PROFILE_OS_MAC : PROFILE_OS_WIN);
+        uint8_t mode = zmk_keymap_layer_active(MAC_LAYER) ? PROFILE_OS_MAC : PROFILE_OS_WIN;
+        save_active_profile_os_mode(mode);
+        apply_os_mode(mode);
     }
 
     return ZMK_EV_EVENT_BUBBLE;

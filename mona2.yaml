@@ -461,8 +461,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -504,8 +504,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -695,10 +695,10 @@ combos:
 - p: [19, 20]
   k: '&app_sw_win'
   l: [default_win]
-- p: [30, 32]
+- p: [31, 32]
   k: gesture_vdesk_win
   l: [default_win]
-- p: [30, 32]
+- p: [31, 32]
   k: gesture_vdesk_mac
   l: [default_mac]
 - p: [8, 9]

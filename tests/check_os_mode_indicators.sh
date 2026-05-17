@@ -73,8 +73,8 @@ check_vdesk_combo() {
     exit 1
   fi
 
-  if ! printf '%s\n' "$block" | rg -q 'key-positions = <30 32>;'; then
-    echo "${combo} must use comma+slash, not W+E or comma+dot, as the VDesk switcher" >&2
+  if ! printf '%s\n' "$block" | rg -q 'key-positions = <31 32>;'; then
+    echo "${combo} must use dot+slash, not W+E or comma+slash, as the VDesk switcher" >&2
     exit 1
   fi
 
@@ -102,7 +102,7 @@ check_app_switch_combo() {
   block="$(awk "/${combo} \\{/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}" config/mona2.keymap)"
 
   if ! printf '%s\n' "$block" | rg -q 'timeout-ms = <100>;'; then
-    echo "${combo} must allow a 100ms O+P combo window" >&2
+    echo "${combo} must allow a 100ms L+- combo window" >&2
     exit 1
   fi
 

@@ -5,8 +5,8 @@
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <120>;
 
-    prev_tab    { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(LS(TAB))>; };
-    next_tab    { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(TAB)>;     };
-    Create_tab  { pattern = <GESTURE_DOWN>; bindings = <&kp LC(T)>;      };  // invert-y: 物理上 → GESTURE_DOWN
-    close_tab   { pattern = <GESTURE_UP>;   bindings = <&kp LC(W)>;       };  // invert-y: 物理下 → GESTURE_UP
+    prev_tab    { pattern = <GESTURE_LEFT>;  bindings = <&lc_ls_key TAB>; };
+    next_tab    { pattern = <GESTURE_RIGHT>; bindings = <&lc_key TAB>;    };
+    Create_tab  { pattern = <GESTURE_DOWN>;  bindings = <&lc_key T>;      };  // invert-y: 物理上 → GESTURE_DOWN
+    close_tab   { pattern = <GESTURE_UP>;    bindings = <&lc_key W>;      };  // invert-y: 物理下 → GESTURE_UP
 };

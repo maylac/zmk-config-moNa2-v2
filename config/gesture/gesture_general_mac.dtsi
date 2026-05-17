@@ -8,9 +8,9 @@
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <120>;
 
-    focus_url   { pattern = <GESTURE_UP>;    bindings = <&kp LG(L)>;      };  // URLバー選択
-    spotlight   { pattern = <GESTURE_DOWN>;  bindings = <&kp LG(SPACE)>;  };  // Spotlight / Raycast
-    browser_back    { pattern = <GESTURE_LEFT>;  bindings = <&kp LG(LEFT)>;   };  // ブラウザ戻る
-    browser_forward { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(RIGHT)>; };  // ブラウザ進む
+    focus_url       { pattern = <GESTURE_UP>;    bindings = <&lg_key L>;     };  // URLバー選択
+    spotlight       { pattern = <GESTURE_DOWN>;  bindings = <&lg_key SPACE>; };  // Spotlight / Raycast
+    browser_back    { pattern = <GESTURE_LEFT>;  bindings = <&lg_key LEFT>;  };  // ブラウザ戻る
+    browser_forward { pattern = <GESTURE_RIGHT>; bindings = <&lg_key RIGHT>; };  // ブラウザ進む
   };
 };

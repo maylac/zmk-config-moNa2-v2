@@ -8,7 +8,7 @@
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <120>;
 
-    app_prev { pattern = <GESTURE_LEFT>;  bindings = <&kp LS(TAB)>; };
+    app_prev { pattern = <GESTURE_LEFT>;  bindings = <&ls_key TAB>; };
     app_next { pattern = <GESTURE_RIGHT>; bindings = <&kp TAB>; };
   };
 };

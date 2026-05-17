@@ -8,9 +8,9 @@
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <120>;
 
-    vdesk_prev       { pattern = <GESTURE_LEFT>;  bindings = <&kp LG(LC(LEFT))>;     };
-    vdesk_next       { pattern = <GESTURE_RIGHT>; bindings = <&kp LG(LC(RIGHT))>;    };
-    task_view        { pattern = <GESTURE_UP>;    bindings = <&kp LG(TAB)>;          };
-    vdesk_send_next  { pattern = <GESTURE_DOWN>; bindings = <&kp LG(LC(LS(RIGHT)))>; };
+    vdesk_prev       { pattern = <GESTURE_LEFT>;  bindings = <&lg_lc_key LEFT>;      };
+    vdesk_next       { pattern = <GESTURE_RIGHT>; bindings = <&lg_lc_key RIGHT>;     };
+    task_view        { pattern = <GESTURE_UP>;    bindings = <&lg_key TAB>;          };
+    vdesk_send_next  { pattern = <GESTURE_DOWN>;  bindings = <&lg_lc_ls_key RIGHT>;  };
   };
 };

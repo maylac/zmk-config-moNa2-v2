@@ -3,12 +3,12 @@ set -eu
 
 keymap="config/mona2.keymap"
 
-if ! rg -q 'sensor-bindings = <&inc_dec_kp LC\(MINUS\) LC\(EQUAL\)>;' "$keymap"; then
+if ! rg -q 'sensor-bindings = <&browser_zoom_win_steps>;' "$keymap"; then
   echo "missing Win browser-gesture encoder zoom binding" >&2
   exit 1
 fi
 
-if ! rg -q 'sensor-bindings = <&inc_dec_kp LG\(MINUS\) LG\(EQUAL\)>;' "$keymap"; then
+if ! rg -q 'sensor-bindings = <&browser_zoom_mac_steps>;' "$keymap"; then
   echo "missing Mac browser-gesture encoder zoom binding" >&2
   exit 1
 fi

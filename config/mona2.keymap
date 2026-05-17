@@ -44,11 +44,11 @@
             slow-release;
         };
 
-        // ,+/: 仮想デスクトップジェスチャー
+        // .+/: 仮想デスクトップジェスチャー
         // W+Eは通常入力中に誤爆しやすいため使わない
         vdesk_win {
             bindings = <&mo 10>;
-            key-positions = <30 32>;
+            key-positions = <31 32>;
             layers = <0>;
             timeout-ms = <100>;
             slow-release;
@@ -56,7 +56,7 @@
 
         vdesk_mac {
             bindings = <&mo 11>;
-            key-positions = <30 32>;
+            key-positions = <31 32>;
             layers = <1>;
             timeout-ms = <100>;
             slow-release;
@@ -141,6 +141,118 @@
                 , <&macro_pause_for_release>
                 , <&macro_release &kp LALT &mo 14>;
             label = "APP_SW_WIN";
+        };
+
+        lg_key: lg_key {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <30>;
+            tap-ms = <40>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LGUI>;
+            label = "lg_key";
+        };
+
+        lc_key: lc_key {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <30>;
+            tap-ms = <40>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LCTRL>;
+            label = "lc_key";
+        };
+
+        la_key: la_key {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <30>;
+            tap-ms = <40>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LALT>;
+            label = "la_key";
+        };
+
+        ls_key: ls_key {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <30>;
+            tap-ms = <40>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LSHFT>;
+            label = "ls_key";
+        };
+
+        lc_ls_key: lc_ls_key {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <30>;
+            tap-ms = <40>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LSHFT>
+                , <&macro_tap>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LSHFT &kp LCTRL>;
+            label = "lc_ls_key";
+        };
+
+        lg_ls_key: lg_ls_key {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <30>;
+            tap-ms = <40>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LGUI &kp LSHFT>
+                , <&macro_tap>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LSHFT &kp LGUI>;
+            label = "lg_ls_key";
+        };
+
+        lg_lc_key: lg_lc_key {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <30>;
+            tap-ms = <40>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LGUI &kp LCTRL>
+                , <&macro_tap>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LCTRL &kp LGUI>;
+            label = "lg_lc_key";
+        };
+
+        lg_lc_ls_key: lg_lc_ls_key {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <30>;
+            tap-ms = <40>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &kp LGUI &kp LCTRL &kp LSHFT>
+                , <&macro_tap>
+                , <&macro_param_1to1>
+                , <&kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LSHFT &kp LCTRL &kp LGUI>;
+            label = "lg_lc_ls_key";
         };
 
         aqua_voice: aqua_voice {
@@ -281,6 +393,69 @@
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
         };
 
+        nav_tabs_win_steps: nav_tabs_win_steps {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <40>;
+            bindings = <&lc_key TAB>, <&lc_ls_key TAB>;
+        };
+
+        nav_tabs_mac_steps: nav_tabs_mac_steps {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <40>;
+            bindings = <&lg_ls_key RBKT>, <&lg_ls_key LBKT>;
+        };
+
+        browser_zoom_win_steps: browser_zoom_win_steps {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <40>;
+            bindings = <&lc_key MINUS>, <&lc_key EQUAL>;
+        };
+
+        browser_zoom_mac_steps: browser_zoom_mac_steps {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <40>;
+            bindings = <&lg_key MINUS>, <&lg_key EQUAL>;
+        };
+
+        vdesk_win_steps: vdesk_win_steps {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <40>;
+            bindings = <&lg_lc_key LEFT>, <&lg_lc_key RIGHT>;
+        };
+
+        vdesk_mac_steps: vdesk_mac_steps {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <40>;
+            bindings = <&lc_key LEFT>, <&lc_key RIGHT>;
+        };
+
+        general_win_steps: general_win_steps {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <40>;
+            bindings = <&la_key LEFT>, <&la_key RIGHT>;
+        };
+
+        general_mac_steps: general_mac_steps {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <40>;
+            bindings = <&lg_key LEFT>, <&lg_key RIGHT>;
+        };
+
+        app_switch_steps: app_switch_steps {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <40>;
+            bindings = <&ls_key TAB>, <&kp TAB>;
+        };
+
         tog_off: toggle_layer_off {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -390,7 +565,7 @@
 &trans       &trans            &trans             &kp DEL           &trans         &trans    &trans                   &trans                                                                         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
+            sensor-bindings = <&nav_tabs_win_steps>;
         };
 
         // Layer 5: nav_mac
@@ -404,7 +579,7 @@
 &trans       &trans        &trans             &kp DEL          &kp RGUI       &trans    &trans               &trans                                                               &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LG(LS(RBKT)) LG(LS(LBKT))>;
+            sensor-bindings = <&nav_tabs_mac_steps>;
         };
 
         // Layer 6: mouse
@@ -440,7 +615,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(EQUAL)>;
+            sensor-bindings = <&browser_zoom_win_steps>;
         };
 
         // Layer 9: gesture_browser_mac
@@ -452,7 +627,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LG(MINUS) LG(EQUAL)>;
+            sensor-bindings = <&browser_zoom_mac_steps>;
         };
 
         // Layer 10: gesture_vdesk_win
@@ -464,7 +639,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LG(LC(LEFT)) LG(LC(RIGHT))>;
+            sensor-bindings = <&vdesk_win_steps>;
         };
 
         // Layer 11: gesture_vdesk_mac
@@ -476,7 +651,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT)>;
+            sensor-bindings = <&vdesk_mac_steps>;
         };
 
         // Layer 12: gesture_general_win
@@ -488,7 +663,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LA(LEFT) LA(RIGHT)>;
+            sensor-bindings = <&general_win_steps>;
         };
 
         // Layer 13: gesture_general_mac
@@ -500,7 +675,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LG(LEFT) LG(RIGHT)>;
+            sensor-bindings = <&general_mac_steps>;
         };
 
         // Layer 14: App Switcher (Win/Mac 共通)
@@ -515,7 +690,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &kp ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp LS(TAB) TAB>;
+            sensor-bindings = <&app_switch_steps>;
         };
 
         // Layer 15: bt

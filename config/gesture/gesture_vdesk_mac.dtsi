@@ -8,9 +8,9 @@
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <120>;
 
-    vdesk_prev      { pattern = <GESTURE_LEFT>;  bindings = <&kp LC(LEFT)>;          };  // 前のSpace Ctrl+←
-    vdesk_next      { pattern = <GESTURE_RIGHT>; bindings = <&kp LC(RIGHT)>;         };  // 次のSpace Ctrl+→
-    mission_control { pattern = <GESTURE_UP>;    bindings = <&kp LC(UP)>;            };  // Mission Control Ctrl+↑
-    vdesk_send_next { pattern = <GESTURE_DOWN>;  bindings = <&kp LC(LS(RIGHT))>;     };  // Spaceへ送る Ctrl+Shift+→
+    vdesk_prev      { pattern = <GESTURE_LEFT>;  bindings = <&lc_key LEFT>;     };  // 前のSpace Ctrl+←
+    vdesk_next      { pattern = <GESTURE_RIGHT>; bindings = <&lc_key RIGHT>;    };  // 次のSpace Ctrl+→
+    mission_control { pattern = <GESTURE_UP>;    bindings = <&lc_key UP>;       };  // Mission Control Ctrl+↑
+    vdesk_send_next { pattern = <GESTURE_DOWN>;  bindings = <&lc_ls_key RIGHT>; };  // Spaceへ送る Ctrl+Shift+→
   };
 };

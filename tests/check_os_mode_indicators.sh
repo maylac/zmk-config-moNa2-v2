@@ -28,13 +28,156 @@ check_combo_layer() {
 }
 
 check_combo_layer 'app_sw_win' 0
-check_combo_layer 'vdesk_win' 0
 check_combo_layer 'general_win' 0
 check_combo_layer 'Select_All_win' 0
 check_combo_layer 'app_sw_mac' 1
-check_combo_layer 'vdesk_mac' 1
 check_combo_layer 'general_mac' 1
 check_combo_layer 'Select_All_mac' 1
+
+check_combo_positions() {
+  combo="$1"
+  expected="$2"
+  block="$(awk "/${combo} \\{/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}" config/mona2.keymap)"
+
+  if ! printf '%s\n' "$block" | rg -q "key-positions = <${expected}>;"; then
+    echo "${combo} must use key positions ${expected}" >&2
+    exit 1
+  fi
+}
+
+check_combo_positions 'app_sw_win' '19 20'
+check_combo_positions 'app_sw_mac' '19 20'
+check_combo_positions 'general_win' '8 9'
+check_combo_positions 'general_mac' '8 9'
+
+for removed_combo in Scroll_toggle; do
+  if rg -q "^[[:space:]]*${removed_combo}[[:space:]]*\\{" config/mona2.keymap; then
+    echo "${removed_combo} combo must not activate a layer" >&2
+    exit 1
+  fi
+done
+
+if rg -q '<&tog 7>' config/mona2.keymap; then
+  echo "Layer 7 scroll toggle binding must be removed" >&2
+  exit 1
+fi
+
+check_vdesk_combo() {
+  combo="$1"
+  layer="$2"
+  scope="$3"
+  block="$(awk "/${combo} \\{/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}" config/mona2.keymap)"
+
+  if ! printf '%s\n' "$block" | rg -q "bindings = <&mo ${layer}>;"; then
+    echo "${combo} must activate VDesk layer ${layer}" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$block" | rg -q 'key-positions = <30 32>;'; then
+    echo "${combo} must use comma+slash, not W+E or comma+dot, as the VDesk switcher" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$block" | rg -q "layers = <${scope}>;"; then
+    echo "${combo} must be scoped to layer ${scope}" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$block" | rg -q 'timeout-ms = <100>;'; then
+    echo "${combo} must allow a 100ms VDesk combo window" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$block" | rg -q 'slow-release;'; then
+    echo "${combo} must hold VDesk until both combo keys are released" >&2
+    exit 1
+  fi
+}
+
+check_vdesk_combo 'vdesk_win' 10 0
+check_vdesk_combo 'vdesk_mac' 11 1
+
+check_app_switch_combo() {
+  combo="$1"
+  block="$(awk "/${combo} \\{/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}" config/mona2.keymap)"
+
+  if ! printf '%s\n' "$block" | rg -q 'timeout-ms = <100>;'; then
+    echo "${combo} must allow a 100ms O+P combo window" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$block" | rg -q 'slow-release;'; then
+    echo "${combo} must hold App Switcher until both combo keys are released" >&2
+    exit 1
+  fi
+}
+
+check_app_switch_macro() {
+  macro="$1"
+  modifier="$2"
+  block="$(awk "/${macro}: ${macro} \\{/{flag=1} flag{print} /label = \"APP_SW_/{if(flag){exit}}" config/mona2.keymap)"
+
+  if ! printf '%s\n' "$block" | rg -q 'wait-ms = <30>;'; then
+    echo "${macro} must use a 30ms wait so Alt/Cmd+Tab is ordered reliably" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$block" | rg -q 'tap-ms = <40>;'; then
+    echo "${macro} must hold tapped TAB for 40ms" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$block" | rg -q "<&macro_press &kp ${modifier} &mo 14>"; then
+    echo "${macro} must press ${modifier} and activate Layer 14" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$block" | rg -q '<&macro_tap &kp TAB>'; then
+    echo "${macro} must tap TAB once to open the OS app switcher" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$block" | rg -q "<&macro_release &kp ${modifier} &mo 14>"; then
+    echo "${macro} must release ${modifier} and Layer 14 together" >&2
+    exit 1
+  fi
+}
+
+check_app_switch_combo 'app_sw_win'
+check_app_switch_combo 'app_sw_mac'
+check_app_switch_macro 'app_sw_win' 'LALT'
+check_app_switch_macro 'app_sw_mac' 'LGUI'
+
+check_general_combo() {
+  combo="$1"
+  block="$(awk "/${combo} \\{/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}" config/mona2.keymap)"
+
+  if ! printf '%s\n' "$block" | rg -q 'timeout-ms = <100>;'; then
+    echo "${combo} must allow a 100ms O+P combo window" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$block" | rg -q 'slow-release;'; then
+    echo "${combo} must hold General Gesture until both combo keys are released" >&2
+    exit 1
+  fi
+}
+
+check_general_combo 'general_win'
+check_general_combo 'general_mac'
+
+check_toggle_behavior_locks() {
+  behavior="$1"
+  block="$(awk "/${behavior}: toggle_layer_/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}" config/mona2.keymap)"
+
+  if ! printf '%s\n' "$block" | rg -q 'locking;'; then
+    echo "${behavior} must use locking so Win/Mac layer state persists" >&2
+    exit 1
+  fi
+}
+
+check_toggle_behavior_locks 'tog_on'
+check_toggle_behavior_locks 'tog_off'
 
 if ! rg -q 'win_mode: win_mode \{' config/mona2.keymap; then
   echo "missing win_mode block" >&2
@@ -47,7 +190,7 @@ if ! printf '%s\n' "$win_block" | rg -q '<&macro_release &kp LALT &kp LGUI>'; th
   exit 1
 fi
 
-if ! printf '%s\n' "$win_block" | rg -q '<&tog_on 1>'; then
+if ! printf '%s\n' "$win_block" | rg -q '<&macro_tap &tog_on 1>'; then
   echo "win_mode must force Mac layer 1 on before turning it off" >&2
   exit 1
 fi
@@ -63,7 +206,7 @@ if ! printf '%s\n' "$mac_block" | rg -q '<&macro_release &kp LALT &kp LGUI>'; th
   exit 1
 fi
 
-if ! printf '%s\n' "$mac_block" | rg -q '<&tog_off 1>'; then
+if ! printf '%s\n' "$mac_block" | rg -q '<&macro_tap &tog_off 1>'; then
   echo "mac_mode must force Mac layer 1 off before turning it on" >&2
   exit 1
 fi

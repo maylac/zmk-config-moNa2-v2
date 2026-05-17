@@ -19,14 +19,14 @@
 | 4 | `nav_win` | ナビゲーション + ウィンドウスナップ | 🩵 シアン | `LANG1` ホールド |
 | 5 | `nav_mac` | Magnetウィンドウスナップ（3×3）+ Macナビゲーション | 🩵 シアン | `LANG1` ホールド（Mac） |
 | 6 | `mouse` | マウスボタン | 消灯（黒） | `TAB` or `ESC` ホールド / Automouse |
-| 7 | `scroll` | スクロールモード | 消灯（黒） | `,`+`.` 同時押し（トグル） |
+| 7 | `scroll` | スクロールモード | 消灯（黒） | 未割当 |
 | 8 | `gesture_browser_win` | ジェスチャー：ブラウザ操作 | ◯白 | `-` ホールド（Win） |
 | 9 | `gesture_browser_mac` | Macジェスチャー：ブラウザ操作 | ◯白 | `-` ホールド（Mac） |
-| 10 | `gesture_vdesk_win` | ジェスチャー：仮想デスクトップ | ◯白 | `W`+`E` 同時押し（Win） |
-| 11 | `gesture_vdesk_mac` | Macジェスチャー：仮想デスクトップ | ◯白 | `W`+`E` 同時押し（Mac） |
-| 12 | `gesture_general_win` | ジェスチャー：一般操作 | ◯白 | `L`+`-` 同時押し（Win） |
-| 13 | `gesture_general_mac` | Macジェスチャー：一般操作 | ◯白 | `L`+`-` 同時押し（Mac） |
-| 14 | `app_switch` | Alt/Cmd+Tab アプリ切替 | ◯白 | `O`+`P` 同時押し（Win/Mac共通） |
+| 10 | `gesture_vdesk_win` | ジェスチャー：仮想デスクトップ | ◯白 | `,`+`/` 同時押し（Win） |
+| 11 | `gesture_vdesk_mac` | Macジェスチャー：仮想デスクトップ | ◯白 | `,`+`/` 同時押し（Mac） |
+| 12 | `gesture_general_win` | ジェスチャー：一般操作 | ◯白 | `O`+`P` 同時押し（Win） |
+| 13 | `gesture_general_mac` | Macジェスチャー：一般操作 | ◯白 | `O`+`P` 同時押し（Mac） |
+| 14 | `app_switch` | Alt/Cmd+Tab アプリ切替 | ◯白 | `L`+`-` 同時押し（Win/Mac共通） |
 | 15 | `bt` | Bluetooth設定 + 現在プロファイルのWin/Mac設定 | 🟣 マゼンタ | `LANG2`+`LANG1` 同時押し |
 
 ## キーマップ
@@ -75,11 +75,10 @@ flowchart LR
     L0 -->|"SPACE"| L3
     L0 -->|"LANG1"| L4
     L0 -->|"TAB / ESC"| L6
-    L0 -->|"combo comma+dot"| L7
     L0 -->|"MINUS hold"| L8
-    L0 -->|"combo W+E"| L10
-    L0 -->|"combo O+P"| L14
-    L0 -->|"combo 19+20"| L12
+    L0 -->|"combo comma+slash"| L10
+    L0 -->|"combo O+P"| L12
+    L0 -->|"combo 19+20"| L14
     L0 -->|"Automouse"| L6
 
     %% 戻り
@@ -88,7 +87,6 @@ flowchart LR
     %% L15でWin/Mac切替
     L15 -->|"Win押す（L1オフ）"| L0
     L15 -->|"Mac押す"| L1M
-    L7 -->|"combo comma+dot 再押し"| L0
     L6 -->|"10秒 or Ctrl/Shift"| L0
 
     %% L1はL0と同時にアクティブ → 共通キーはL0へ透過
@@ -97,9 +95,9 @@ flowchart LR
     %% L1のみ異なる遷移
     L1M -->|"LANG1"| L5
     L1M -->|"MINUS hold"| L9
-    L1M -->|"combo W+E"| L11
-    L1M -->|"combo O+P"| L14
-    L1M -->|"combo 19+20"| L13
+    L1M -->|"combo comma+slash"| L11
+    L1M -->|"combo O+P"| L13
+    L1M -->|"combo 19+20"| L14
     L5 & L9 & L11 & L13 -->|"コンボ/キー離す"| L1M
     L14 -->|"ESC or コンボ離す"| L0
 ```
@@ -180,7 +178,7 @@ LANG1押しながら...
 
 全キー透過（トランス）。トラックボール移動がスクロール入力に変換される。
 
-**遷移方法:** `,` + `.` 同時押し（トグル）
+**遷移方法:** 現在は未割当（スクロールトグルなし）
 
 - スケール: 1/8倍
 - Y軸反転あり
@@ -215,7 +213,7 @@ LANG1押しながら...
 | ↑      | タスクビュー | `Win+Tab` | Mission Control | `Ctrl+↑` |
 | ↓      | アプリを次のデスクへ | `Win+Ctrl+Shift+→` | Spaceへ移動 | `Ctrl+Shift+→` |
 
-**遷移方法:** `W`+`E` 同時押し
+**遷移方法:** `,`+`/` 同時押し（`W`+`E` 同時押しでは発動しない）
 
 ---
 
@@ -228,7 +226,7 @@ LANG1押しながら...
 | ←      | ブラウザ戻る | `Alt+←` | ブラウザ戻る | `Cmd+←` |
 | →      | ブラウザ進む | `Alt+→` | ブラウザ進む | `Cmd+→` |
 
-**遷移方法:** キー19+20同時押し（Win: `Win` / Mac: `Cmd`）
+**遷移方法:** `O`+`P` 同時押し
 
 ---
 
@@ -236,8 +234,8 @@ LANG1押しながら...
 
 - `-` キー ホールド → Layer 9（Mac Gesture Browser）
 - `LANG1` ホールド → Layer 5（Mac Nav）
-- コンボ `W+E` → Layer 11（Mac Gesture VDesk）
-- コンボ `19+20` → Layer 13（Mac Gesture General）
+- コンボ `,`+`/` → Layer 11（Mac Gesture VDesk）
+- コンボ `O`+`P` → Layer 13（Mac Gesture General）
 
 ---
 
@@ -245,11 +243,10 @@ LANG1押しながら...
 
 | キー | 動作 |
 |-----|------|
-| `W` + `E` 同時押し | Layer 10/11 一時有効（仮想デスクトップジェスチャー） |
-| `O` + `P` 同時押し | Layer 14 一時有効（App Switcher、Alt/Cmd+Tab） |
-| `L` + `-` 同時押し | Layer 12/13 一時有効（一般ジェスチャー + Win/Cmd） |
+| `,` + `/` 同時押し | Layer 10/11 一時有効（仮想デスクトップジェスチャー） |
+| `L` + `-` 同時押し | Alt/Cmd+Tab を送信して Layer 14 一時有効（App Switcher） |
+| `O` + `P` 同時押し | Layer 12/13 一時有効（一般ジェスチャー + Win/Cmd） |
 | `LANG2` + `LANG1` 同時押し | Layer 15 (Bluetooth/System) 一時有効 |
-| `,` + `.` 同時押し | Layer 7 (Scroll) トグル ON/OFF |
 | `Q` + `A` 同時押し | 全選択（Win: `Ctrl+A` / Mac: `Cmd+A`） |
 
 ### Layer 15 の使い方
@@ -329,7 +326,7 @@ LANG1押しながら...
 | 11 (Mac Gesture VDesk) | `Ctrl+←` / `Ctrl+→` |
 | 12 (Win Gesture General) | `Alt+←` / `Alt+→` |
 | 13 (Mac Gesture General) | `Cmd+←` / `Cmd+→` |
-| 14 (App Switcher) | `Shift+Tab` / `Tab` |
+| 14 (App Switcher) | `Shift+Tab` / `Tab`（L+- 起動時に最初の `Tab` を送信） |
 
 ---
 

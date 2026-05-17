@@ -30,42 +30,52 @@
 
         app_sw_mac {
             bindings = <&app_sw_mac>;
-            key-positions = <8 9>;
+            key-positions = <19 20>;
             layers = <1>;
+            timeout-ms = <100>;
+            slow-release;
         };
 
         app_sw_win {
             bindings = <&app_sw_win>;
-            key-positions = <8 9>;
+            key-positions = <19 20>;
             layers = <0>;
+            timeout-ms = <100>;
+            slow-release;
         };
 
-        // W+E: 仮想デスクトップジェスチャー
-        // トラックボール ←/→ = 前/次のデスクトップ、↑ = タスクビュー/Mission Control
+        // ,+/: 仮想デスクトップジェスチャー
+        // W+Eは通常入力中に誤爆しやすいため使わない
         vdesk_win {
             bindings = <&mo 10>;
-            key-positions = <1 2>;
+            key-positions = <30 32>;
             layers = <0>;
+            timeout-ms = <100>;
+            slow-release;
         };
 
         vdesk_mac {
             bindings = <&mo 11>;
-            key-positions = <1 2>;
+            key-positions = <30 32>;
             layers = <1>;
+            timeout-ms = <100>;
+            slow-release;
         };
 
         general_mac {
             bindings = <&lt 13 LGUI>;
-            key-positions = <19 20>;
+            key-positions = <8 9>;
             layers = <1>;
             timeout-ms = <100>;
+            slow-release;
         };
 
         general_win {
             bindings = <&lt 12 LEFT_WIN>;
-            key-positions = <19 20>;
+            key-positions = <8 9>;
             layers = <0>;
             timeout-ms = <100>;
+            slow-release;
         };
 
         BT_layer {
@@ -74,12 +84,6 @@
             layers = <0 1>;
             timeout-ms = <250>;
             slow-release;
-        };
-
-        Scroll_toggle {
-            bindings = <&tog 7>;
-            key-positions = <30 31>;
-            layers = <0 1>;
         };
 
         Delete {
@@ -128,9 +132,12 @@
 
         app_sw_win: app_sw_win {
             compatible = "zmk,behavior-macro";
+            wait-ms = <30>;
+            tap-ms = <40>;
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT &mo 14>
+                , <&macro_tap &kp TAB>
                 , <&macro_pause_for_release>
                 , <&macro_release &kp LALT &mo 14>;
             label = "APP_SW_WIN";
@@ -183,9 +190,12 @@
 
         app_sw_mac: app_sw_mac {
             compatible = "zmk,behavior-macro";
+            wait-ms = <30>;
+            tap-ms = <40>;
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LGUI &mo 14>
+                , <&macro_tap &kp TAB>
                 , <&macro_pause_for_release>
                 , <&macro_release &kp LGUI &mo 14>;
             label = "APP_SW_MAC";
@@ -197,7 +207,7 @@
             tap-ms = <0>;
             #binding-cells = <0>;
             bindings = <&macro_release &kp LALT &kp LGUI>
-                     , <&tog_on 1>
+                     , <&macro_tap &tog_on 1>
                      , <&tog_off 1>;
             label = "WIN_MODE";
         };
@@ -208,7 +218,7 @@
             tap-ms = <0>;
             #binding-cells = <0>;
             bindings = <&macro_release &kp LALT &kp LGUI>
-                     , <&tog_off 1>
+                     , <&macro_tap &tog_off 1>
                      , <&tog_on 1>;
             label = "MAC_MODE";
         };
@@ -276,6 +286,7 @@
             #binding-cells = <1>;
             display-name = "Toggle Layer Off";
             toggle-mode = "off";
+            locking;
         };
 
         tog_on: toggle_layer_on {
@@ -283,6 +294,7 @@
             #binding-cells = <1>;
             display-name = "Toggle Layer On";
             toggle-mode = "on";
+            locking;
         };
 
         mt_exit_AML_on_tap: mt_exit_AML_on_tap {
@@ -494,7 +506,7 @@
         };
 
         // Layer 14: App Switcher (Win/Mac 共通)
-        // コンボ [8+9] で起動。Win=LALT保持、Mac=LGUI保持（マクロ側で制御）
+        // コンボ [19+20] で Alt/Cmd+Tab を一度送り、Win=LALT保持、Mac=LGUI保持（マクロ側で制御）
         // トラックボール左=前のアプリ(Shift+Tab)、右=次のアプリ(Tab)
         // コンボキーを離すと修飾キーも解放され、選択中のアプリに遷移
         app_switch {

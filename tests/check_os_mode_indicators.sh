@@ -30,6 +30,7 @@ check_combo_layer() {
 check_combo_layer 'app_sw_win' 0
 check_combo_layer 'general_win' 0
 check_combo_layer 'Select_All_win' 0
+check_combo_layer 'win_secure_attention' 0
 check_combo_layer 'app_sw_mac' 1
 check_combo_layer 'general_mac' 1
 check_combo_layer 'Select_All_mac' 1
@@ -49,6 +50,7 @@ check_combo_positions 'app_sw_win' '19 20'
 check_combo_positions 'app_sw_mac' '19 20'
 check_combo_positions 'general_win' '8 9'
 check_combo_positions 'general_mac' '8 9'
+check_combo_positions 'win_secure_attention' '33 35 36'
 
 for removed_combo in Scroll_toggle; do
   if rg -q "^[[:space:]]*${removed_combo}[[:space:]]*\\{" config/mona2.keymap; then
@@ -147,6 +149,38 @@ check_app_switch_combo 'app_sw_win'
 check_app_switch_combo 'app_sw_mac'
 check_app_switch_macro 'app_sw_win' 'LALT'
 check_app_switch_macro 'app_sw_mac' 'LGUI'
+
+check_ctrl_alt_del_combo() {
+  combo_block="$(awk '/win_secure_attention \{/{flag=1} flag{print} /^[[:space:]]*};/{if(flag){exit}}' config/mona2.keymap)"
+  macro_block="$(awk '/ctrl_alt_del: ctrl_alt_del \{/{flag=1} flag{print} /label = "CTRL_ALT_DEL";/{if(flag){exit}}' config/mona2.keymap)"
+
+  if ! printf '%s\n' "$combo_block" | rg -q 'bindings = <&ctrl_alt_del>;'; then
+    echo "win_secure_attention must send Ctrl+Alt+Delete" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$combo_block" | rg -q 'timeout-ms = <250>;'; then
+    echo "win_secure_attention must allow a deliberate 250ms three-key combo window" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$macro_block" | rg -q '<&macro_press &kp LCTRL &kp LALT>'; then
+    echo "ctrl_alt_del must press Ctrl and Alt before Delete" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$macro_block" | rg -q '<&macro_tap &kp DEL>'; then
+    echo "ctrl_alt_del must tap Delete" >&2
+    exit 1
+  fi
+
+  if ! printf '%s\n' "$macro_block" | rg -q '<&macro_release &kp LALT &kp LCTRL>'; then
+    echo "ctrl_alt_del must release Alt and Ctrl after Delete" >&2
+    exit 1
+  fi
+}
+
+check_ctrl_alt_del_combo
 
 check_general_combo() {
   combo="$1"

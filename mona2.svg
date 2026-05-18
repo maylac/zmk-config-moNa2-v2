@@ -372,6 +372,12 @@ g.layer-L14 text.label { fill: #4A148C; }
 <rect rx="6" ry="6" x="14" y="43" width="28" height="26" class="combo"/>
 <text x="28" y="56" class="combo tap">Ctl+A</text>
 </g>
+<g class="combo combopos-6">
+<path d="M121,196 l-75,0" class="combo"/>
+<path d="M121,196 l56,0" class="combo"/>
+<rect rx="6" ry="6" x="107" y="183" width="28" height="26" class="combo"/>
+<text x="121" y="196" class="combo tap"><tspan style="font-size: 64%">&amp;ctrl_alt_…</tspan></text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 296)" class="layer-default_mac">

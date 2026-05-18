@@ -722,3 +722,6 @@ combos:
 - p: [0, 10]
   k: Ctl+A
   l: [default_win]
+- p: [33, 35, 36]
+  k: '&ctrl_alt_del'
+  l: [default_win]

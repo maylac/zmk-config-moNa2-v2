@@ -15,9 +15,9 @@ check_binding() {
 }
 
 check_binding "gesture_vdesk_win" 'sensor-bindings = <&vdesk_win_steps>;'
-check_binding "gesture_general_win" 'sensor-bindings = <&general_win_steps>;'
+check_binding "gesture_general_win" 'sensor-bindings = <&window_zoom_win_steps>;'
 check_binding "gesture_vdesk_mac" 'sensor-bindings = <&vdesk_mac_steps>;'
-check_binding "gesture_general_mac" 'sensor-bindings = <&general_mac_steps>;'
+check_binding "gesture_general_mac" 'sensor-bindings = <&window_zoom_mac_steps>;'
 check_binding "app_switch" 'sensor-bindings = <&app_switch_steps>;'
 
 echo "Missing encoder layer bindings look consistent."

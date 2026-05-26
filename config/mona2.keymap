@@ -608,7 +608,7 @@
             bindings = <
 &kp PAGE_UP  &kp LC(LEFT)      &kp UP_ARROW       &kp LC(RIGHT)     &kp PAGE_DOWN                                     &kp LC(LA(E))         &kp LC(LA(U))     &kp LC(LA(UP))     &kp LC(LA(I))      &kp LC(LA(T))
 &kp HOME     &kp LEFT          &kp DOWN           &kp RIGHT_ARROW   &kp END                  &kp LC(LG(PRINTSCREEN))  &kp LC(LA(D))         &kp LC(LA(LEFT))  &kp LC(LA(ENTER))  &kp LC(LA(RIGHT))  &kp LC(LA(G))
-&trans       &kp LC(LS(LEFT))  &kp LC(BACKSPACE)  &kp LC(LS(RIGHT)) &trans         &trans    &kp LG(LS(S))            &kp LC(LA(BACKSPACE)) &kp LC(LA(J))     &kp LC(LA(DOWN))   &kp LC(LA(K))      &kp LC(LA(F))
+&trans       &kp LC(LS(LEFT))  &kp LC(BACKSPACE)  &kp LC(LS(RIGHT)) &trans         &trans    &lg_ls_key S             &kp LC(LA(BACKSPACE)) &kp LC(LA(J))     &kp LC(LA(DOWN))   &kp LC(LA(K))      &kp LC(LA(F))
 &trans       &trans            &trans             &kp DEL           &trans         &trans    &trans                   &trans                                                                         &trans
             >;
 

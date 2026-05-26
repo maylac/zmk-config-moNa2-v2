@@ -63,7 +63,7 @@
         };
 
         general_mac {
-            bindings = <&lt 13 LGUI>;
+            bindings = <&mo 13>;
             key-positions = <8 9>;
             layers = <1>;
             timeout-ms = <100>;
@@ -71,7 +71,7 @@
         };
 
         general_win {
-            bindings = <&lt 12 LEFT_WIN>;
+            bindings = <&mo 12>;
             key-positions = <8 9>;
             layers = <0>;
             timeout-ms = <100>;
@@ -444,7 +444,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <40>;
-            bindings = <&lc_key MINUS>, <&lc_key EQUAL>;
+            bindings = <&lc_key MINUS>, <&lc_ls_key EQUAL>;
         };
 
         browser_zoom_mac_steps: browser_zoom_mac_steps {

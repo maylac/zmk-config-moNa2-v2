@@ -200,7 +200,7 @@ layers:
   - Ctl+Sft+RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Gui+Sft+S
+  - '&lg_ls_key S'
   - Ctl+Alt+BACKSPACE
   - Ctl+Alt+J
   - Ctl+Alt+DOWN

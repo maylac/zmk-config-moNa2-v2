@@ -349,11 +349,8 @@ g.layer-L14 text.label { fill: #4A148C; }
 </a></g>
 <g class="combo combopos-2">
 <rect rx="6" ry="6" x="658" y="15" width="28" height="26" class="combo"/>
-<text x="672" y="28" class="combo tap">
-<tspan x="672" dy="-0.6em">LEFT</tspan><tspan x="672" dy="1.2em">WIN</tspan>
-</text>
 <a href="#gesture_general_win">
-<text x="672" y="39" class="combo hold layer-activator"><tspan style="font-size: 64%">gesture_ge…</tspan></text>
+<text x="672" y="28" class="combo tap layer-activator"><tspan style="font-size: 64%">gesture_ge…</tspan></text>
 </a></g>
 <g class="combo combopos-3">
 <path d="M364,196 l-37,0" class="combo"/>
@@ -571,9 +568,8 @@ g.layer-L14 text.label { fill: #4A148C; }
 </a></g>
 <g class="combo combopos-2">
 <rect rx="6" ry="6" x="658" y="15" width="28" height="26" class="combo"/>
-<text x="672" y="28" class="combo tap">LGUI</text>
 <a href="#gesture_general_mac">
-<text x="672" y="39" class="combo hold layer-activator"><tspan style="font-size: 64%">gesture_ge…</tspan></text>
+<text x="672" y="28" class="combo tap layer-activator"><tspan style="font-size: 64%">gesture_ge…</tspan></text>
 </a></g>
 <g class="combo combopos-3">
 <path d="M364,196 l-37,0" class="combo"/>

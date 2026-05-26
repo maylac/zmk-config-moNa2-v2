@@ -702,10 +702,10 @@ combos:
   k: gesture_vdesk_mac
   l: [default_mac]
 - p: [8, 9]
-  k: {t: LGUI, h: gesture_general_mac}
+  k: gesture_general_mac
   l: [default_mac]
 - p: [8, 9]
-  k: {t: LEFT WIN, h: gesture_general_win}
+  k: gesture_general_win
   l: [default_win]
 - p: [38, 39]
   k: bt

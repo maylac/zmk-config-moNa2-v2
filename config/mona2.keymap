@@ -13,6 +13,7 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 6
+#define POINTER_FAST 16
 
 &mt {
     flavor = "balanced";
@@ -745,9 +746,21 @@
         bt {
             bindings = <
 &none  &win_mode  &mac_mode  &none  &none                    &bt_0  &bt_1  &bt_2  &bt_3  &bt_4
-&none  &none      &none      &none  &none            &none  &none  &none  &none  &none  &none
+&none  &none      &none      &none  &none            &none  &tog_off POINTER_FAST  &tog_on POINTER_FAST  &none  &none  &none
 &none  &none      &none      &none  &none  &none    &bootloader  &none  &none  &none  &none  &bt BT_CLR
 &none  &none      &none      &none  &none  &none    &bt BT_CLR   &none                          &bt BT_CLR_ALL
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        // Layer 16: pointer_fast
+        pointer_fast {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;

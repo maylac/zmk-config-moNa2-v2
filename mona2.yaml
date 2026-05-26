@@ -200,7 +200,7 @@ layers:
   - Ctl+Sft+RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+PRINTSCREEN
+  - Gui+Sft+S
   - Ctl+Alt+BACKSPACE
   - Ctl+Alt+J
   - Ctl+Alt+DOWN

@@ -297,8 +297,8 @@ if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_15_COLOR=5$' config/mona2_r.conf; then
   exit 1
 fi
 
-if rg -q '^CONFIG_RGBLED_WIDGET_LAYER_16_COLOR=' config/mona2_r.conf; then
-  echo "layer 16 must not have a color after minimizing OS layers" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_16_COLOR=3$' config/mona2_r.conf; then
+  echo "layer 16 (pointer_fast) LED color must be yellow (3) so the toggled-on state stays visible" >&2
   exit 1
 fi
 

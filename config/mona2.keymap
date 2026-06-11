@@ -82,7 +82,9 @@
         BT_layer {
             bindings = <&mo 15>;
             key-positions = <38 39>;
-            layers = <0 1>;
+            // 16(POINTER_FAST)を含める: トグルON中は最上位レイヤーが16になるため、
+            // ここに無いとBTレイヤーへ入れず高速ポインタを解除できなくなる
+            layers = <0 1 16>;
             timeout-ms = <250>;
             slow-release;
         };

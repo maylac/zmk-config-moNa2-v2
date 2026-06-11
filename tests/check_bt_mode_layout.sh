@@ -40,8 +40,8 @@ if ! printf '%s\n' "$bt_combo_block" | rg -q 'bindings = <&mo 15>;'; then
   exit 1
 fi
 
-if ! printf '%s\n' "$bt_combo_block" | rg -q 'layers = <0 1>;'; then
-  echo "BT layer combo must be available from Win base and Mac base only" >&2
+if ! printf '%s\n' "$bt_combo_block" | rg -q 'layers = <0 1 16>;'; then
+  echo "BT layer combo must be available from Win base, Mac base, and pointer_fast (escape hatch while layer 16 is toggled on)" >&2
   exit 1
 fi
 
@@ -65,8 +65,8 @@ if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_15_COLOR=5$' config/mona2_r.conf; then
   exit 1
 fi
 
-if rg -q '^CONFIG_RGBLED_WIDGET_LAYER_16_COLOR=' config/mona2_r.conf; then
-  echo "layer 16 must not exist after reducing to the minimal OS-layer layout" >&2
+if ! rg -q '^CONFIG_RGBLED_WIDGET_LAYER_16_COLOR=3$' config/mona2_r.conf; then
+  echo "pointer_fast layer 16 must have an LED color (default black would hide the Win/Mac mode indicator while toggled on)" >&2
   exit 1
 fi
 

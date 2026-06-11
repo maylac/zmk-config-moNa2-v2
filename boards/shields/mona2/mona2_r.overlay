@@ -76,7 +76,7 @@
     input-processors = <&zip_temp_layer 6 10000>;
 
     scroller {
-        layers = <4>;
+        layers = <4 5>;  // nav_win / nav_mac: 同じ運指で同じスクロール動作にする
         input-processors = 
             // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転

@@ -23,6 +23,7 @@ jobs:
           sh tests/check_missing_encoder_layers.sh
           sh tests/check_right_slash_scroll_hold.sh
           sh tests/check_pointer_speed_toggle.sh
+          sh tests/check_nav_scroll_parity.sh
           sh tests/check_l7_encoder_zoom.sh
           git diff --check
 

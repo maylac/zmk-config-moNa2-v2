@@ -752,7 +752,7 @@ combos:
   l: [default_win]
 - p: [38, 39]
   k: bt
-  l: [default_win, default_mac]
+  l: [default_win, default_mac, pointer_fast]
 - p: [36, 39]
   k: DEL
   l: [default_win, default_mac]

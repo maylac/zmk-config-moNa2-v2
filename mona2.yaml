@@ -82,8 +82,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: '&to_layer_1 LANG1', h: nav_mac}
+  - {t: LGUI, h: LGUI}
+  - {t: '&to_layer_1 RGUI', h: nav_mac}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   symbol:
@@ -761,6 +761,9 @@ combos:
   l: [default_mac]
 - p: [37, 39]
   k: '&aqua_voice'
+  l: [default_mac]
+- p: [37, 40]
+  k: '&typeless'
   l: [default_mac]
 - p: [0, 10]
   k: Ctl+A

@@ -538,14 +538,15 @@ g.layer-L14 text.label { fill: #4A148C; }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(308, 196)" class="key trans keypos-38">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(308, 196)" class="key keypos-38">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">LGUI</text>
+<text x="0" y="24" class="key hold">LGUI</text>
 </g>
 <g transform="translate(420, 196)" class="key keypos-39">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.9em" style="font-size: 64%">&amp;to_layer_1</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">LANG1</tspan>
+<tspan x="0" dy="-0.9em" style="font-size: 64%">&amp;to_layer_1</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">RGUI</tspan>
 </text>
 <a href="#nav_mac">
 <text x="0" y="24" class="key hold layer-activator">nav_mac</text>
@@ -594,6 +595,12 @@ g.layer-L14 text.label { fill: #4A148C; }
 <path d="M336,196 l65,0" class="combo"/>
 <rect rx="6" ry="6" x="322" y="183" width="28" height="26" class="combo"/>
 <text x="336" y="196" class="combo tap"><tspan style="font-size: 64%">&amp;aqua_voice</tspan></text>
+</g>
+<g class="combo combopos-7">
+<path d="M364,196 l-93,0" class="combo"/>
+<path d="M364,196 l93,0" class="combo"/>
+<rect rx="6" ry="6" x="350" y="183" width="28" height="26" class="combo"/>
+<text x="364" y="196" class="combo tap"><tspan style="font-size: 78%">&amp;typeless</tspan></text>
 </g>
 </g>
 </g>

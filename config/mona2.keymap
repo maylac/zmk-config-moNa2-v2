@@ -302,9 +302,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp F18>
+                = <&macro_press &kp RGUI &kp RALT>
                 , <&macro_pause_for_release>
-                , <&macro_release &kp F18>;
+                , <&macro_release &kp RALT &kp RGUI>;
             label = "AQUA_VOICE";
         };
 
@@ -312,9 +312,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp F19>
+                = <&macro_press &kp LALT &kp LGUI>
                 , <&macro_pause_for_release>
-                , <&macro_release &kp F19>;
+                , <&macro_release &kp LGUI &kp LALT>;
             label = "TYPELESS";
         };
 

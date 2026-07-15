@@ -119,8 +119,8 @@ flowchart LR
 - `Z` ホールド → LShift（+ マウスレイヤー終了）
 - `LANG1` タップ → Macでは右 Command（Kanary で日本語入力） / ホールド → Layer 4一時有効（Mac時はLayer 5）
 - `LANG2` タップ／ホールド → Macでは左 Command（Kanary で英数入力）
-- `Space` + `LANG1`（Mac）→ Aqua Voice（`F18` をホールド）
-- `Space` + `Enter`（Mac）→ Typeless（`F19` をホールド）
+- `Space` + `LANG1`（Mac）→ Aqua Voice（右 Command + 右 Option をホールド）
+- `Space` + `Enter`（Mac）→ Typeless（左 Option + 左 Command をホールド）
 - IME は Kanary が担当する。左 Command タップで英数、右 Command タップで日本語に切り替えるため、Karabiner では Command／LANG キーの IME 変換を設定しない
 
 ---
@@ -252,8 +252,8 @@ LANG1押しながら...
 | `O` + `P` 同時押し | Layer 12/13 一時有効（一般ジェスチャー + Win/Cmd） |
 | `LANG2` + `LANG1` 同時押し | Layer 15 (Bluetooth/System) 一時有効 |
 | `Q` + `A` 同時押し | 全選択（Win: `Ctrl+A` / Mac: `Cmd+A`） |
-| `Space` + `LANG1`（Mac） | Aqua Voice（`F18` ホールド） |
-| `Space` + `Enter`（Mac） | Typeless（`F19` ホールド） |
+| `Space` + `LANG1`（Mac） | Aqua Voice（右 Command + 右 Option をホールド） |
+| `Space` + `Enter`（Mac） | Typeless（左 Option + 左 Command をホールド） |
 
 ### Layer 15 の使い方
 
